@@ -10,9 +10,11 @@ import { Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
 
   trails: Observable<any[]>;
+  sections: Observable<any[]>;
 
   constructor(db: AngularFireDatabase) {
     this.trails = db.list('trails').valueChanges();
+    this.sections = db.list('trails/sections').valueChanges();
    }
 
   ngOnInit(): void {

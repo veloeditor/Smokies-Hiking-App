@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "the-smokies-hiking-log": {
+      "hosting": {
+        "smokies-hiking-app": [
+          "the-smokies-hiking-log"
+        ]
+      }
+    }
+  }
+}

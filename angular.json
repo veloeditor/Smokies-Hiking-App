@@ -121,8 +121,13 @@
               "devServerTarget": "smokies-hiking-app:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "smokies-hiking-app"
 }

@@ -3,10 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { TrailsLogComponent } from './components/trails-log/trails-log.component';
+import { HikesListComponent } from './components/hikes-list/hikes-list.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    TrailsLogComponent,
+    HikesListComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

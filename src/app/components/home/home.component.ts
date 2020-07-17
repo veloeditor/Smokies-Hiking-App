@@ -12,6 +12,10 @@ export class HomeComponent implements OnInit {
   trails: Observable<any[]>;
   sections: Observable<any[]>;
 
+  objectKeys(obj) {
+    return Object.keys(obj);
+  }
+
   constructor(db: AngularFireDatabase) {
     this.trails = db.list('trails').valueChanges();
     this.sections = db.list('trails/sections').valueChanges();

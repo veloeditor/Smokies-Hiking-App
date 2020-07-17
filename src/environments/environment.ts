@@ -10,8 +10,7 @@ export const environment = {
     databaseURL: 'https://the-smokies-hiking-log.firebaseio.com',
     projectId: 'the-smokies-hiking-log',
     storageBucket: 'the-smokies-hiking-log.appspot.com',
-    messagingSenderId: '224558465527',
-    appId: '1:224558465527:web:4b7e063d811bebb6946ef2'
+    messagingSenderId: '224558465527'
   }
 };
 

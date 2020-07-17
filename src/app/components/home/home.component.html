@@ -1,1 +1,5 @@
-<p>home works!</p>
+<ul>
+    <li class="text" *ngFor="let trail of trails | async">
+        {{ trail.name }}
+    </li>
+</ul>

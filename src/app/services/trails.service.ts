@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,20 @@ export class TrailsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public sendGetRequest() {
+  handleError(error: HttpErrorResponse) {
+    let errorMessage = 'Unknown error!';
+    if (error.error instanceof ErrorEvent) {
+      // client-side errors
+      errorMessage = 'Error: ${error.error.message}';
+    } else {
+      // servier-side errors
+      errorMessage = 'Error Code: ${error.status}\nMessage: ${error.message}';
+    }
+    window.alert(errorMessage);
+    return throwError(errorMessage);
+  }
+
+  public getAllTrails() {
     return this.httpClient.get(this.REST_API_SERVER);
   }
 }

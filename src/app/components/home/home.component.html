@@ -2,6 +2,11 @@
     <h3>List of Official Trails in the Great Smoky Mountains</h3>
     <li *ngFor="let trail of trails">
         {{trail.name}} -- {{trail.length}}
+        <ul>
+            <li *ngFor="let section of trail.sections">
+                    {{section.sectionName}} -- {{section.sectionLength}}
+            </li>
+        </ul>
     </li>
 
 </ul>

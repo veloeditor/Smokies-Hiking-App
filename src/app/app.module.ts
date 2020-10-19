@@ -7,9 +7,8 @@ import { HomeComponent } from './components/home/home.component';
 import { TrailsLogComponent } from './components/trails-log/trails-log.component';
 import { HikesListComponent } from './components/hikes-list/hikes-list.component';
 import { HeaderComponent } from './components/header/header.component';
-import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,8 +21,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

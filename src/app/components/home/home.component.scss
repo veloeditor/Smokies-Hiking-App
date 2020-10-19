@@ -1,0 +1,47 @@
+h1, h2 {
+    text-align: center;
+
+}
+
+h1 {
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.app_title {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.goals {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    text-align: center;
+    gap: 20px;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.latest_hike {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.main_options {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    gap: 30px;
+    justify-content: space-evenly;
+}

@@ -5,23 +5,35 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { TrailsLogComponent } from './components/trails-log/trails-log.component';
-import { HikesListComponent } from './components/hikes-list/hikes-list.component';
+import { TrailsListComponent } from './components/trails-list/trails-list.component';
 import { HeaderComponent } from './components/header/header.component';
-import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     TrailsLogComponent,
-    HikesListComponent,
-    HeaderComponent,
+    TrailsListComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatExpansionModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

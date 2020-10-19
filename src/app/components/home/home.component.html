@@ -1,13 +1,7 @@
 <ul>
     <h3>List of Official Trails in the Great Smoky Mountains</h3>
-    <li class="text" *ngFor="let trail of trails | async">
-        {{ trail.name }} -- {{ trail.length }} miles
-        <ng-container *ngIf="trail.sections">
-            <ul>
-                <li *ngFor="let key of objectKeys(trail.sections)">
-                    {{ trail.sections[key].name }} -- {{ trail.sections[key].sectionMiles }} miles
-                </li>
-            </ul>
-        </ng-container>
+    <li *ngFor="let trail of trails">
+        {{trail.name}} -- {{trail.length}}
     </li>
+
 </ul>

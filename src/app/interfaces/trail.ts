@@ -3,7 +3,9 @@ export interface Trail {
    name: string;
    length: number;
    sections: [
-       sectionName: string,
-       sectionLength: number
+       {
+        sectionName: string,
+        sectionLength: number
+       }
    ];
 }

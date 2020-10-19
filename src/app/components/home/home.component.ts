@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
+import { TrailsService } from '../../services/trails.service';
+import { Trail } from '../../interfaces/trail';
 
 @Component({
   selector: 'app-home',
@@ -9,18 +10,16 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-  trails: Observable<any[]>;
-  sections: Observable<any[]>;
+  trails: Trail[];
 
-  objectKeys(obj) {
-    return Object.keys(obj);
+  constructor(private trailsService: TrailsService) {
   }
 
-  constructor(db: AngularFireDatabase) {
-    this.trails = db.list('trails').valueChanges();
-  }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.trailsService.sendGetRequest().subscribe((data: any[]) => {
+      this.trails = data;
+      console.log(this.trails);
+    });
   }
 
 }

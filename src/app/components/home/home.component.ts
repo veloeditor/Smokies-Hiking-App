@@ -18,8 +18,7 @@ export class HomeComponent implements OnInit {
 
   constructor(db: AngularFireDatabase) {
     this.trails = db.list('trails').valueChanges();
-    this.sections = db.list('trails/sections').valueChanges();
-   }
+  }
 
   ngOnInit(): void {
   }

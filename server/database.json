@@ -3,22 +3,26 @@
  {
    "id": 1,
    "name": "Abrams Falls Trail",
-   "length": 4.2
+   "length": 4.2,
+   "sections": []
  },
  {
    "id": 2,
    "name": "Ace Gap Trail",
-   "length": 5.6
+   "length": 5.6,
+   "sections": []
  },
  {
    "id": 3,
    "name": "Albright Grove Loop",
-   "length": 0.7
+   "length": 0.7,
+   "sections": []
  },
  {
    "id": 4,
    "name": "Alum Cave Trail",
-   "length": 5
+   "length": 5,
+   "sections": []
  },
  {
    "id": 5,
@@ -180,37 +184,44 @@
  {
    "id": 7,
    "name": "Baskins Creek Trail",
-   "length": 2.7
+   "length": 2.7,
+   "sections": []
  },
  {
    "id": 8,
    "name": "Baxter Creek Trail",
-   "length": 6.1
+   "length": 6.1,
+   "sections": []
  },
  {
    "id": 9,
    "name": "Bear Creek Trail ",
-   "length": 5.9
+   "length": 5.9,
+   "sections": []
  },
  {
    "id": 10,
    "name": "Beard Cane Trail",
-   "length": 4.2
+   "length": 4.2,
+   "sections": []
  },
  {
    "id": 11,
    "name": "Beech Gap Trail I",
-   "length": 2.5
+   "length": 2.5,
+   "sections": []
  },
  {
    "id": 12,
    "name": "Beech Gap Trail II",
-   "length": 2.8
+   "length": 2.8,
+   "sections": []
  },
  {
    "id": 13,
-   "name": "Benton MacKaye Connector Trail in Smokemont/Smokemont Stables Trail (Bradley Fork to Church Parking at Entrance)",
-   "length": 0.8
+   "name": "Benton MacKaye Connector Trail in Smokemont",
+   "length": 0.8,
+   "sections": []
  },
  {
    "id": 14,
@@ -234,17 +245,20 @@
  {
    "id": 15,
    "name": "Big Fork Ridge Trail",
-   "length": 3.2
+   "length": 3.2,
+   "sections": []
  },
  {
    "id": 16,
    "name": "Bone Valley Trail",
-   "length": 1.8
+   "length": 1.8,
+   "sections": []
  },
  {
    "id": 17,
    "name": "Boogerman Trail",
-   "length": 4.1
+   "length": 4.1,
+   "sections": []
  },
  {
    "id": 18,
@@ -276,7 +290,8 @@
  {
    "id": 19,
    "name": "Boulevard Trail",
-   "length": 5.4
+   "length": 5.4,
+   "sections": []
  },
  {
    "id": 20,
@@ -319,7 +334,8 @@
  {
    "id": 22,
    "name": "Bull Head Trail (closed)",
-   "length": 5.9
+   "length": 5.9,
+   "sections": []
  },
  {
    "id": 23,
@@ -385,7 +401,8 @@
  {
    "id": 26,
    "name": "Cane Creek Trail",
-   "length": 2.1
+   "length": 2.1,
+   "sections": []
  },
  {
    "id": 27,
@@ -405,17 +422,20 @@
  {
    "id": 28,
    "name": "Chasteen Creek Trail",
-   "length": 4
+   "length": 4,
+   "sections": []
  },
  {
    "id": 29,
    "name": "Chestnut Branch Trail",
-   "length": 2.1
+   "length": 2.1,
+   "sections": []
  },
  {
    "id": 30,
    "name": "Chestnut Top Trail",
-   "length": 4.3
+   "length": 4.3,
+   "sections": []
  },
  {
    "id": 31,
@@ -435,22 +455,26 @@
  {
    "id": 32,
    "name": "Clingmans Dome Nature Trail (asphalt)",
-   "length": 0.5
+   "length": 0.5,
+   "sections": []
  },
  {
    "id": 33,
    "name": "Clingmans Dome Bypass Trail",
-   "length": 0.5
+   "length": 0.5,
+   "sections": []
  },
  {
    "id": 34,
    "name": "Cold Spring Gap Trail",
-   "length": 3.5
+   "length": 3.5,
+   "sections": []
  },
  {
    "id": 35,
    "name": "Cooper Creek Trail (avoid area at Park's request)",
-   "length": 0.5
+   "length": 0.5,
+   "sections": []
  },
  {
    "id": 36,
@@ -486,12 +510,14 @@
  {
    "id": 37,
    "name": "Cosby Campground Trails",
-   "length": 2.5
+   "length": 2.5,
+   "sections": []
  },
  {
    "id": 38,
    "name": "Cove Mountain Trail (to tower)",
-   "length": 8.5
+   "length": 8.5,
+   "sections": []
  },
  {
    "id": 39,
@@ -511,22 +537,26 @@
  {
    "id": 40,
    "name": "Crooked Arm Ridge Trail",
-   "length": 2.2
+   "length": 2.2,
+   "sections": []
  },
  {
    "id": 41,
    "name": "Cucumber Gap Trail",
-   "length": 2.4
+   "length": 2.4,
+   "sections": []
  },
  {
    "id": 42,
    "name": "Curry Mountain Trail",
-   "length": 3.3
+   "length": 3.3,
+   "sections": []
  },
  {
    "id": 43,
    "name": "Deep Creek Horse Trail",
-   "length": 1.7
+   "length": 1.7,
+   "sections": []
  },
  {
    "id": 44,
@@ -608,12 +638,14 @@
  {
    "id": 47,
    "name": "Eagle Creek Trail",
-   "length": 8.9
+   "length": 8.9,
+   "sections": []
  },
  {
    "id": 48,
    "name": "Enloe Creek Trail",
-   "length": 3.6
+   "length": 3.6,
+   "sections": []
  },
  {
    "id": 49,
@@ -633,12 +665,14 @@
  {
    "id": 50,
    "name": "Flat Creek Trail",
-   "length": 2.6
+   "length": 2.6,
+   "sections": []
  },
  {
    "id": 51,
    "name": "Fork Ridge Trail",
-   "length": 5.1
+   "length": 5.1,
+   "sections": []
  },
  {
    "id": 52,
@@ -689,22 +723,26 @@
  {
    "id": 54,
    "name": "Gabes Mountain Trail",
-   "length": 6.6
+   "length": 6.6,
+   "sections": []
  },
  {
    "id": 55,
    "name": "Gatlinburg Trail",
-   "length": 1.9
+   "length": 1.9,
+   "sections": []
  },
  {
    "id": 56,
    "name": "Gold Mine Trail",
-   "length": 0.8
+   "length": 0.8,
+   "sections": []
  },
  {
    "id": 57,
    "name": "Goldmine Loop Trail",
-   "length": 2
+   "length": 2,
+   "sections": []
  },
  {
    "id": 58,
@@ -724,17 +762,20 @@
  {
    "id": 59,
    "name": "Grapeyard Ridge Trail",
-   "length": 7.6
+   "length": 7.6,
+   "sections": []
  },
  {
    "id": 60,
    "name": "Grassy Branch Trail",
-   "length": 2.5
+   "length": 2.5,
+   "sections": []
  },
  {
    "id": 61,
    "name": "Greenbrier Ridge Trail",
-   "length": 4.2
+   "length": 4.2,
+   "sections": []
  },
  {
    "id": 62,
@@ -762,12 +803,14 @@
  {
    "id": 63,
    "name": "Gregory Ridge Trail",
-   "length": 5
+   "length": 5,
+   "sections": []
  },
  {
    "id": 64,
    "name": "Gunter Fork Trail",
-   "length": 4.1
+   "length": 4.1,
+   "sections": []
  },
  {
    "id": 65,
@@ -787,7 +830,8 @@
  {
    "id": 66,
    "name": "Hatcher Mountain Trail (Little Bottoms - Cooper Road)",
-   "length": 2.6
+   "length": 2.6,
+   "sections": []
  },
  {
    "id": 67,
@@ -815,7 +859,8 @@
  {
    "id": 68,
    "name": "Hazel Creek Trail Access to Fontana Lake Landing",
-   "length": 0.7
+   "length": 0.7,
+   "sections": []
  },
  {
    "id": 69,
@@ -833,7 +878,8 @@
  {
    "id": 70,
    "name": "High Rocks Trail",
-   "length": 0.3
+   "length": 0.3,
+   "sections": []
  },
  {
    "id": 71,
@@ -888,7 +934,8 @@
  {
    "id": 74,
    "name": "Indian Creek Motor Trail",
-   "length": 1.8
+   "length": 1.8,
+   "sections": []
  },
  {
    "id": 75,
@@ -954,27 +1001,32 @@
  {
    "id": 78,
    "name": "Jenkins Ridge Trail",
-   "length": 8.9
+   "length": 8.9,
+   "sections": []
  },
  {
    "id": 79,
    "name": "Jonas Creek Trail",
-   "length": 4.1
+   "length": 4.1,
+   "sections": []
  },
  {
    "id": 80,
    "name": "Juney Whank Falls Trail (Deep Creek parking to falls and back to Deep Creek Trail)",
-   "length": 0.5
+   "length": 0.5,
+   "sections": []
  },
  {
    "id": 81,
    "name": "Kanati Fork Trail",
-   "length": 2.9
+   "length": 2.9,
+   "sections": []
  },
  {
    "id": 82,
    "name": "Kephart Prong Trail",
-   "length": 2
+   "length": 2,
+   "sections": []
  },
  {
    "id": 83,
@@ -1035,7 +1087,8 @@
  {
    "id": 85,
    "name": "Lead Cove Trail",
-   "length": 1.8
+   "length": 1.8,
+   "sections": []
  },
  {
    "id": 86,
@@ -1053,7 +1106,8 @@
  {
    "id": 87,
    "name": "Little Brier Gap Trail",
-   "length": 1.4
+   "length": 1.4,
+   "sections": []
  },
  {
    "id": 88,
@@ -1115,12 +1169,14 @@
  {
    "id": 91,
    "name": "Long Bunk Trail",
-   "length": 3.6
+   "length": 3.6,
+   "sections": []
  },
  {
    "id": 92,
    "name": "Long Hungry Ridge Trail",
-   "length": 4.5
+   "length": 4.5,
+   "sections": []
  },
  {
    "id": 93,
@@ -1140,12 +1196,14 @@
  {
    "id": 94,
    "name": "Lost Cove Trail",
-   "length": 2.7
+   "length": 2.7,
+   "sections": []
  },
  {
    "id": 95,
    "name": "Low Gap Trail I",
-   "length": 2.5
+   "length": 2.5,
+   "sections": []
  },
  {
    "id": 96,
@@ -1180,12 +1238,14 @@
  {
    "id": 98,
    "name": "Lumber Ridge Trail",
-   "length": 4.1
+   "length": 4.1,
+   "sections": []
  },
  {
    "id": 99,
    "name": "Lynn Camp Prong Trail",
-   "length": 3.7
+   "length": 3.7,
+   "sections": []
  },
  {
    "id": 100,
@@ -1228,12 +1288,14 @@
  {
    "id": 102,
    "name": "McKee Branch Trail",
-   "length": 2.3
+   "length": 2.3,
+   "sections": []
  },
  {
    "id": 103,
    "name": "Meigs Creek Trail",
-   "length": 3.5
+   "length": 3.5,
+   "sections": []
  },
  {
    "id": 104,
@@ -1253,7 +1315,8 @@
  {
    "id": 105,
    "name": "Metcalf Bottoms Trail",
-   "length": 0.7
+   "length": 0.7,
+   "sections": []
  },
  {
    "id": 106,
@@ -1303,7 +1366,8 @@
  {
    "id": 109,
    "name": "Mount Cammerer Trail",
-   "length": 0.6
+   "length": 0.6,
+   "sections": []
  },
  {
    "id": 110,
@@ -1391,12 +1455,14 @@
  {
    "id": 115,
    "name": "Oconaluftee River Trail",
-   "length": 1.6
+   "length": 1.6,
+   "sections": []
  },
  {
    "id": 116,
    "name": "Old Settlers Trail",
-   "length": 15.8
+   "length": 15.8,
+   "sections": []
  },
  {
    "id": 117,
@@ -1416,22 +1482,26 @@
  {
    "id": 118,
    "name": "Ollie Cove",
-   "length": 0.3
+   "length": 0.3,
+   "sections": []
  },
  {
    "id": 119,
    "name": "Palmer Creek Trail",
-   "length": 3.3
+   "length": 3.3,
+   "sections": []
  },
  {
    "id": 120,
    "name": "Panther Creek Trail",
-   "length": 2.3
+   "length": 2.3,
+   "sections": []
  },
  {
    "id": 121,
    "name": "Pole Road Creek Trail",
-   "length": 3.3
+   "length": 3.3,
+   "sections": []
  },
  {
    "id": 122,
@@ -1508,7 +1578,8 @@
  {
    "id": 126,
    "name": "Ramsay Cascades Trail",
-   "length": 4
+   "length": 4,
+   "sections": []
  },
  {
    "id": 127,
@@ -1528,17 +1599,20 @@
  {
    "id": 128,
    "name": "Rich Mountain Trail",
-   "length": 2.3
+   "length": 2.3,
+   "sections": []
  },
  {
    "id": 129,
    "name": "Road Prong Trail",
-   "length": 2.4
+   "length": 2.4,
+   "sections": []
  },
  {
    "id": 130,
    "name": "Rough Creek Trail",
-   "length": 2.8
+   "length": 2.8,
+   "sections": []
  },
  {
    "id": 131,
@@ -1558,12 +1632,14 @@
  {
    "id": 132,
    "name": "Roundtop Trail",
-   "length": 7.5
+   "length": 7.5,
+   "sections": []
  },
  {
    "id": 133,
    "name": "Russell Field Trail",
-   "length": 3.5
+   "length": 3.5,
+   "sections": []
  },
  {
    "id": 134,
@@ -1587,12 +1663,14 @@
  {
    "id": 135,
    "name": "Scott Mountain Trail (closed, open to CS6)",
-   "length": 3.6
+   "length": 3.6,
+   "sections": []
  },
  {
    "id": 136,
    "name": "Smokemont Loop Trail",
-   "length": 3.9
+   "length": 3.9,
+   "sections": []
  },
  {
    "id": 137,
@@ -1627,12 +1705,14 @@
  {
    "id": 139,
    "name": "Spruce Mountain Trail (to CS42)",
-   "length": 1
+   "length": 1,
+   "sections": []
  },
  {
    "id": 140,
    "name": "Stone Pile Gap Trail",
-   "length": 0.9
+   "length": 0.9,
+   "sections": []
  },
  {
    "id": 141,
@@ -1671,12 +1751,14 @@
  {
    "id": 143,
    "name": "Swallow Fork Trail",
-   "length": 4
+   "length": 4,
+   "sections": []
  },
  {
    "id": 144,
    "name": "Sweat Heifer Creek Trail",
-   "length": 3.7
+   "length": 3.7,
+   "sections": []
  },
  {
    "id": 145,
@@ -1716,7 +1798,8 @@
  {
    "id": 146,
    "name": "Tow String Trail",
-   "length": 2.2
+   "length": 2.2,
+   "sections": []
  },
  {
    "id": 147,
@@ -1778,7 +1861,8 @@
  {
    "id": 150,
    "name": "Twentymile Loop Trail",
-   "length": 2.9
+   "length": 2.9,
+   "sections": []
  },
  {
    "id": 151,
@@ -1802,7 +1886,8 @@
  {
    "id": 152,
    "name": "Twin Creeks Trail",
-   "length": 1.9
+   "length": 1.9,
+   "sections": []
  },
  {
    "id": 153,
@@ -1834,17 +1919,20 @@
  {
    "id": 154,
    "name": "West Prong Trail",
-   "length": 2.7
+   "length": 2.7,
+   "sections": []
  },
  {
    "id": 155,
    "name": "Wet Bottom Trail",
-   "length": 1
+   "length": 1,
+   "sections": []
  },
  {
    "id": 156,
    "name": "Whiteoak Branch Trail",
-   "length": 1.8
+   "length": 1.8,
+   "sections": []
  },
  {
    "id": 157,
@@ -1865,12 +1953,18 @@
   "userHikes": [
     {
       "id": 1,
-      "date": "",
-      "trailId": "",
-      "length": "",
+      "trailName": "Anthony Creek Trail",
+      "totalMiles": 1.6,
+      "date": "02-20-2020",
+      "comments": "Beautiful hike but had to turn around early", 
       "sections": [
         {
-                 "sectionLength": ""
+          "sectionName": "Cades Cove Picnic Area - Crib Gap",
+          "sectionLength": 0.2
+        },
+        {
+          "sectionName": "Crib Gap - Russell Field",
+          "sectionLength": 1.4
         }
       ]
     }

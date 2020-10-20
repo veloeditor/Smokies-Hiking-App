@@ -1,16 +1,15 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable } from 'rxjs';
-import { TrailsService } from '../../services/trails.service';
-import { Trail } from '../../interfaces/trail';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { Trail } from 'src/app/interfaces/trail';
+import { TrailsService } from 'src/app/services/trails.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-trails-list',
+  templateUrl: './trails-list.component.html',
+  styleUrls: ['./trails-list.component.scss']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class TrailsListComponent implements OnInit, OnDestroy {
 
   trails: Trail[];
   destroy$: Subject<boolean> = new Subject<boolean>();
@@ -21,7 +20,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.trailsService.getAllTrails().pipe(takeUntil(this.destroy$)).subscribe((data: any[]) => {
       this.trails = data;
-      console.log(this.trails);
     });
   }
 

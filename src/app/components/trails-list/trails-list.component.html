@@ -1,0 +1,32 @@
+    <h3>List of Official Trails in the Great Smoky Mountains</h3>
+    
+    <div class="trailList_container">
+      <div class="trail" *ngFor="let trail of trails">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{trail.name}}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{trail.length}} miles
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div *ngIf="trail.sections.length > 1; else elseBlock">
+            <p *ngFor="let section of trail.sections">{{section.sectionName}} -- {{section.sectionLength}}</p>
+          </div>
+          <ng-template #elseBlock>
+            <p>There are no additional segments for this trail.</p>
+          </ng-template>
+        
+        </mat-expansion-panel>
+      </div>
+    </div>
+
+    <!-- <li *ngFor="let trail of trails">
+        {{trail.name}} -- {{trail.length}}
+        <ul>
+            <li *ngFor="let section of trail.sections">
+                    {{section.sectionName}} -- {{section.sectionLength}}
+            </li>
+        </ul>
+    </li> -->

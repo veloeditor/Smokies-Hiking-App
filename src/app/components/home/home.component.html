@@ -1,13 +1,20 @@
-<ul>
-    <h3>List of Official Trails in the Great Smoky Mountains</h3>
-    <li class="text" *ngFor="let trail of trails | async">
-        {{ trail.name }} -- {{ trail.length }} miles
-        <ng-container *ngIf="trail.sections">
-            <ul>
-                <li *ngFor="let key of objectKeys(trail.sections)">
-                    {{ trail.sections[key].name }} -- {{ trail.sections[key].sectionMiles }} miles
-                </li>
-            </ul>
-        </ng-container>
-    </li>
-</ul>
+<div class="app_title">
+    <h1>The 900 Miler Challenge</h1>
+    <h2>Hike all of the trails of the Great Smoky Mountains</h2>
+</div>
+<div class="goals">
+    <p>Your current goal: 800 miles</p>
+    <p>Current unique miles you've hiked: 200 miles</p>
+    <p>Your current progress: 25%</p>
+</div>
+<div class="latest_hike">
+    <p>Your last hike was on: July 14, 2020</p>
+</div>
+<div class="main_options">
+        <p>
+            View your hiking log and add a new hike
+        </p>
+        <p>
+            <a routerLink="/trails">View the official trail list</a>
+        </p>
+</div>

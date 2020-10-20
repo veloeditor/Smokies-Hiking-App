@@ -5,25 +5,42 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { TrailsLogComponent } from './components/trails-log/trails-log.component';
-import { HikesListComponent } from './components/hikes-list/hikes-list.component';
+import { TrailsListComponent } from './components/trails-list/trails-list.component';
 import { HeaderComponent } from './components/header/header.component';
-import { AngularFireModule } from '@angular/fire';
-import { environment } from 'src/environments/environment';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTableModule } from '@angular/material/table';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     TrailsLogComponent,
-    HikesListComponent,
-    HeaderComponent,
+    TrailsListComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatExpansionModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatTableModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

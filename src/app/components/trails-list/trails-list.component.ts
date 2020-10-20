@@ -13,7 +13,6 @@ export class TrailsListComponent implements OnInit, OnDestroy {
 
   trails: Trail[];
   destroy$: Subject<boolean> = new Subject<boolean>();
-  panelOpenState = false;
 
   constructor(private trailsService: TrailsService) {
   }
@@ -21,7 +20,6 @@ export class TrailsListComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.trailsService.getAllTrails().pipe(takeUntil(this.destroy$)).subscribe((data: any[]) => {
       this.trails = data;
-      console.log(this.trails);
     });
   }
 

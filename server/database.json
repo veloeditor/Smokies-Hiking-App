@@ -219,7 +219,7 @@
  },
  {
    "id": 13,
-   "name": "Benton MacKaye Connector Trail in Smokemont/Smokemont Stables Trail (Bradley Fork to Church Parking at Entrance)",
+   "name": "Benton MacKaye Connector Trail in Smokemont",
    "length": 0.8,
    "sections": []
  },
@@ -1953,12 +1953,18 @@
   "userHikes": [
     {
       "id": 1,
-      "date": "",
-      "trailId": "",
-      "length": "",
+      "trailName": "Anthony Creek Trail",
+      "totalMiles": 1.6,
+      "date": "02-20-2020",
+      "comments": "Beautiful hike but had to turn around early", 
       "sections": [
         {
-                 "sectionLength": ""
+          "sectionName": "Cades Cove Picnic Area - Crib Gap",
+          "sectionLength": 0.2
+        },
+        {
+          "sectionName": "Crib Gap - Russell Field",
+          "sectionLength": 1.4
         }
       ]
     }

@@ -1,1 +1,31 @@
-<p>trails-log works!</p>
+<h2 class="hikingLogTitle">
+    Hiking Log
+</h2>
+<div class="addHike">
+    <div class="search">
+        <form class="form-inline waves-light" mdbWavesEffect>
+            <div class="md-form mt-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search for a trail...">
+            </div>
+          </form>
+    </div>
+    <button>Add a new hike</button>
+</div>
+<div class="log_container">
+   <div class="card_container" *ngFor="let userHike of userHikes">
+     <div class="card_header">
+      {{ userHike.trailName }} on {{ userHike.date }}
+     </div>
+     <div class="card_body">
+        {{ userHike.totalMiles }} miles total
+     </div>
+     <div class="sections">
+       <p>Sections Hiked:</p>
+       <ul *ngFor="let section of userHike.sections">
+         <li>
+           {{ section.sectionName }} -- {{ section.sectionLength }} miles
+         </li>
+       </ul>
+     </div>
+   </div>
+</div>

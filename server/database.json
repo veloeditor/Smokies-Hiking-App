@@ -1751,7 +1751,7 @@
  {
    "id": 143,
    "name": "Swallow Fork Trail",
-   "length": 4,
+   "length": 4.0,
    "sections": []
  },
  {
@@ -1804,7 +1804,7 @@
  {
    "id": 147,
    "name": "Trillium Gap Trail",
-   "length": 9,
+   "length": 9.0,
    "sections": [
      {
        "sectionName": "Cherokee Orchard Road - Baskins Creek",
@@ -1967,6 +1967,14 @@
           "sectionLength": 1.4
         }
       ]
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "userName": "Brian",
+      "email": "brian@email.com",
+      "password": 1234
     }
   ]
 }

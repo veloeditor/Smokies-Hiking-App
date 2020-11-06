@@ -1967,6 +1967,23 @@
           "sectionLength": 1.4
         }
       ]
+    },
+    {
+      "id": 2,
+      "trailName": "Wolf Ridge Trail",
+      "totalMiles": 6.3,
+      "date": "04-16-2020",
+      "comments": "Pretty hike with a nice view", 
+      "sections": [
+        {
+          "sectionName": "Twentymile - Twentymile Loop",
+          "sectionLength": 1.1
+        },
+        {
+          "sectionName": "Twentymile Loop - Gregory Bald",
+          "sectionLength": 5.2
+        }
+      ]
     }
   ],
   "users": [

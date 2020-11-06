@@ -1,31 +1,28 @@
-<h2 class="hikingLogTitle">
-    Hiking Log
-</h2>
-<div class="addHike">
-    <div class="search">
-        <form class="form-inline waves-light" mdbWavesEffect>
-            <div class="md-form mt-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search for a trail...">
-            </div>
-          </form>
-    </div>
-    <button>Add a new hike</button>
+<div class="header">
+  <h2 class="hikingLogTitle">
+      Hiking Log
+  </h2>
+  <button mat-mini-fab><mat-icon (click)="openForm()">add</mat-icon></button>
+</div>
+<div *ngIf="addUser" class="hidden-form">
+  <form [formGroup]="trailForm" (ngSubmit)="saveTrail(trailForm)">
+    <mat-form-field appearance="fill" color="primary">
+      <mat-label>Trail</mat-label>
+      <input formControlName="trailName" required matInput>
+  </mat-form-field>
+  </form>
 </div>
 <div class="log_container">
-   <div class="card_container" *ngFor="let userHike of userHikes">
-     <div class="card_header">
-      {{ userHike.trailName }} on {{ userHike.date }}
-     </div>
-     <div class="card_body">
-        {{ userHike.totalMiles }} miles total
-     </div>
-     <div class="sections">
-       <p>Sections Hiked:</p>
-       <ul *ngFor="let section of userHike.sections">
-         <li>
-           {{ section.sectionName }} -- {{ section.sectionLength }} miles
-         </li>
-       </ul>
-     </div>
-   </div>
+  <mat-card *ngFor="let userHike of userHikes" class="mat-elevation-z2 hike-card">
+    <mat-card-title>
+      {{ userHike.trailName }}</mat-card-title>
+    <mat-card-subtitle>{{ userHike.date }}</mat-card-subtitle>
+    <mat-card-content>{{ userHike.comments }}</mat-card-content>
+    <h4>Sections hiked:</h4>
+    <ul *ngFor="let section of userHike.sections">
+      <li>
+        {{ section.sectionName }} -- {{ section.sectionLength }} miles
+      </li>
+    </ul>
+  </mat-card>
 </div>

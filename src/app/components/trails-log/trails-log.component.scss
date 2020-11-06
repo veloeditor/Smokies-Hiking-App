@@ -1,3 +1,43 @@
-table {
-    width: 900px;
+.header {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  gap: 15px;
+  
+  h2 {
+    text-align: center;
   }
+}
+
+
+.addHike {
+  margin-bottom: 25px;
+  display: flex;
+  gap: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.log_container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-evenly;
+}
+
+mat-card {
+  background-color: rgb(197, 196, 196);
+  border-radius: 10px;
+
+  ul {
+    list-style: circle;
+
+    li {
+      line-height: .5;
+    }
+  }
+
+}

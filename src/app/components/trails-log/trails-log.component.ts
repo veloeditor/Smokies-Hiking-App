@@ -12,9 +12,10 @@ import { UserHikesService } from 'src/app/services/user-hikes.service';
 export class TrailsLogComponent implements OnInit {
   trailForm: FormGroup;
 
-
   userHikes: UserHike[];
   addUser = false;
+
+  userUniqueMilesHiked = null;
 
   constructor(
     private userHikesService: UserHikesService,
@@ -24,6 +25,11 @@ export class TrailsLogComponent implements OnInit {
   ngOnInit(): void {
     this.userHikesService.getAllUserHikes().subscribe((data: any[]) => {
       this.userHikes = data;
+      this.userHikes.sort((a, b) => new Date(a?.date) > new Date(b?.date) ? -1 : 1);
+      const miles =  this.userHikes.reduce((acc, userHike) => {
+        return acc + Number(userHike.totalMiles);
+       }, 0);
+      this.userUniqueMilesHiked = miles.toFixed(1);
     });
 
     this.trailForm = this.fb.group({
@@ -51,7 +57,10 @@ export class TrailsLogComponent implements OnInit {
     } as UserHike;
 
     console.log(trailForm.value);
-    this.userHikesService.postHike(hike);
+    this.userHikesService.postHike(hike).subscribe(data => {
+      console.log(data);
+    });
+    this.userHikesService.getAllUserHikes();
   }
 
   openForm() {

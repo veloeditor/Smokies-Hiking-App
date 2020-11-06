@@ -30,12 +30,14 @@
         </button>
   </form>
 </div>
+{{userUniqueMilesHiked}}
 <div class="log_container">
   <mat-card *ngFor="let userHike of userHikes" class="mat-elevation-z2 hike-card">
     <mat-card-title>
       {{ userHike.trailName }}</mat-card-title>
-    <mat-card-subtitle>{{ userHike.date }}</mat-card-subtitle>
+    <mat-card-subtitle>{{ userHike.date | date: 'MM/dd/yyyy' }}</mat-card-subtitle>
     <mat-card-content>{{ userHike.comments }}</mat-card-content>
+    <mat-card-content>{{ userHike.totalMiles }} miles hiked</mat-card-content>
     <h4>Sections hiked:</h4>
     <ul *ngFor="let section of userHike.sections">
       <li>

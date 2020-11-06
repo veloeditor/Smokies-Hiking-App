@@ -27,11 +27,14 @@
   display: flex;
   gap: 20px;
   justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 mat-card {
   background-color: rgb(197, 196, 196);
   border-radius: 10px;
+  flex-basis: 80%;
 
   ul {
     list-style: circle;

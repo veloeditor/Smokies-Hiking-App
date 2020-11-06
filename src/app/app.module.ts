@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatCard, MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatInputModule,
     MatToolbarModule,
     MatTableModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

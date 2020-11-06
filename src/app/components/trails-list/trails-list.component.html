@@ -2,23 +2,30 @@
     
     <div class="trailList_container">
       <div class="trail" *ngFor="let trail of trails">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              {{trail.name}}
-            </mat-panel-title>
-            <mat-panel-description>
-              {{trail.length}} miles
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <div *ngIf="trail.sections.length > 1; else elseBlock">
-            <p *ngFor="let section of trail.sections">{{section.sectionName}} -- {{section.sectionLength}}</p>
-          </div>
-          <ng-template #elseBlock>
-            <p>There are no additional segments for this trail.</p>
-          </ng-template>
-        
-        </mat-expansion-panel>
+        <div class="no-section-trails" *ngIf="trail.sections.length < 1; else trailSections">
+          <mat-card class="mat-elevation-z2 trail-card">
+            <p>{{trail.name}}</p>
+            <p> {{trail.length}} miles</p>
+          </mat-card>
+        </div>
+        <ng-template #trailSections>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{trail.name}}
+              </mat-panel-title>
+              <mat-panel-description>
+                {{trail.length}} miles
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div *ngIf="trail.sections.length > 0; else elseBlock">
+              <p *ngFor="let section of trail.sections">{{section.sectionName}} -- {{section.sectionLength}}</p>
+            </div>
+            <ng-template #elseBlock>
+              <p>There are no additional segments for this trail.</p>
+            </ng-template>        
+          </mat-expansion-panel>
+        </ng-template>
       </div>
     </div>
 

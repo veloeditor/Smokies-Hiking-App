@@ -28,9 +28,13 @@ export class TrailsLogComponent implements OnInit {
 
     this.trailForm = this.fb.group({
       trailName: '',
-      totalMiles: '',
-      date: '',
+      totalMiles: null,
+      date: new Date(),
       comments: '',
+      sections: [{
+        sectionName: 'Section Name',
+        sectionLength: 9
+      }]
     });
   }
 
@@ -39,11 +43,15 @@ export class TrailsLogComponent implements OnInit {
       trailName: this.trailForm.value.trailName,
       totalMiles: this.trailForm.value.totalMiles,
       date: this.trailForm.value.date,
-      comments: this.trailForm.value.comments
+      comments: this.trailForm.value.comments,
+      sections: [{
+        sectionName: 'Section Name',
+        sectionLength: 9
+      }]
     } as UserHike;
 
-    // call user hike service here
-    
+    console.log(trailForm.value);
+    this.userHikesService.postHike(hike);
   }
 
   openForm() {

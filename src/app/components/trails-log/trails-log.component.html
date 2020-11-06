@@ -5,11 +5,29 @@
   <button mat-mini-fab><mat-icon (click)="openForm()">add</mat-icon></button>
 </div>
 <div *ngIf="addUser" class="hidden-form">
-  <form [formGroup]="trailForm" (ngSubmit)="saveTrail(trailForm)">
+  <form [formGroup]="trailForm" (ngSubmit)="saveTrail(trailForm)" class="form">
     <mat-form-field appearance="fill" color="primary">
       <mat-label>Trail</mat-label>
       <input formControlName="trailName" required matInput>
-  </mat-form-field>
+    </mat-form-field>
+    <mat-form-field appearance="fill" color="primary">
+      <mat-label>Total Miles Hiked</mat-label>
+      <input formControlName="totalMiles" required matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill" color="primary">
+      <mat-label>Hike Date</mat-label>
+      <input matInput [matDatepicker]="hikeDate" formControlName="date" (click)="$event.stopPropagation();">
+      <mat-datepicker-toggle matSuffix [for]="hikeDate"></mat-datepicker-toggle>
+      <mat-datepicker #hikeDate></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="fill" color="primary">
+      <mat-label>Comments</mat-label>
+      <input formControlName="comments" matInput>
+    </mat-form-field>
+    <button mat-icon-button mat-mini-fab matTooltip="Save" type="submit"
+            class="submit_btn">
+            <mat-icon class="save_icon">save</mat-icon>
+        </button>
   </form>
 </div>
 <div class="log_container">

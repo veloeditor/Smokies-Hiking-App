@@ -5,21 +5,22 @@
   margin-right: auto;
   justify-content: center;
   gap: 15px;
+  margin-bottom: 30px;
   
   h2 {
     text-align: center;
   }
 }
 
-
-.addHike {
-  margin-bottom: 25px;
+.form {
   display: flex;
-  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
-  justify-content: center;
-  align-items: center;
+  margin-bottom: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .log_container {
@@ -39,5 +40,4 @@ mat-card {
       line-height: .5;
     }
   }
-
 }

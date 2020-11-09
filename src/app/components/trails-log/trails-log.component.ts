@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { Trail } from '../../interfaces/trail';
 
-import { UserHike } from 'src/app/interfaces/user-hike';
-import { UserHikesService } from 'src/app/services/user-hikes.service';
+import { UserHike } from '../../interfaces/user-hike';
+import { UserHikesService } from '../../services/user-hikes.service';
+import { TrailsService } from '../../services/trails.service';
 
 @Component({
   selector: 'app-trails-log',
@@ -15,11 +18,14 @@ export class TrailsLogComponent implements OnInit {
   userHikes: UserHike[];
   addUser = false;
 
+  trails: Trail[];
+
   userUniqueMilesHiked = null;
 
   constructor(
     private userHikesService: UserHikesService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private trailsService: TrailsService
   ) {}
 
   ngOnInit(): void {
@@ -30,6 +36,12 @@ export class TrailsLogComponent implements OnInit {
         return acc + Number(userHike.totalMiles);
        }, 0);
       this.userUniqueMilesHiked = miles.toFixed(1);
+    });
+
+    // ToDo: put call to trailsService to retrieve all trails and set equal to trails for auto-complete
+    this.trailsService.getAllTrails().subscribe((data: any[]) => {
+      this.trails = data;
+      console.log(this.trails);
     });
 
     this.trailForm = this.fb.group({

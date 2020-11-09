@@ -8,7 +8,12 @@
   <form [formGroup]="trailForm" (ngSubmit)="saveTrail(trailForm)" class="form">
     <mat-form-field appearance="fill" color="primary">
       <mat-label>Trail</mat-label>
-      <input formControlName="trailName" required matInput>
+      <input formControlName="trailName" required matInput [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let trail of trails" [value]="trail.name">
+          {{trail.name}}
+        </mat-option>
+      </mat-autocomplete>
     </mat-form-field>
     <mat-form-field appearance="fill" color="primary">
       <mat-label>Total Miles Hiked</mat-label>

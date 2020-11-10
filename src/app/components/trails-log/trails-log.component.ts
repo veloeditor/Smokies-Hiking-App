@@ -20,6 +20,11 @@ export class TrailsLogComponent implements OnInit {
 
   trails: Trail[];
 
+  trailSelected: Trail;
+
+  ind = 0;
+  val = 0;
+
   userUniqueMilesHiked = null;
 
   constructor(
@@ -68,15 +73,14 @@ export class TrailsLogComponent implements OnInit {
       }]
     } as UserHike;
 
-    console.log(trailForm.value);
     this.userHikesService.postHike(hike).subscribe(data => {
       console.log(data);
     });
+
     this.userHikesService.getAllUserHikes();
   }
 
   openForm() {
     this.addUser = true;
-    console.log('open form');
   }
 }

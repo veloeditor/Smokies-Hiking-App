@@ -27,3 +27,20 @@ h3 {
  .tp-full-width {
     width: 100%;
  }
+ 
+ mat-panel-description {
+     color: rgb(27, 27, 27);
+ }
+
+ mat-card {
+     height: fit-content;
+     padding-bottom: 5px;
+ }
+
+ .trail-card {
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 8px;
+     padding-left: 25px;
+     padding-right: 25px;
+ }

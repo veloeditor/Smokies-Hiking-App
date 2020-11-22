@@ -3,17 +3,17 @@
     <h2>Hike all of the trails of the Great Smoky Mountains</h2>
 </div>
 <div class="goals">
-    <p>Your current goal: 800 miles</p>
-    <p>Current unique miles you've hiked: 200 miles</p>
-    <p>Your current progress: 25%</p>
-    <p>Change your goal</p>
+        <p>Your current goal: 800 miles</p>
+        <p>Current unique miles you've hiked: {{ goalMiles }}</p>
+        <p>Your current progress: {{ currentProgress }}%</p>
+        <p>Change your goal</p>
 </div>
 <div class="latest_hike">
     <p>Your last hike was on: July 14, 2020</p>
 </div>
 <div class="main_options">
         <p>
-            View your hiking log and add a new hike
+            <a routerLink="/log">View your hiking log and add a new hike</a>
         </p>
         <p>
             <a routerLink="/trails">View the official trail list</a>

@@ -1,3 +1,46 @@
-table {
-    width: 900px;
+.header {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  
+  h2 {
+    text-align: center;
   }
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.log_container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+mat-card {
+  background-color: rgb(197, 196, 196);
+  border-radius: 10px;
+  flex-basis: 80%;
+
+  ul {
+    list-style: circle;
+
+    li {
+      line-height: .5;
+    }
+  }
+}

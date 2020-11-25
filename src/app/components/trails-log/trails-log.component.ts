@@ -59,6 +59,10 @@ export class TrailsLogComponent implements OnInit {
         sectionLength: 9
       }]
     });
+
+    this.trailForm.controls.trailName.valueChanges.subscribe(change => {
+      console.log(change);
+    });
   }
 
   saveTrail(trailForm: FormGroup): void {

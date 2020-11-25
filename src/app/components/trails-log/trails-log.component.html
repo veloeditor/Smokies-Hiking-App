@@ -9,7 +9,7 @@
     
     <mat-form-field appearance="fill" color="primary">
       <mat-label>Trail</mat-label>
-      <input formControlName="trailName" required matInput [matAutocomplete]="auto" (change)="ind = $event.target.value">
+      <input formControlName="trailName" required matInput [matAutocomplete]="auto">
       <mat-autocomplete #auto="matAutocomplete">
         <mat-option *ngFor="let trail of trails" [value]="trail.name">
           {{trail.name}}
@@ -19,10 +19,7 @@
 
     <mat-form-field appearance="fill" color="primary">
       <mat-label>Total Miles Hiked</mat-label>
-      <input formControlName="totalMiles" required matInput (change)="val = $event.target.value">
-      <option *ngFor="let trail of trails[ind].length" [value]="trail.length">
-        {{ trail.length }}
-      </option>
+      <input formControlName="totalMiles" required matInput>
     </mat-form-field>
     
     <mat-form-field appearance="fill" color="primary">

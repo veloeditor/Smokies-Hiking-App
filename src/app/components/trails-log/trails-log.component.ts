@@ -21,6 +21,7 @@ export class TrailsLogComponent implements OnInit {
   trails: Trail[];
 
   trailSelected: Trail;
+  trailObjSelectedMiles = 0;
 
   ind = 0;
   val = 0;
@@ -51,7 +52,7 @@ export class TrailsLogComponent implements OnInit {
 
     this.trailForm = this.fb.group({
       trailName: '',
-      totalMiles: null,
+      totalMiles: this.trailObjSelectedMiles,
       date: new Date(),
       comments: '',
       sections: [{
@@ -61,7 +62,13 @@ export class TrailsLogComponent implements OnInit {
     });
 
     this.trailForm.controls.trailName.valueChanges.subscribe(change => {
-      console.log(change);
+      const trailObjSelected = this.trails?.find(t => t.name === change);
+      if (trailObjSelected?.length !== undefined) {
+        this.trailObjSelectedMiles = trailObjSelected?.length;
+      } else {
+        this.trailObjSelectedMiles = 0;
+      }
+      console.log(this.trailObjSelectedMiles);
     });
   }
 

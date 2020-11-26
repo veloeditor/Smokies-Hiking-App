@@ -3,11 +3,18 @@
   flex-direction: row;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 5px;
   justify-content: center;
+  align-items: baseline;
   gap: 15px;
-  margin-bottom: 30px;
   
   h2 {
+    text-align: center;
+  }
+}
+
+.hidden-form {
+  h3 {
     text-align: center;
   }
 }
@@ -75,5 +82,13 @@ mat-card {
     li {
       line-height: .5;
     }
+  }
+}
+
+.card-header {
+  margin-bottom: 0px;
+
+  .miles {
+    font-weight: 600;;
   }
 }

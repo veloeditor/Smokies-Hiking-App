@@ -103,10 +103,14 @@ export class TrailsLogComponent implements OnInit {
 
     this.userHikesService.postHike(hike).subscribe(_ => {
     });
+    this.getUserHikes();
+
+  }
+
+  private getUserHikes() {
     this.userHikesService.getAllUserHikes().subscribe((data: any[]) => {
       this.userHikes = data;
-      this.userHikes.sort((a, b) =>
-        new Date(a?.date) > new Date(b?.date) ? -1 : 1
+      this.userHikes.sort((a, b) => new Date(a?.date) > new Date(b?.date) ? -1 : 1
       );
       const miles = this.userHikes.reduce((acc, userHike) => {
         return acc + Number(userHike.totalMiles);
@@ -114,10 +118,9 @@ export class TrailsLogComponent implements OnInit {
       this.userUniqueMilesHiked = miles.toFixed(1);
       console.log('ngOnInit fires');
     });
-
   }
 
   openForm() {
-    this.addUser = true;
+    this.addUser = !this.addUser;
   }
 }

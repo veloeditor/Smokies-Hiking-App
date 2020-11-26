@@ -2018,6 +2018,77 @@
         }
       ],
       "id": 3
+    },
+    {
+      "trailName": "Appalachian Trail",
+      "totalMiles": 0,
+      "date": "2020-11-26T16:08:01.569Z",
+      "comments": "Knocked out the first 2 sections of the AT!",
+      "sections": [
+        {
+          "sectionName": "Fontana/Lakeview Drive West - Lost Cove",
+          "sectionLength": 3.7
+        },
+        {
+          "sectionName": "Lost Cove - Gregory Bald (Doe Knob)",
+          "sectionLength": 3.1
+        }
+      ],
+      "id": 4
+    },
+    {
+      "trailName": "Anthony Creek Trail",
+      "totalMiles": 0,
+      "date": "2020-11-26T16:14:18.072Z",
+      "comments": "",
+      "sections": [
+        {
+          "sectionName": "Cades Cove Picnic Area - Crib Gap",
+          "sectionLength": 0.2
+        },
+        {
+          "sectionName": "Crib Gap - Russell Field",
+          "sectionLength": 1.4
+        },
+        {
+          "sectionName": "Russell Field - Bote Mountain",
+          "sectionLength": 1.9
+        }
+      ],
+      "id": 5
+    },
+    {
+      "trailName": "Abrams Falls Trail",
+      "totalMiles": 0,
+      "date": "2020-11-26T16:17:59.179Z",
+      "comments": "",
+      "sections": null,
+      "id": 6
+    },
+    {
+      "trailName": "Albright Grove Loop",
+      "totalMiles": 0.7,
+      "date": "2020-11-26T19:53:50.089Z",
+      "comments": "",
+      "sections": null,
+      "id": 7
+    },
+    {
+      "trailName": "Dry Sluice Gap Trail",
+      "totalMiles": "4.2",
+      "date": "2020-11-26T19:56:16.083Z",
+      "comments": "",
+      "sections": [
+        {
+          "sectionName": "Cabin Flats - Grassy Branch",
+          "sectionLength": 2.9
+        },
+        {
+          "sectionName": "Grassy Branch - AT",
+          "sectionLength": 1.3
+        }
+      ],
+      "id": 8
     }
   ],
   "users": [

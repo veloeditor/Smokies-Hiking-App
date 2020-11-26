@@ -16,15 +16,14 @@ export class TrailsLogComponent implements OnInit {
   trailForm: FormGroup;
 
   userHikes: UserHike[];
+  
   addUser = false;
 
   trails: Trail[];
 
   trailSelected: Trail;
   trailObjSelectedMiles = 0;
-
-  ind = 0;
-  val = 0;
+  sectionNameArray = [];
 
   userUniqueMilesHiked = null;
 
@@ -55,20 +54,22 @@ export class TrailsLogComponent implements OnInit {
       totalMiles: this.trailObjSelectedMiles,
       date: new Date(),
       comments: '',
-      sections: [{
-        sectionName: 'Section Name',
-        sectionLength: 9
-      }]
+      sections: this.sectionNameArray
     });
 
     this.trailForm.controls.trailName.valueChanges.subscribe(change => {
       const trailObjSelected = this.trails?.find(t => t.name === change);
-      if (trailObjSelected?.length !== undefined) {
-        this.trailObjSelectedMiles = trailObjSelected?.length;
+      if (trailObjSelected?.sections?.length < 1) {
+        if (trailObjSelected?.length !== undefined) {
+          this.trailObjSelectedMiles = trailObjSelected?.length;
+        } else {
+          this.trailObjSelectedMiles = 0;
+        }
       } else {
         this.trailObjSelectedMiles = 0;
+        this.sectionNameArray = trailObjSelected.sections;
+        console.log(this.trailForm.value.sections);
       }
-      console.log(this.trailObjSelectedMiles);
     });
   }
 
@@ -78,10 +79,7 @@ export class TrailsLogComponent implements OnInit {
       totalMiles: this.trailForm.value.totalMiles,
       date: this.trailForm.value.date,
       comments: this.trailForm.value.comments,
-      sections: [{
-        sectionName: 'Section Name',
-        sectionLength: 9
-      }]
+      sections: this.trailForm.value.sections
     } as UserHike;
 
     this.userHikesService.postHike(hike).subscribe(data => {

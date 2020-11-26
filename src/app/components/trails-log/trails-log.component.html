@@ -20,7 +20,8 @@
         <mat-label>Total Miles Hiked</mat-label>
         <input formControlName="totalMiles" required matInput [value]="trailObjSelectedMiles">
       </mat-form-field>
-      <mat-form-field appearance="fill">
+      
+      <mat-form-field *ngIf="sectionNameArray" appearance="fill" class="sections-form-field">
         <mat-label>Sections</mat-label>
         <mat-select formControlName="sections" multiple>
           <mat-option *ngFor="let section of sectionNameArray" [value]="section">{{section.sectionName}}</mat-option>

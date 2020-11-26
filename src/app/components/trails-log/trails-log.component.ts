@@ -16,14 +16,13 @@ export class TrailsLogComponent implements OnInit {
   trailForm: FormGroup;
 
   userHikes: UserHike[];
-  
   addUser = false;
 
   trails: Trail[];
 
   trailSelected: Trail;
   trailObjSelectedMiles = 0;
-  sectionNameArray = [];
+  sectionNameArray: [{sectionName: string, sectionLength: number}];
 
   userUniqueMilesHiked = null;
 
@@ -36,10 +35,12 @@ export class TrailsLogComponent implements OnInit {
   ngOnInit(): void {
     this.userHikesService.getAllUserHikes().subscribe((data: any[]) => {
       this.userHikes = data;
-      this.userHikes.sort((a, b) => new Date(a?.date) > new Date(b?.date) ? -1 : 1);
-      const miles =  this.userHikes.reduce((acc, userHike) => {
+      this.userHikes.sort((a, b) =>
+        new Date(a?.date) > new Date(b?.date) ? -1 : 1
+      );
+      const miles = this.userHikes.reduce((acc, userHike) => {
         return acc + Number(userHike.totalMiles);
-       }, 0);
+      }, 0);
       this.userUniqueMilesHiked = miles.toFixed(1);
     });
 
@@ -54,11 +55,14 @@ export class TrailsLogComponent implements OnInit {
       totalMiles: this.trailObjSelectedMiles,
       date: new Date(),
       comments: '',
-      sections: this.sectionNameArray
+      sections: this.sectionNameArray,
     });
 
-    this.trailForm.controls.trailName.valueChanges.subscribe(change => {
-      const trailObjSelected = this.trails?.find(t => t.name === change);
+    // ToDo: probably need to move logic for determining length of hike out of here and
+    // move to line 82 where we are looking at the valueChange of the sections form field
+
+    this.trailForm.controls.trailName.valueChanges.subscribe((change) => {
+      const trailObjSelected = this.trails?.find((t) => t.name === change);
       if (trailObjSelected?.sections?.length < 1) {
         if (trailObjSelected?.length !== undefined) {
           this.trailObjSelectedMiles = trailObjSelected?.length;
@@ -66,10 +70,20 @@ export class TrailsLogComponent implements OnInit {
           this.trailObjSelectedMiles = 0;
         }
       } else {
+        this.sectionNameArray = trailObjSelected?.sections;
         this.trailObjSelectedMiles = 0;
-        this.sectionNameArray = trailObjSelected.sections;
-        console.log(this.trailForm.value.sections);
+        this.sectionNameArray.forEach((section) => {
+          this.trailObjSelectedMiles += section.sectionLength;
+        });
       }
+    });
+
+    this.trailForm.controls.comments.valueChanges.subscribe((comment) => {
+      console.log('comments', comment);
+    });
+
+    this.trailForm.controls.sections.valueChanges.subscribe((value) => {
+      console.log('sections', value[0].sectionLength);
     });
   }
 

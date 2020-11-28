@@ -1,8 +1,8 @@
 <div class="header">
-  <h2 class="hikingLogTitle">
-      Hiking Log
-  </h2>
-  <button mat-mini-fab (click)="openForm()"><span *ngIf="!addUser" class="material-icons">add</span><span *ngIf="addUser" class="material-icons">cancel</span></button>
+  <h2 class="hikingLogTitle">Hiking Log</h2>
+  <button mat-mini-fab (click)="openForm()">
+    <span *ngIf="!addUser" class="material-icons">add</span><span *ngIf="addUser" class="material-icons">cancel</span>
+  </button>
 </div>
 <div *ngIf="addUser" class="hidden-form">
   <h3>Add a new hike</h3>
@@ -10,22 +10,30 @@
     <div class="hike-form">
       <mat-form-field appearance="fill" color="primary" class="name-form-field">
         <mat-label>Trail or Section Name</mat-label>
-        <input formControlName="trailName" required matInput [matAutocomplete]="auto">
+        <input formControlName="trailName" required matInput [matAutocomplete]="auto" />
         <mat-autocomplete #auto="matAutocomplete">
           <mat-option *ngFor="let trail of trails" [value]="trail.name">
-            {{trail.name}}
+            {{ trail.name }}
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
       <mat-form-field appearance="fill" color="primary" class="miles-form-field">
         <mat-label>Total Miles Hiked</mat-label>
-        <input formControlName="totalMiles" required matInput [value]="trailObjSelectedMiles">
+        <input formControlName="totalMiles" required matInput [value]="trailObjSelectedMiles" />
       </mat-form-field>
-      
+
       <mat-form-field *ngIf="sectionNameArray" appearance="fill" class="sections-form-field">
         <mat-label>Sections</mat-label>
         <mat-select formControlName="sections" multiple>
-          <mat-option *ngFor="let section of sectionNameArray" [value]="section">{{section.sectionName}}</mat-option>
+          <mat-select-trigger>
+            {{ selectedSection[0]?.sectionName }}
+            <span *ngIf="selectedSection.length > 1" class="example-additional-selection">
+              (+{{ selectedSection.length - 1 }}
+              {{ selectedSection.length === 2 ? "other" : "others" }})
+            </span>
+          </mat-select-trigger>
+          <mat-option *ngFor="let section of sectionNameArray" [value]="section">{{ section.sectionName }} - {{
+            section.sectionLength }} miles</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
@@ -33,17 +41,16 @@
     <div class="date-comments-form">
       <mat-form-field appearance="fill" color="primary" class="date-form-field">
         <mat-label>Hike Date</mat-label>
-        <input matInput [matDatepicker]="hikeDate" formControlName="date" (click)="$event.stopPropagation();">
+        <input matInput [matDatepicker]="hikeDate" formControlName="date" (click)="$event.stopPropagation()" />
         <mat-datepicker-toggle matSuffix [for]="hikeDate"></mat-datepicker-toggle>
         <mat-datepicker #hikeDate></mat-datepicker>
       </mat-form-field>
 
       <mat-form-field appearance="fill" color="primary" class="comments-form-field">
         <mat-label>Comments</mat-label>
-        <input formControlName="comments" matInput>
+        <input formControlName="comments" matInput />
       </mat-form-field>
-      <button mat-icon-button mat-mini-fab matTooltip="Save" type="submit"
-        class="submit_btn">
+      <button mat-icon-button mat-mini-fab matTooltip="Save" type="submit" class="submit_btn">
         <mat-icon class="save_icon">save</mat-icon>
       </button>
     </div>
@@ -52,20 +59,20 @@
 
 <div class="log_container">
   <div class="card-header">
-    You've hiked <span class="miles">{{userUniqueMilesHiked}}</span> of unique trail in the Smokies
+    You've hiked <span class="miles">{{ userUniqueMilesHiked }}</span> of unique
+    trail in the Smokies
   </div>
   <mat-card *ngFor="let userHike of userHikes" class="mat-elevation-z2 hike-card">
-    <mat-card-title>
-      {{ userHike.trailName }}</mat-card-title>
-    <mat-card-subtitle>{{ userHike.date | date: 'MM/dd/yyyy' }}</mat-card-subtitle>
+    <mat-card-title> {{ userHike.trailName }}</mat-card-title>
+    <mat-card-subtitle>{{
+      userHike.date | date: "MM/dd/yyyy"
+      }}</mat-card-subtitle>
     <mat-card-content>{{ userHike.comments }}</mat-card-content>
     <mat-card-content>{{ userHike.totalMiles }} miles hiked</mat-card-content>
     <div *ngIf="userHike.sections">
       <h4>Sections hiked:</h4>
       <ul *ngFor="let section of userHike.sections">
-        <li>
-          {{ section.sectionName }} -- {{ section.sectionLength }} miles
-        </li>
+        <li>{{ section.sectionName }} -- {{ section.sectionLength }} miles</li>
       </ul>
     </div>
   </mat-card>

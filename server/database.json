@@ -2007,19 +2007,6 @@
       ]
     },
     {
-      "trailName": "Alum Bluff",
-      "totalMiles": "12",
-      "date": "2020-11-06T19:53:02.729Z",
-      "comments": "General Services",
-      "sections": [
-        {
-          "sectionName": "Section Name",
-          "sectionLength": 9
-        }
-      ],
-      "id": 3
-    },
-    {
       "trailName": "Albright Grove Loop",
       "totalMiles": 0.7,
       "date": "2020-11-26T19:53:50.089Z",
@@ -2036,22 +2023,26 @@
       "id": 8
     },
     {
-      "trailName": "Anthony Creek Trail",
-      "totalMiles": "3.5",
-      "date": "2020-11-26T20:03:57.606Z",
-      "comments": "This is awesome",
+      "trailName": "Balsam Mountain Trail",
+      "totalMiles": "10.1",
+      "date": "2020-11-28T17:42:40.148Z",
+      "comments": "",
       "sections": [
         {
-          "sectionName": "Cades Cove Picnic Area - Crib Gap",
-          "sectionLength": 0.2
+          "sectionName": "Balsam Mountain Road - Beech Gap I",
+          "sectionLength": 2.3
         },
         {
-          "sectionName": "Crib Gap - Russell Field",
-          "sectionLength": 1.4
+          "sectionName": "Beech Gap I - Mt. Sterling Ridge",
+          "sectionLength": 2
         },
         {
-          "sectionName": "Russell Field - Bote Mountain",
-          "sectionLength": 1.9
+          "sectionName": "Mt. Sterling Ridge - Gunter Fork",
+          "sectionLength": 0.9
+        },
+        {
+          "sectionName": "Gunter Fork - AT",
+          "sectionLength": 4.9
         }
       ],
       "id": 9

@@ -23,8 +23,8 @@ export class TrailsLogComponent implements OnInit {
   trailSelected: Trail;
   trailObjSelectedMiles = 0;
   sectionNameArray: [{sectionName: string, sectionLength: number}];
-
   userUniqueMilesHiked = null;
+  selectedSection = [];
 
   constructor(
     private userHikesService: UserHikesService,
@@ -42,12 +42,10 @@ export class TrailsLogComponent implements OnInit {
         return acc + Number(userHike.totalMiles);
       }, 0);
       this.userUniqueMilesHiked = miles.toFixed(1);
-      console.log('ngOnInit fires');
     });
 
     this.trailsService.getAllTrails().subscribe((data: any[]) => {
       this.trails = data;
-      console.log(this.trails);
     });
 
     this.trailForm = this.fb.group({
@@ -76,15 +74,12 @@ export class TrailsLogComponent implements OnInit {
     });
 
     this.trailForm.controls.sections.valueChanges.subscribe((value) => {
-      let selectedSection = [];
-      selectedSection = value;
-      const miles = selectedSection.reduce((acc, section) => {
+      this.selectedSection = value;
+      const miles = this.selectedSection.reduce((acc, section) => {
         return acc + Number(section.sectionLength);
       }, 0);
       this.trailObjSelectedMiles = miles.toFixed(1);
-      // this.trailObjSelectedMiles += value[0]?.sectionLength;
-      // this.trailObjSelectedMiles.toFixed(1);
-      console.log(miles);
+      console.log(this.selectedSection);
     });
   }
 

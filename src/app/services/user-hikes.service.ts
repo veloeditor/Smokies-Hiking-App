@@ -16,7 +16,7 @@ export class UserHikesService {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
-  }
+  };
 
   userHikes$: BehaviorSubject<UserHike[]> = new BehaviorSubject<UserHike[]>(null);
 
@@ -27,7 +27,6 @@ export class UserHikesService {
   }
 
   postHike(hike: UserHike): Observable<UserHike> {
-    console.log('from service', hike);
     return this.httpClient.post<UserHike>(this.REST_API_SERVER, JSON.stringify(hike), this.httpOptions)
     .pipe(
       catchError(this.errorHandler)

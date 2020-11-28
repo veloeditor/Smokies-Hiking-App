@@ -2007,17 +2007,45 @@
       ]
     },
     {
-      "trailName": "Alum Bluff",
-      "totalMiles": "12",
-      "date": "2020-11-06T19:53:02.729Z",
-      "comments": "General Services",
+      "trailName": "Albright Grove Loop",
+      "totalMiles": 0.7,
+      "date": "2020-11-26T19:53:50.089Z",
+      "comments": "",
+      "sections": null,
+      "id": 7
+    },
+    {
+      "trailName": "Bone Valley Trail",
+      "totalMiles": 1.8,
+      "date": "2020-11-26T20:01:19.879Z",
+      "comments": "",
+      "sections": null,
+      "id": 8
+    },
+    {
+      "trailName": "Balsam Mountain Trail",
+      "totalMiles": "10.1",
+      "date": "2020-11-28T17:42:40.148Z",
+      "comments": "",
       "sections": [
         {
-          "sectionName": "Section Name",
-          "sectionLength": 9
+          "sectionName": "Balsam Mountain Road - Beech Gap I",
+          "sectionLength": 2.3
+        },
+        {
+          "sectionName": "Beech Gap I - Mt. Sterling Ridge",
+          "sectionLength": 2
+        },
+        {
+          "sectionName": "Mt. Sterling Ridge - Gunter Fork",
+          "sectionLength": 0.9
+        },
+        {
+          "sectionName": "Gunter Fork - AT",
+          "sectionLength": 4.9
         }
       ],
-      "id": 3
+      "id": 9
     }
   ],
   "users": [

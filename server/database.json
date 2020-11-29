@@ -1990,37 +1990,12 @@
       ]
     },
     {
-      "id": 2,
-      "trailName": "Wolf Ridge Trail",
-      "totalMiles": 6.3,
-      "date": "04-16-2020",
-      "comments": "Pretty hike with a nice view",
-      "sections": [
-        {
-          "sectionName": "Twentymile - Twentymile Loop",
-          "sectionLength": 1.1
-        },
-        {
-          "sectionName": "Twentymile Loop - Gregory Bald",
-          "sectionLength": 5.2
-        }
-      ]
-    },
-    {
       "trailName": "Albright Grove Loop",
       "totalMiles": 0.7,
       "date": "2020-11-26T19:53:50.089Z",
       "comments": "",
       "sections": null,
       "id": 7
-    },
-    {
-      "trailName": "Bone Valley Trail",
-      "totalMiles": 1.8,
-      "date": "2020-11-26T20:01:19.879Z",
-      "comments": "",
-      "sections": null,
-      "id": 8
     },
     {
       "trailName": "Balsam Mountain Trail",

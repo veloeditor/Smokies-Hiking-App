@@ -1,7 +1,7 @@
 <div class="header">
   <h2 class="hikingLogTitle">Hiking Log</h2>
   <button mat-mini-fab (click)="openForm()">
-    <span *ngIf="!addUser" class="material-icons">add</span><span *ngIf="addUser" class="material-icons">cancel</span>
+    <span *ngIf="!addUser" class="material-icons">add</span><span *ngIf="addUser" class="material-icons cancel-btn">cancel</span>
   </button>
 </div>
 <div *ngIf="addUser" class="hidden-form">
@@ -73,6 +73,8 @@
       <ul *ngFor="let section of userHike.sections">
         <li>{{ section.sectionName }} -- {{ section.sectionLength }} miles</li>
       </ul>
+      
     </div>
+    <button (click)="deleteHike(userHike)">Delete</button>
   </mat-card>
 </div>

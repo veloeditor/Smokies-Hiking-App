@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { UserHike } from '../interfaces/user-hike';
-import { User } from 'firebase';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +28,21 @@ export class UserHikesService {
   postHike(hike: UserHike): Observable<UserHike> {
     return this.httpClient.post<UserHike>(this.REST_API_SERVER, JSON.stringify(hike), this.httpOptions)
     .pipe(
+      catchError(this.errorHandler)
+    );
+  }
+
+  updateHike(userHike: UserHike): Observable<UserHike> {
+    const url = `${this.REST_API_SERVER}/${userHike.id}`;
+    return this.httpClient.put<UserHike>(url, userHike, this.httpOptions).pipe(
+      map(() => userHike),
+      catchError(this.errorHandler)
+    );
+  }
+
+  deleteHike(id: number): Observable<UserHike> {
+    const url = `${this.REST_API_SERVER}/${id}`;
+    return this.httpClient.delete<UserHike>(url, this.httpOptions).pipe(
       catchError(this.errorHandler)
     );
   }

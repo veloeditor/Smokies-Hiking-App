@@ -1,4 +1,5 @@
 export interface UserHike {
+    id: number;
     trailName: string;
     totalMiles: number;
     date: Date;

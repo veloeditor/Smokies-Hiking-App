@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { startWith, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Trail } from '../../interfaces/trail';
 
@@ -26,10 +27,12 @@ export class TrailsLogComponent implements OnInit {
   userUniqueMilesHiked = null;
   selectedSection = [];
 
+  filteredTrails: Observable<Trail[]>;
+
   constructor(
     private userHikesService: UserHikesService,
     private fb: FormBuilder,
-    private trailsService: TrailsService
+    private trailsService: TrailsService,
   ) {}
 
   ngOnInit(): void {
@@ -49,12 +52,18 @@ export class TrailsLogComponent implements OnInit {
     });
 
     this.trailForm = this.fb.group({
-      trailName: '',
-      totalMiles: this.trailObjSelectedMiles,
-      date: new Date(),
+      trailName: ['', [Validators.required]],
+      totalMiles: [this.trailObjSelectedMiles, [Validators.required]],
+      date: [new Date(), [Validators.required]],
       comments: '',
       sections: this.sectionNameArray,
     });
+
+    this.filteredTrails = this.trailForm.controls.trailName.valueChanges
+    .pipe(
+      startWith(''),
+      map(value => this.findOption(value))
+    );
 
     this.trailForm.controls.trailName.valueChanges.subscribe((change) => {
       const trailObjSelected = this.trails?.find((t) => t.name === change);
@@ -79,8 +88,12 @@ export class TrailsLogComponent implements OnInit {
         return acc + Number(section.sectionLength);
       }, 0);
       this.trailObjSelectedMiles = miles.toFixed(1);
-      console.log(this.selectedSection);
     });
+  }
+
+  findOption(val: string) {
+    const filterValue = val.toString().toLowerCase();
+    return this.trails.filter(option => option.name.toLowerCase().includes(filterValue));
   }
 
   get sections(): FormControl {
@@ -117,5 +130,9 @@ export class TrailsLogComponent implements OnInit {
 
   openForm() {
     this.addUser = !this.addUser;
+  }
+
+  hasError = (controlName: string, errorName: string) => {
+    return this.trailForm.contains[controlName].hasError(errorName);
   }
 }

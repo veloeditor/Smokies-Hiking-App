@@ -23,6 +23,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
+import {MatSnackBar, MAT_SNACK_BAR_DATA} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { MatSelectModule } from '@angular/material/select';
     HomeComponent,
     TrailsLogComponent,
     TrailsListComponent,
-    HeaderComponent
+    HeaderComponent,
+    SnackbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

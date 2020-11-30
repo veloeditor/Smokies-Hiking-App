@@ -1973,23 +1973,6 @@
   ],
   "userHikes": [
     {
-      "id": 1,
-      "trailName": "Anthony Creek Trail",
-      "totalMiles": 1.6,
-      "date": "02-20-2020",
-      "comments": "Beautiful hike but had to turn around early",
-      "sections": [
-        {
-          "sectionName": "Cades Cove Picnic Area - Crib Gap",
-          "sectionLength": 0.2
-        },
-        {
-          "sectionName": "Crib Gap - Russell Field",
-          "sectionLength": 1.4
-        }
-      ]
-    },
-    {
       "trailName": "Balsam Mountain Trail",
       "totalMiles": "10.1",
       "date": "2020-11-28T17:42:40.148Z",
@@ -2013,14 +1996,6 @@
         }
       ],
       "id": 9
-    },
-    {
-      "trailName": "Ace Gap Trail",
-      "totalMiles": 5.6,
-      "date": "2020-11-30T14:49:23.886Z",
-      "comments": "Nice trail!",
-      "sections": null,
-      "id": 10
     }
   ],
   "users": [

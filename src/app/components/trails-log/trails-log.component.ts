@@ -7,6 +7,8 @@ import { Trail } from '../../interfaces/trail';
 import { UserHike } from '../../interfaces/user-hike';
 import { UserHikesService } from '../../services/user-hikes.service';
 import { TrailsService } from '../../services/trails.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent, ConfirmDialogModel } from '../confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-trails-log',
@@ -33,6 +35,7 @@ export class TrailsLogComponent implements OnInit {
     private userHikesService: UserHikesService,
     private fb: FormBuilder,
     private trailsService: TrailsService,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -117,11 +120,21 @@ export class TrailsLogComponent implements OnInit {
 
   deleteHike(userHike) {
     const hikeId = userHike.id;
-    if(confirm(`Are you sure you want to delete the ${userHike.trailName} hike?`)) {
-      this.userHikesService.deleteHike(hikeId).subscribe(() => {
-        this.getUserHikes();
-      });
-    }
+    const message = `Are you sure you want to do delete the ${userHike.trailName} hike?`;
+    const dialogData = new ConfirmDialogModel('Confirm Delete', message);
+
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      maxWidth: '400px',
+      data: dialogData
+    });
+
+    dialogRef.afterClosed().subscribe(dialogResult => {
+      if (dialogResult) {
+        this.userHikesService.deleteHike(hikeId).subscribe(() => {
+          this.getUserHikes();
+        });
+      }
+    });
   }
 
   private getUserHikes() {

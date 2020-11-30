@@ -60,16 +60,8 @@
      }
  }
 
-//  .card-title {
-//      display: flex;
-//      flex-direction: row-reverse;
-//      gap: 10px;
-//     //  align-items: end;
-//      align-items: center;
-//  }
-
  .alreadyHiked {
-     color: rgb(177, 176, 176);
+    color: black;
     //  text-decoration: line-through;
  }
 
@@ -96,10 +88,37 @@
      color: green;
  }
 
- .in-progress {
-     content: '';
+ .inProgress{
+    color: black;;
  }
 
- .in-progress::after {
-     content: ' - In progress';
+ .inProgress::after {
+     font-family: "Material Icons";
+     content: "timelapse";
+     color: orange;
+     padding-left: 5px;
+     font-size: 20px;
+ }
+
+ .progress-indicators {
+     display: flex;
+     text-align: center;
+     justify-content: center;
+     align-items: center;
+     gap: 15px;
+
+     .done, .progress {
+         display: flex;
+         align-items: center;
+         font-size: 12px;
+     }
+
+     .check-box-icon {
+         color: green;
+     }
+
+     .in-progress-icon {
+         color: orange;
+     }
+
  }

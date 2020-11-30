@@ -4,6 +4,10 @@
 </div>
 
 <div class="trailList_container">
+  <div class="progress-indicators">
+    <p class="done"><mat-icon class="check-box-icon">check_box</mat-icon> - Trail fully hiked</p>
+    <p class="progress"><mat-icon class="in-progress-icon">timelapse</mat-icon> - Trail in progress</p>
+  </div>
   <div class="trail" *ngFor="let trail of trails">
     <div class="no-section-trails" *ngIf="trail.sections.length < 1; else trailSections">
       <mat-card class="mat-elevation-z2 trail-card">
@@ -18,9 +22,9 @@
       </mat-card>
     </div>
     <ng-template #trailSections>
-      <mat-expansion-panel>
+      <mat-expansion-panel #matExpansionPanel>
         <mat-expansion-panel-header>
-          <mat-panel-title [ngClass]="{alreadyHiked: compareTrailsWithSections(trail)}">
+          <mat-panel-title [ngClass]="{alreadyHiked: isTrailFullyHiked(trail), inProgress: trailWithSectionsProgress(trail)}">
             {{ trail.name }}
           </mat-panel-title>
           <mat-panel-description>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { startWith, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -10,6 +10,7 @@ import { TrailsService } from '../../services/trails.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent, ConfirmDialogModel } from '../confirm-dialog/confirm-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-trails-log',
@@ -17,6 +18,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./trails-log.component.scss'],
 })
 export class TrailsLogComponent implements OnInit {
+
   trailForm: FormGroup;
 
   userHikes: UserHike[];
@@ -123,6 +125,10 @@ export class TrailsLogComponent implements OnInit {
     this.addUser = false;
     this.trailForm.markAsPristine();
     this.trailForm.reset();
+  }
+
+  editHike(userHike): void {
+    // this.edit.emit(this.userHikes);
   }
 
   deleteHike(userHike) {

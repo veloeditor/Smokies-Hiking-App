@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { MatExpansionPanel } from '@angular/material/expansion';
 import { getMatIconFailedToSanitizeUrlError } from '@angular/material/icon';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -12,7 +13,10 @@ import { UserHikesService } from 'src/app/services/user-hikes.service';
   templateUrl: './trails-list.component.html',
   styleUrls: ['./trails-list.component.scss'],
 })
+
 export class TrailsListComponent implements OnInit, OnDestroy {
+  @ViewChild('matExpansionPanel', { static: true }) matExpansionPanelElement: MatExpansionPanel;
+
   trails: Trail[];
   hikes: UserHike[];
   destroy$: Subject<boolean> = new Subject<boolean>();
@@ -61,9 +65,16 @@ export class TrailsListComponent implements OnInit, OnDestroy {
 
   // take the hike.sections array and compare it to the same trail.sections array.
   // Are lengths equal? If not then that trail is not fully completed.
-  compareTrailsWithSections(trail: Trail) {
+  isTrailFullyHiked(trail: Trail) {
     const matchedHike = this.hikes?.find((h) => h.trailName === trail.name);
     if (matchedHike?.sections?.length === trail?.sections?.length) {
+      return true;
+    }
+  }
+
+  trailWithSectionsProgress(trail: Trail) {
+    const matchedHike = this.hikes?.find((h) => h.trailName === trail.name);
+    if (matchedHike?.sections?.length > 0 && matchedHike?.sections?.length !== trail?.sections?.length) {
       return true;
     }
   }

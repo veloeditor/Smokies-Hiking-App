@@ -9,6 +9,7 @@ import { UserHikesService } from '../../services/user-hikes.service';
 import { TrailsService } from '../../services/trails.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent, ConfirmDialogModel } from '../confirm-dialog/confirm-dialog.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-trails-log',
@@ -35,7 +36,8 @@ export class TrailsLogComponent implements OnInit {
     private userHikesService: UserHikesService,
     private fb: FormBuilder,
     private trailsService: TrailsService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -87,15 +89,15 @@ export class TrailsLogComponent implements OnInit {
 
     this.trailForm.controls.sections.valueChanges.subscribe((value) => {
       this.selectedSection = value;
-      const miles = this.selectedSection.reduce((acc, section) => {
-        return acc + Number(section.sectionLength);
+      const miles = this.selectedSection?.reduce((acc, section) => {
+        return acc + Number(section?.sectionLength);
       }, 0);
-      this.trailObjSelectedMiles = miles.toFixed(1);
+      this.trailObjSelectedMiles = miles?.toFixed(1);
     });
   }
 
   findOption(val: string) {
-    const filterValue = val.toString().toLowerCase();
+    const filterValue = val?.toString().toLowerCase();
     return this.trails.filter(option => option.name.toLowerCase().includes(filterValue));
   }
 
@@ -113,9 +115,14 @@ export class TrailsLogComponent implements OnInit {
     } as UserHike;
 
     this.userHikesService.postHike(hike).subscribe(_ => {
+      this.snackBar.open('Successfully added hike', 'Close', {
+        duration: 5000,
+      });
     });
     this.getUserHikes();
     this.addUser = false;
+    this.trailForm.markAsPristine();
+    this.trailForm.reset();
   }
 
   deleteHike(userHike) {
@@ -146,7 +153,6 @@ export class TrailsLogComponent implements OnInit {
         return acc + Number(userHike.totalMiles);
       }, 0);
       this.userUniqueMilesHiked = miles.toFixed(1);
-      console.log('ngOnInit fires');
     });
   }
 

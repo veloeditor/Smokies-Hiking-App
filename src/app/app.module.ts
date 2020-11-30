@@ -24,8 +24,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
-import {MatSnackBar, MAT_SNACK_BAR_DATA} from '@angular/material/snack-bar';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HikeFormComponent } from './components/hike-form/hike-form.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     HeaderComponent,
     SnackbarComponent,
     ConfirmDialogComponent,
+    HikeFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +58,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    MatSnackBarModule,
     MatAutocompleteModule,
   ],
   providers: [],

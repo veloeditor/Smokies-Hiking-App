@@ -112,13 +112,16 @@ export class TrailsLogComponent implements OnInit {
     this.userHikesService.postHike(hike).subscribe(_ => {
     });
     this.getUserHikes();
+    this.addUser = false;
   }
 
   deleteHike(userHike) {
     const hikeId = userHike.id;
-    this.userHikesService.deleteHike(hikeId).subscribe(() => {
-      this.getUserHikes();
-    });
+    if(confirm(`Are you sure you want to delete the ${userHike.trailName} hike?`)) {
+      this.userHikesService.deleteHike(hikeId).subscribe(() => {
+        this.getUserHikes();
+      });
+    }
   }
 
   private getUserHikes() {

@@ -1990,14 +1990,6 @@
       ]
     },
     {
-      "trailName": "Albright Grove Loop",
-      "totalMiles": 0.7,
-      "date": "2020-11-26T19:53:50.089Z",
-      "comments": "",
-      "sections": null,
-      "id": 7
-    },
-    {
       "trailName": "Balsam Mountain Trail",
       "totalMiles": "10.1",
       "date": "2020-11-28T17:42:40.148Z",
@@ -2021,6 +2013,14 @@
         }
       ],
       "id": 9
+    },
+    {
+      "trailName": "Ace Gap Trail",
+      "totalMiles": 5.6,
+      "date": "2020-11-30T14:49:23.886Z",
+      "comments": "Nice trail!",
+      "sections": null,
+      "id": 10
     }
   ],
   "users": [

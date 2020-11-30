@@ -26,6 +26,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HikeFormComponent } from './components/hike-form/hike-form.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     HeaderComponent,
     SnackbarComponent,
     ConfirmDialogComponent,
+    HikeFormComponent,
   ],
   imports: [
     BrowserModule,

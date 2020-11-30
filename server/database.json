@@ -1973,31 +1973,6 @@
   ],
   "userHikes": [
     {
-      "id": 1,
-      "trailName": "Anthony Creek Trail",
-      "totalMiles": 1.6,
-      "date": "02-20-2020",
-      "comments": "Beautiful hike but had to turn around early",
-      "sections": [
-        {
-          "sectionName": "Cades Cove Picnic Area - Crib Gap",
-          "sectionLength": 0.2
-        },
-        {
-          "sectionName": "Crib Gap - Russell Field",
-          "sectionLength": 1.4
-        }
-      ]
-    },
-    {
-      "trailName": "Albright Grove Loop",
-      "totalMiles": 0.7,
-      "date": "2020-11-26T19:53:50.089Z",
-      "comments": "",
-      "sections": null,
-      "id": 7
-    },
-    {
       "trailName": "Balsam Mountain Trail",
       "totalMiles": "10.1",
       "date": "2020-11-28T17:42:40.148Z",

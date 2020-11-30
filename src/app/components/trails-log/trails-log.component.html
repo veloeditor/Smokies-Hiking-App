@@ -1,6 +1,6 @@
 <div class="header">
   <h2 class="hikingLogTitle">Hiking Log</h2>
-  <button mat-mini-fab (click)="openForm()">
+  <button mat-mini-fab color="primary" (click)="openForm()">
     <span *ngIf="!addUser" class="material-icons">add</span><span *ngIf="addUser" class="material-icons cancel-btn">cancel</span>
   </button>
 </div>
@@ -60,6 +60,7 @@
 <div class="log_container">
   <div class="card-header">
     You've hiked <span class="miles">{{ userUniqueMilesHiked }}</span> of miles in the Smokies
+    <p *ngIf="!userHikes">You currently do not have any hikes.</p>
   </div>
   <mat-card *ngFor="let userHike of userHikes" class="mat-elevation-z2 hike-card">
     <mat-card-title> {{ userHike.trailName }}</mat-card-title>
@@ -75,6 +76,6 @@
       </ul>
       
     </div>
-    <button (click)="deleteHike(userHike)">Delete</button>
+    <button mat-icon-button mat-mini-fab color="warn" (click)="deleteHike(userHike)"><mat-icon>delete</mat-icon></button>
   </mat-card>
 </div>

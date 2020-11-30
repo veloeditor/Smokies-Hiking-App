@@ -25,6 +25,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
 import {MatSnackBar, MAT_SNACK_BAR_DATA} from '@angular/material/snack-bar';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import {MatSnackBar, MAT_SNACK_BAR_DATA} from '@angular/material/snack-bar';
     TrailsListComponent,
     HeaderComponent,
     SnackbarComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +59,7 @@ import {MatSnackBar, MAT_SNACK_BAR_DATA} from '@angular/material/snack-bar';
     MatAutocompleteModule,
   ],
   providers: [],
+  entryComponents: [ConfirmDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

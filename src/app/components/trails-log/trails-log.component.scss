@@ -79,6 +79,7 @@ mat-card {
   background-color: rgb(197, 196, 196);
   border-radius: 10px;
   flex-basis: 80%;
+  margin-bottom: 15px;
 
   ul {
     list-style: circle;
@@ -91,6 +92,7 @@ mat-card {
 
 .card-header {
   margin-bottom: 0px;
+  text-align: center;
 
   .miles {
     font-weight: 600;;

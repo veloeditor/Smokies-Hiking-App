@@ -1996,6 +1996,22 @@
         }
       ],
       "id": 9
+    },
+    {
+      "trailName": "Ace Gap Trail",
+      "totalMiles": 5.6,
+      "date": "2020-11-30T18:36:43.291Z",
+      "comments": "Nice trail!",
+      "sections": null,
+      "id": 10
+    },
+    {
+      "trailName": "Abrams Falls Trail",
+      "totalMiles": 4.2,
+      "date": "2020-11-30T18:38:07.111Z",
+      "comments": "These are comments",
+      "sections": null,
+      "id": 11
     }
   ],
   "users": [

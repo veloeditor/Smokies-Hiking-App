@@ -23,6 +23,8 @@ export class TrailsLogComponent implements OnInit {
 
   userHikes: UserHike[];
   addUser = false;
+  enableEdit = false;
+  enableEditIndex = null;
 
   trails: Trail[];
 
@@ -53,6 +55,8 @@ export class TrailsLogComponent implements OnInit {
       }, 0);
       this.userUniqueMilesHiked = miles.toFixed(1);
     });
+
+    console.log(this.enableEditIndex, this.enableEdit);
 
     this.trailsService.getAllTrails().subscribe((data: any[]) => {
       this.trails = data;
@@ -127,8 +131,10 @@ export class TrailsLogComponent implements OnInit {
     this.trailForm.reset();
   }
 
-  editHike(userHike): void {
-    // this.edit.emit(this.userHikes);
+  editHike(userHike, e, i): void {
+    this.enableEdit = true;
+    this.enableEditIndex = i;
+    console.log(i, e, userHike);
   }
 
   deleteHike(userHike) {

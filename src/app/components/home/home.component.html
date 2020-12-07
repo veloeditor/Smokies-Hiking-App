@@ -3,19 +3,40 @@
     <h2>Hike all of the trails of the Great Smoky Mountains</h2>
 </div>
 <div class="goals">
-        <p>Your current goal: 800 miles</p>
-        <p>Current unique miles you've hiked: {{ goalMiles }}</p>
-        <p>Your current progress: {{ currentProgress }}%</p>
-        <p>Change your goal</p>
+    <div class="current-miles">
+        <div class="miles-icon">
+            <mat-icon class="material-icons">directions_walk</mat-icon>
+        </div>
+        <p><span class="big-font">{{ goalMiles }}</span>
+            <br>
+            miles hiked so far
+        </p>
+    </div>
+    <div class="percentage">
+        <div class="progress-icon">
+            <mat-icon class="in-progress-icon">timelapse</mat-icon>
+        </div>
+        <p><span class="big-font">{{ currentProgress }}% </span><br>
+            of goal accomplished so far
+        </p>
+    </div>
+    <div class="goal">
+        <p class="goal-p">Your current goal: <br>
+            <span class="big-font">800 miles</span></p>
+        <mat-icon>edit</mat-icon>   
+    </div>
 </div>
 <div class="latest_hike">
-    <p>Your last hike was on: July 14, 2020</p>
+    <p>Your last hike was on: <span class="date"> {{ mostRecentHike | date }}</span></p>
 </div>
 <div class="main_options">
-        <p>
-            <a routerLink="/log">View your hiking log and add a new hike</a>
-        </p>
-        <p>
-            <a routerLink="/trails">View the official trail list</a>
-        </p>
+        <div class="go-to-log">
+            <a routerLink="/log"><button mat-icon-button mat-mini-fab color="primary"><mat-icon class="material-icons">edit</mat-icon></button></a>
+            <p>View & add a new hike</p>  
+        </div>
+        <div class="official-list">
+            <a routerLink="/trails"><button mat-icon-button mat-mini-fab color="primary"><mat-icon class="material-icons">library_books</mat-icon></button></a>
+            <p>View the official trail list</p> 
+        </div>
+        
 </div>

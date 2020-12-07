@@ -1,14 +1,14 @@
 <div class="header">
   <h2 class="hikingLogTitle">Hiking Log</h2>
   <button mat-mini-fab color="primary" (click)="openForm()">
-    <span *ngIf="!addUser" class="material-icons">add</span><span *ngIf="addUser" class="material-icons cancel-btn">cancel</span>
+    <span *ngIf="!addUser" class="material-icons">add</span><span *ngIf="addUser" color="warn" class="material-icons">cancel</span>
   </button>
 </div>
 <div *ngIf="addUser" class="hidden-form">
   <h3>Add a new hike</h3>
   <form [formGroup]="trailForm" (ngSubmit)="saveTrail(trailForm)" class="form">
     <div class="hike-form">
-      <mat-form-field appearance="fill" color="primary" class="name-form-field">
+      <mat-form-field appearance="fill" color="accent" class="name-form-field">
         <mat-label>Trail or Section Name</mat-label>
         <input formControlName="trailName" required matInput [matAutocomplete]="auto" />
         <mat-autocomplete #auto="matAutocomplete">
@@ -62,21 +62,42 @@
     You've hiked <span class="miles">{{ userUniqueMilesHiked }}</span> of miles in the Smokies
     <p *ngIf="!userHikes">You currently do not have any hikes.</p>
   </div>
-  <mat-card *ngFor="let userHike of userHikes" class="mat-elevation-z2 hike-card">
-    <mat-card-title> {{ userHike.trailName }}</mat-card-title>
-    <mat-card-subtitle>{{
-      userHike.date | date: "MM/dd/yyyy"
-      }}</mat-card-subtitle>
-    <mat-card-content>{{ userHike.comments }}</mat-card-content>
-    <mat-card-content>{{ userHike.totalMiles }} miles hiked</mat-card-content>
-    <div *ngIf="userHike.sections">
-      <h4>Sections hiked:</h4>
-      <ul *ngFor="let section of userHike.sections">
-        <li>{{ section.sectionName }} -- {{ section.sectionLength }} miles</li>
-      </ul>
-      
-    </div>
-    <button mat-icon-button color="primary" (click)="editHike(userHike)"><mat-icon>edit</mat-icon></button>
-    <button mat-icon-button color="warn" (click)="deleteHike(userHike)"><mat-icon>delete</mat-icon></button>
-  </mat-card>
+  <div class="card-container">
+  <mat-card *ngFor="let userHike of userHikes; index as i;" class="mat-elevation-z3 hike-card">
+      <div *ngIf="enableEditIndex !== i; else elseBlock">
+        <div class="thumbnail">
+          <div class="date">
+            <div class="month">
+              {{ userHike.date | date: "LLL"}}
+            </div>
+            <div class="day">
+              {{ userHike.date | date: "dd"}}
+            </div>
+            <div class="year">
+              {{ userHike.date | date: "yyyy"}}
+            </div>
+          </div>
+        </div>
+
+        <img src="../../../assets/img/shutterstock_226674508.png" alt="Trail" class="card-trail-pic">
+        <mat-card-title> {{ userHike.trailName }}</mat-card-title>
+        <mat-card-subtitle>{{ userHike.totalMiles }} miles hiked</mat-card-subtitle>
+        <mat-card-content>{{ userHike.comments }}</mat-card-content>
+        <div *ngIf="userHike.sections" class="sections-section">
+          <h4>Sections hiked:</h4>
+          <ul *ngFor="let section of userHike.sections">
+            <li>{{ section.sectionName }} -- {{ section.sectionLength }} miles</li>
+          </ul>
+        </div>
+        <mat-card-actions>
+          <button mat-mini-fab mat-icon-button color="primary" (click)="editHike(userHike, $event, i)"><mat-icon>edit</mat-icon></button>
+          <button mat-mini-fab mat-icon-button color="warn" (click)="deleteHike(userHike)"><mat-icon>delete</mat-icon></button> 
+        </mat-card-actions>
+      </div>
+      <ng-template #elseBlock class="edit-form-container">
+        <button mat-icon-button class="cancel-btn" *ngIf="enableEdit && enableEditIndex === i" (click)="cancelEdit()"><mat-icon>cancel</mat-icon></button> 
+        <app-hike-form *ngIf="enableEdit && enableEditIndex === i" [userHike]="userHike"></app-hike-form>
+      </ng-template>
+    </mat-card>
+  </div>
 </div>

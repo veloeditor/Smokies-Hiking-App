@@ -1,3 +1,10 @@
+@import 'src/assets/material.scss';
+
+body {
+  font-family: 'proxima-nova-soft', sans-serif;
+  font-size: 14px;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -7,7 +14,7 @@
   justify-content: center;
   align-items: baseline;
   gap: 15px;
-  
+
   h2 {
     text-align: center;
   }
@@ -32,7 +39,12 @@
   margin-bottom: 15px;
   padding-left: 5px;
   padding-right: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   flex-direction: column;
+  background-color: #202020;
+  width: 89%;
+  border-radius: 12px;
 }
 
 .hike-form,
@@ -67,34 +79,125 @@
   width: 450px;
 }
 
-.log_container {
+.card-container {
   display: flex;
-  gap: 20px;
-  justify-content: space-evenly;
-  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 15px;
+  flex-basis: 40%;
+}
+
+.card-header {
+  margin-bottom: 15px;
+  text-align: center;
+
+  .miles {
+    font-weight: 600;
+  }
 }
 
 mat-card {
-  background-color: rgb(197, 196, 196);
-  border-radius: 10px;
-  flex-basis: 80%;
+  display: flex;
+  background-color: #6F4930 !important;
+  flex-basis: 90%;
   margin-bottom: 15px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 0;
+  border-radius: 10px;
 
   ul {
     list-style: circle;
 
     li {
-      line-height: .5;
+      line-height: 0.5;
     }
   }
-}
 
-.card-header {
-  margin-bottom: 0px;
-  text-align: center;
+  .thumbnail {
+    .date {
+      position: absolute;
+      padding-top: 5px;
+      top: 20px;
+      right: 20px;
+      z-index: 1;
+      background-color: #1b5e20;
+      border-radius: 100%;
+      width: 72px;
+      height: 65px;
+      // padding: 12.5px 0;
+      color: white;
+      font-weight: 700;
+      text-align: center;
 
-  .miles {
-    font-weight: 600;;
+      .day {
+        font-size: 18px;
+      }
+      .month {
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .card-trail-pic {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    padding-bottom: 15px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  .mat-card-title,
+  .mat-card-subtitle,
+  .mat-card-content {
+    padding-left: 15px;
+    padding-right: 10px;
+  }
+
+  .mat-card-title {
+    font-weight: bold;
+    padding-top: 15px;
+  }
+
+  .mat-card-subtitle {
+    padding-top: 5px;
+    font-weight: 400;
+    font-size: 1.1em;
+    color: #e0f3e1;
+  }
+
+  .mat-card-actions{
+    margin-top: auto;
+    padding-left: 15px;
+    
+    button {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
+
+  .sections-section {
+    padding-left: 15px;
+    padding-right: 10px;
+  }
+
+  .edit-form-container {
+    display: flex;
+  }
+
+  .cancel-btn {
+    margin-left: 96%;
+    margin-right: auto;
+    margin-top: -8px !important;
   }
 }
+
+// .mat-card:nth-of-type(odd) {
+//   background-color: #325e8a;
+// }
+
+// .mat-card:nth-of-type(even) {
+//   background-color: #7e561b;
+// }

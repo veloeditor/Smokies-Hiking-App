@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { startWith, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -17,12 +17,16 @@ import { EventEmitter } from 'events';
   templateUrl: './trails-log.component.html',
   styleUrls: ['./trails-log.component.scss'],
 })
-export class TrailsLogComponent implements OnInit {
+export class TrailsLogComponent implements OnInit, AfterViewInit {
 
   trailForm: FormGroup;
 
   userHikes: UserHike[];
   addUser = false;
+  enableEdit = false;
+  enableEditIndex = null;
+  pictureLink = '';
+  picArray = ['bridge.jpg', 'cabin.jpg', 'jumpoff.jpg', 'trail_1.jpg', 'trail_2.jpg'];
 
   trails: Trail[];
 
@@ -33,6 +37,8 @@ export class TrailsLogComponent implements OnInit {
   selectedSection = [];
 
   filteredTrails: Observable<Trail[]>;
+
+  numArr = Array.from(Array(5), (_, x) => x);
 
   constructor(
     private userHikesService: UserHikesService,
@@ -81,6 +87,7 @@ export class TrailsLogComponent implements OnInit {
           this.trailObjSelectedMiles = 0;
         }
       } else {
+        this.trailObjSelectedMiles = 0;
         this.sectionNameArray = trailObjSelected?.sections;
       }
     });
@@ -96,6 +103,11 @@ export class TrailsLogComponent implements OnInit {
       }, 0);
       this.trailObjSelectedMiles = miles?.toFixed(1);
     });
+  }
+
+  ngAfterViewInit() {
+    // this.randomPictures();
+    // console.log('ngAfterView has fired');
   }
 
   findOption(val: string) {
@@ -127,8 +139,15 @@ export class TrailsLogComponent implements OnInit {
     this.trailForm.reset();
   }
 
-  editHike(userHike): void {
-    // this.edit.emit(this.userHikes);
+  editHike(userHike, e, i): void {
+    this.enableEdit = true;
+    this.enableEditIndex = i;
+    console.log(i, e, userHike);
+  }
+
+  cancelEdit() {
+    this.enableEdit = false;
+    this.enableEditIndex = null;
   }
 
   deleteHike(userHike) {
@@ -169,4 +188,15 @@ export class TrailsLogComponent implements OnInit {
   hasError = (controlName: string, errorName: string) => {
     return this.trailForm.contains[controlName].hasError(errorName);
   }
+
+
+  randomPictures() {
+    const path = '../../../assets/img/';
+    const picArray = ['bridge.jpg', 'cabin.jpg', 'jumpoff.jpg', 'trail_1.jpg', 'trail_2.jpg'];
+    const i = Math.floor(Math.random() * picArray.length);
+    this.pictureLink = `${path}${picArray[i]}`;
+    console.log(this.pictureLink);
+    return this.pictureLink;
+  }
+
 }

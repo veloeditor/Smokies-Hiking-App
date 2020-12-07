@@ -4,6 +4,7 @@ export interface UserHike {
     totalMiles: number;
     date: Date;
     comments: string;
+    imgUrl: string;
     sections: [{
         sectionName: string;
         sectionLength: number;

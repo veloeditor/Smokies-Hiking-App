@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject<boolean>();
   goalMiles = null;
   currentProgress = null;
+  mostRecentHike = null;
 
   constructor(private trailsService: TrailsService, private userHikesService: UserHikesService) {
   }
@@ -36,6 +37,14 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.goalMiles = miles.toFixed(1);
       const percentage = (this.goalMiles / 800) * 100;
       this.currentProgress = percentage.toFixed(1);
+
+      this.userHikes.forEach(hike => {
+        const dateArray = [];
+        const date = hike.date;
+        dateArray.push(date);
+        dateArray.reduce((a, b) => b > a ? b : a);
+        this.mostRecentHike = dateArray[dateArray.length - 1];
+      });
     });
   }
 

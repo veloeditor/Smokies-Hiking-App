@@ -1,124 +1,156 @@
+body {
+  color: white;
+}
+
 .mat-expansion-panel-header-title {
-    width: 200px;
+  width: 200px;
 }
 
 .mat-expansion-panel-header-description {
-    flex-grow: 0;
+  flex-grow: 0;
 }
 
 .mat-expansion-panel {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
+  background-color: #6f4930;
 }
 
 .trailList_container {
-    width: 600px;
-    margin: auto;
+  width: 600px;
+  margin: auto;
+  color: white;
+
+  .expansion-miles {
+    color: white !important;
+  }
+
+  .mat-expansion-panel-header-description {
+    color: white !important;
+  }
 }
 
 .trail-list-title {
-    text-align: center;
-    
+  text-align: center;
 
-    h1 {
-        margin-bottom: 0;
-        font-weight: bold;
-    }
+  h1 {
+    margin-bottom: 0;
+    font-weight: bold;
+  }
 
-    h2 {
-        font-weight: 200;
-        font-size: 20px;
-    }
+  h2 {
+    font-weight: 200;
+    font-size: 20px;
+  }
 }
 
 .tp-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
- }
- .tp-full-width {
-    width: 100%;
- }
- 
- mat-panel-description {
-     color: rgb(27, 27, 27);
- }
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+.tp-full-width {
+  width: 100%;
+}
 
- mat-card {
-     height: fit-content;
-     padding-bottom: 5px;
- }
+mat-panel-description {
+  color: rgb(27, 27, 27);
+}
 
- .trail-card {
-     display: flex;
-     justify-content: space-between;
-     margin-bottom: 8px;
-     padding-left: 25px;
-     padding-right: 25px;
+mat-card {
+  height: fit-content;
+  padding-bottom: 5px;
+}
 
-     p {
-         display: flex;
-     }
- }
+.trail-card {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #6f4930;
 
- .alreadyHiked {
-    color: black;
-    //  text-decoration: line-through;
- }
+  p {
+    display: flex;
+  }
+}
 
- .alreadyHikedMiles {
-    color: rgb(177, 176, 176);
-    // text-decoration: line-through;
- }
+.alreadyHiked.sections {
+  color: rgb(196, 194, 194);
+}
 
- .sections {
-     display: flex;
- }
+.alreadyHikedMiles {
+  color: rgb(109, 108, 108);
+  // text-decoration: line-through;
+}
 
- .alreadyHiked::after {
-    font-family: "Material Icons";
-    content: "check_box";
-    text-decoration: none !important;
+.sections {
+  display: flex;
+}
+
+.alreadyHiked::after {
+  font-family: 'Material Icons';
+  content: 'check_box';
+  text-decoration: none !important;
+  color: green;
+  padding-left: 5px;
+  font-size: 20px;
+}
+
+.completed {
+  text-decoration: none;
+  color: green;
+}
+
+.inProgress::after {
+  font-family: 'Material Icons';
+  content: 'timelapse';
+  color: orange;
+  padding-left: 5px;
+  font-size: 20px;
+}
+
+.progress-indicators {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  .done,
+  .progress {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  .check-box-icon {
     color: green;
-    padding-left: 5px;
-    font-size: 20px;
- }
+  }
 
- .completed {
-     text-decoration: none;
-     color: green;
- }
+  .in-progress-icon {
+    color: orange;
+  }
+}
 
- .inProgress{
-    color: black;;
- }
+.location-icon {
+  padding-right: 15px;
+  color: green;
+}
 
- .inProgress::after {
-     font-family: "Material Icons";
-     content: "timelapse";
-     color: orange;
-     padding-left: 5px;
-     font-size: 20px;
- }
+.sections-header {
+  //  padding-bottom: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
 
- .progress-indicators {
-     display: flex;
-     text-align: center;
-     justify-content: center;
-     align-items: center;
-     gap: 15px;
-
-     .done, .progress {
-         display: flex;
-         align-items: center;
-         font-size: 12px;
-     }
-
-     .check-box-icon {
-         color: green;
-     }
-
-     .in-progress-icon {
-         color: orange;
-     }
-
- }
+hr {
+  margin-bottom: 14px;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    // rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+}

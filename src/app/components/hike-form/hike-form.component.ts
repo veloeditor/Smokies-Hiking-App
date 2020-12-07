@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { UserHike } from 'src/app/interfaces/user-hike';
 
 @Component({
   selector: 'app-hike-form',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hike-form.component.scss']
 })
 export class HikeFormComponent implements OnInit {
+
+  @Input() userHike: UserHike;
 
   constructor() { }
 

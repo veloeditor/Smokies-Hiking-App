@@ -16,9 +16,10 @@
             {{ trail.name }}
           </p>
         </div>
-        <p>
+        <div class="expansion-miles">
+          <!-- <mat-icon class="location-icon">location_on</mat-icon> -->
           {{ trail.length }} miles
-        </p>
+        </div>
       </mat-card>
     </div>
     <ng-template #trailSections>
@@ -28,10 +29,15 @@
             {{ trail.name }}
           </mat-panel-title>
           <mat-panel-description>
+            <!-- <mat-icon class="location-icon">location_on</mat-icon> -->
             {{ trail.length }} miles
           </mat-panel-description>
         </mat-expansion-panel-header>
         <div *ngIf="trail.sections.length > 0; else elseBlock">
+          <div class="sections-header">
+            Trail Sections:
+          </div>
+          <hr>
           <p *ngFor="let section of trail.sections" class="sections" [ngClass]="{
               alreadyHiked: hikedSectionNames.includes(section.sectionName)
             }">

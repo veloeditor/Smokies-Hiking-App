@@ -42,9 +42,8 @@ export class HomeComponent implements OnInit, OnDestroy {
         const dateArray = [];
         const date = hike.date;
         dateArray.push(date);
-        dateArray.reduce((a, b) => {return b > a ? b : a;});
+        dateArray.reduce((a, b) => b > a ? b : a);
         this.mostRecentHike = dateArray[dateArray.length - 1];
-        console.log('most recent', this.mostRecentHike);
       });
     });
   }

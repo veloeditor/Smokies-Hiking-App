@@ -15,7 +15,7 @@ $custom-typography: mat-typography-config($font-family: '"proxima-nova-soft", sa
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $candy-app-primary : mat-palette($mat-green, 900);
-$candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$candy-app-accent:  mat-palette($mat-light-blue);
 
 // The warn palette is optional (defaults to red).
 $candy-app-warn:    mat-palette($mat-red);

@@ -1,3 +1,4 @@
+@import 'src/assets/material.scss';
 
 body {
   font-family: 'proxima-nova-soft', sans-serif;
@@ -38,7 +39,12 @@ body {
   margin-bottom: 15px;
   padding-left: 5px;
   padding-right: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   flex-direction: column;
+  background-color: #202020;
+  width: 89%;
+  border-radius: 12px;
 }
 
 .hike-form,
@@ -92,7 +98,7 @@ body {
 
 mat-card {
   display: flex;
-  background-color: #6F4930;
+  background-color: #6F4930 !important;
   flex-basis: 90%;
   margin-bottom: 15px;
   flex-wrap: wrap;

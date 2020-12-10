@@ -15,9 +15,9 @@
       <input formControlName="totalMiles" required matInput [value]="trailObjSelectedMiles" />
     </mat-form-field>
 
-    <mat-form-field *ngIf="sectionNameArray" appearance="fill" class="sections-form-field">
+    <mat-form-field *ngIf="trailObjectedEdited?.sections" appearance="fill" class="sections-form-field">
       <mat-label>Sections</mat-label>
-      <mat-select formControlName="sections" multiple>
+      <mat-select formControlName="sections" multiple [compareWith]="">
         <mat-select-trigger>
           {{ selectedSection[0]?.sectionName }}
           <span *ngIf="selectedSection.length > 1" class="example-additional-selection">
@@ -25,7 +25,7 @@
             {{ selectedSection.length === 2 ? "other" : "others" }})
           </span>
         </mat-select-trigger>
-        <mat-option *ngFor="let section of sectionNameArray" [value]="section">{{ section.sectionName }} - {{
+        <mat-option *ngFor="let section of trailObjectedEdited?.sections" [value]="section">{{ section.sectionName }} - {{
           section.sectionLength }} miles</mat-option>
       </mat-select>
     </mat-form-field>

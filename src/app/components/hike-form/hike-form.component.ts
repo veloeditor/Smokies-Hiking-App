@@ -64,6 +64,7 @@ export class HikeFormComponent implements OnInit {
 
     this.trailForm.controls.trailName.valueChanges.subscribe((change) => {
       const trailObjSelected = this.trails?.find((t) => t.name === change);
+      console.log('trailName.valueChanges');
       if (trailObjSelected?.sections?.length < 1) {
         if (this.hikedNames.includes(trailObjSelected.name)) {
           window.alert('You already hiked this!');
@@ -77,6 +78,7 @@ export class HikeFormComponent implements OnInit {
         this.trailObjSelectedMiles = 0;
         this.sectionNameArray = trailObjSelected?.sections;
       }
+      console.log(this.trailObjSelectedMiles);
     });
 
     this.trailForm.controls.sections.valueChanges.subscribe((value) => {
@@ -89,6 +91,12 @@ export class HikeFormComponent implements OnInit {
         return acc + Number(section?.sectionLength);
       }, 0);
       this.trailObjSelectedMiles = miles?.toFixed(1);
+      console.log('sections.valueChanges');
+      console.log(this.trailObjSelectedMiles);
+    });
+
+    this.trailForm.controls.totalMiles.valueChanges.subscribe((value) => {
+      this.trailObjSelectedMiles = value;
     });
   }
 
@@ -109,7 +117,7 @@ export class HikeFormComponent implements OnInit {
     const hike = {
       id: this.userHike.id,
       trailName: this.trailForm.value.trailName,
-      totalMiles: this.trailForm.value.totalMiles,
+      totalMiles: this.trailObjSelectedMiles,
       date: this.trailForm.value.date,
       comments: this.trailForm.value.comments,
       sections: this.trailForm.value.sections

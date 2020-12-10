@@ -96,7 +96,7 @@
       </div>
       <ng-template #elseBlock class="edit-form-container">
         <button mat-icon-button class="cancel-btn" *ngIf="enableEdit && enableEditIndex === i" (click)="cancelEdit()"><mat-icon>cancel</mat-icon></button> 
-        <app-hike-form *ngIf="enableEdit && enableEditIndex === i" [userHike]="userHike"></app-hike-form>
+        <app-hike-form class="edit-form" *ngIf="enableEdit && enableEditIndex === i" [userHike]="userHike"></app-hike-form>
       </ng-template>
     </mat-card>
   </div>

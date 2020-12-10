@@ -1,5 +1,5 @@
-<form [formGroup]="trailForm" (ngSubmit)="editTrail(trailForm)" class="form">
-  <h3>Add a new hike:</h3>
+<form [formGroup]="trailForm" (ngSubmit)="saveTrail(trailForm)" class="form">
+  <h2>Edit your <span>{{ userHike.trailName }}</span> hike:</h2>
   <div class="hike-form">
     <mat-form-field appearance="fill" class="name-form-field">
       <mat-label>Trail or Section Name</mat-label>

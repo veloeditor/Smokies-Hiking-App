@@ -185,6 +185,7 @@ mat-card {
 
   .edit-form-container {
     display: flex;
+    margin: auto;
   }
 
   .cancel-btn {
@@ -194,10 +195,6 @@ mat-card {
   }
 }
 
-// .mat-card:nth-of-type(odd) {
-//   background-color: #325e8a;
-// }
-
-// .mat-card:nth-of-type(even) {
-//   background-color: #7e561b;
-// }
+.edit-form {
+  margin: auto;
+}

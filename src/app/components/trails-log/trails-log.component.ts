@@ -152,7 +152,6 @@ export class TrailsLogComponent implements OnInit, AfterViewInit {
   editHike(userHike, e, i): void {
     this.enableEdit = true;
     this.enableEditIndex = i;
-    console.log(i, e, userHike);
   }
 
   cancelEdit() {

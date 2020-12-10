@@ -1998,12 +1998,12 @@
       "id": 9
     },
     {
+      "id": 10,
       "trailName": "Ace Gap Trail",
-      "totalMiles": 5.6,
+      "totalMiles": "5.6",
       "date": "2020-11-30T18:36:43.291Z",
-      "comments": "Nunc sed augue lacus viverra vitae congue eu consequat ac felis donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum",
-      "sections": null,
-      "id": 10
+      "comments": "Nice hiking trail and just long enough to feel some pain in the legs.",
+      "sections": null
     },
     {
       "trailName": "Abrams Falls Trail",

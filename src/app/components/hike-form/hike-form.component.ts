@@ -109,7 +109,7 @@ export class HikeFormComponent implements OnInit {
     const hike = {
       id: this.userHike.id,
       trailName: this.trailForm.value.trailName,
-      totalMiles: this.trailObjSelectedMiles,
+      totalMiles: this.trailForm.value.totalMiles,
       date: this.trailForm.value.date,
       comments: this.trailForm.value.comments,
       sections: this.trailForm.value.sections

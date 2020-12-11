@@ -1975,13 +1975,25 @@
     {
       "id": 9,
       "trailName": "Balsam Mountain Trail",
-      "totalMiles": "2.3",
+      "totalMiles": "10.1",
       "date": "2020-11-12T17:42:40.148Z",
       "comments": "Beautiful, but long hike. Enjoyed the scenary.",
       "sections": [
         {
           "sectionName": "Balsam Mountain Road - Beech Gap I",
           "sectionLength": 2.3
+        },
+        {
+          "sectionName": "Beech Gap I - Mt. Sterling Ridge",
+          "sectionLength": 2
+        },
+        {
+          "sectionName": "Mt. Sterling Ridge - Gunter Fork",
+          "sectionLength": 0.9
+        },
+        {
+          "sectionName": "Gunter Fork - AT",
+          "sectionLength": 4.9
         }
       ]
     },
@@ -2019,6 +2031,23 @@
         {
           "sectionName": "Russell Field - Bote Mountain",
           "sectionLength": 1.9
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "trailName": "Appalachian Trail",
+      "totalMiles": "6.8",
+      "date": "2020-12-11T01:55:10.403Z",
+      "comments": "I did the first section of the Appalachian Trail!!",
+      "sections": [
+        {
+          "sectionName": "Fontana/Lakeview Drive West - Lost Cove",
+          "sectionLength": 3.7
+        },
+        {
+          "sectionName": "Lost Cove - Gregory Bald (Doe Knob)",
+          "sectionLength": 3.1
         }
       ]
     }

@@ -39,9 +39,12 @@ export class HikeFormComponent implements OnInit {
       this.trails = data;
       const hikedTrailName = this.userHike.trailName;
       this.trailObjectedEdited = this.trails?.find((t) => t.name === hikedTrailName);
+      console.log('trailObjectedEdited', this.trailObjectedEdited.sections);
+      console.log('this.userHike.sections', this.userHike.sections);
       const results = this.trailObjectedEdited.sections.filter(( { sectionName: id1 }) =>
-        !this.userHike.sections.some(({ sectionName: id2 }) => id2 !== id1));
+        this.userHike.sections.some(({ sectionName: id2 }) => id2 === id1));
       this.trailForm.get('sections').setValue(results);
+      console.log('results', results);
     });
 
     this.trailForm = this.fb.group({

@@ -1973,50 +1973,39 @@
   ],
   "userHikes": [
     {
+      "id": 9,
       "trailName": "Balsam Mountain Trail",
-      "totalMiles": "10.1",
+      "totalMiles": "2.3",
       "date": "2020-11-12T17:42:40.148Z",
       "comments": "Beautiful, but long hike. Enjoyed the scenary.",
       "sections": [
         {
           "sectionName": "Balsam Mountain Road - Beech Gap I",
           "sectionLength": 2.3
-        },
-        {
-          "sectionName": "Beech Gap I - Mt. Sterling Ridge",
-          "sectionLength": 2
-        },
-        {
-          "sectionName": "Mt. Sterling Ridge - Gunter Fork",
-          "sectionLength": 0.9
-        },
-        {
-          "sectionName": "Gunter Fork - AT",
-          "sectionLength": 4.9
         }
-      ],
-      "id": 9
+      ]
     },
     {
+      "id": 10,
       "trailName": "Ace Gap Trail",
       "totalMiles": 5.6,
       "date": "2020-11-30T18:36:43.291Z",
-      "comments": "Nunc sed augue lacus viverra vitae congue eu consequat ac felis donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum",
-      "sections": null,
-      "id": 10
+      "comments": "Nice hiking trail and just long enough to feel some pain in the legs.",
+      "sections": null
     },
     {
       "trailName": "Abrams Falls Trail",
       "totalMiles": 4.2,
-      "date": "2020-11-30T18:38:07.111Z",
+      "date": "2020-09-12T18:38:07.111Z",
       "comments": "Definitely one of the bussier hikes in the park, but well worth the effort to see the falls. Lots of water",
       "sections": null,
       "id": 11
     },
     {
+      "id": 12,
       "trailName": "Anthony Creek Trail",
-      "totalMiles": "1.6",
-      "date": "2020-11-30T20:29:55.174Z",
+      "totalMiles": "3.5",
+      "date": "2020-10-30T20:29:55.174Z",
       "comments": "Nunc sed augue lacus viverra vitae congue eu consequat ac felis donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum",
       "sections": [
         {
@@ -2026,9 +2015,12 @@
         {
           "sectionName": "Crib Gap - Russell Field",
           "sectionLength": 1.4
+        },
+        {
+          "sectionName": "Russell Field - Bote Mountain",
+          "sectionLength": 1.9
         }
-      ],
-      "id": 12
+      ]
     }
   ],
   "users": [

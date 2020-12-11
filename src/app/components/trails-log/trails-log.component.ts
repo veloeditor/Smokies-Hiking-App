@@ -29,6 +29,8 @@ export class TrailsLogComponent implements OnInit, AfterViewInit {
   picArray = ['bridge.jpg', 'cabin.jpg', 'jumpoff.jpg', 'trail_1.jpg', 'trail_2.jpg'];
 
   trails: Trail[];
+  hikedNames = [];
+  hikedSectionNames = [];
 
   trailSelected: Trail;
   trailObjSelectedMiles = 0;
@@ -51,6 +53,7 @@ export class TrailsLogComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.userHikesService.getAllUserHikes().subscribe((data: any[]) => {
       this.userHikes = data;
+      this.hiked();
       this.userHikes.sort((a, b) =>
         new Date(a?.date) > new Date(b?.date) ? -1 : 1
       );
@@ -81,7 +84,10 @@ export class TrailsLogComponent implements OnInit, AfterViewInit {
     this.trailForm.controls.trailName.valueChanges.subscribe((change) => {
       const trailObjSelected = this.trails?.find((t) => t.name === change);
       if (trailObjSelected?.sections?.length < 1) {
-        if (trailObjSelected?.length !== undefined) {
+        if (this.hikedNames.includes(trailObjSelected.name)) {
+          window.alert('You already hiked this!');
+        }
+        if (trailObjSelected?.length !== undefined && !this.hikedNames.includes(trailObjSelected.name)) {
           this.trailObjSelectedMiles = trailObjSelected?.length;
         } else {
           this.trailObjSelectedMiles = 0;
@@ -99,6 +105,10 @@ export class TrailsLogComponent implements OnInit, AfterViewInit {
     this.trailForm.controls.sections.valueChanges.subscribe((value) => {
       this.selectedSection = value;
       const miles = this.selectedSection?.reduce((acc, section) => {
+        if (this.hikedSectionNames.includes(section.sectionName)) {
+          console.log(section.sectionName);
+          return 0;
+        }
         return acc + Number(section?.sectionLength);
       }, 0);
       this.trailObjSelectedMiles = miles?.toFixed(1);
@@ -142,7 +152,13 @@ export class TrailsLogComponent implements OnInit, AfterViewInit {
   editHike(userHike, e, i): void {
     this.enableEdit = true;
     this.enableEditIndex = i;
-    console.log(i, e, userHike);
+    this.getUserHikes();
+  }
+
+  saveTrailForm(value: boolean): void {
+    this.enableEdit = false;
+    this.enableEditIndex = null;
+    this.getUserHikes();
   }
 
   cancelEdit() {
@@ -199,4 +215,17 @@ export class TrailsLogComponent implements OnInit, AfterViewInit {
     return this.pictureLink;
   }
 
+  hiked() {
+    this.userHikes?.forEach((hike) => {
+      if (hike.sections === null) {
+        const trailName = hike.trailName;
+        this.hikedNames.push(trailName);
+      } else {
+        hike.sections.forEach((section) => {
+          const sectionName = section.sectionName;
+          this.hikedSectionNames.push(sectionName);
+        });
+      }
+    });
+  }
 }

@@ -3,3 +3,61 @@
     flex-direction: column;
     padding-left: 12px;
 }
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-direction: column;
+    // background-color: #241810;
+    width: 100%;
+    border-radius: 12px;
+    color: white;
+  
+    h2 {
+      font-size: 1.6em;
+
+      span {
+          font-weight: bold;
+      }
+    }
+  }
+  
+  .hike-form,
+  .date-comments-form {
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    gap: 40px;
+  }
+  
+  .date-comments-form {
+    align-items: center;
+  }
+  
+  .name-form-field {
+    width: 300px;
+  }
+  
+  .miles-form-field {
+    width: 110px;
+  }
+  
+  .sections-form-field {
+    width: 330px;
+  }
+  
+  .date-form-field {
+    width: 170px;
+  }
+  
+  .comments-form-field {
+    width: 450px;
+  }

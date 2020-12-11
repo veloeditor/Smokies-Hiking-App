@@ -5,10 +5,10 @@
   </button>
 </div>
 <div *ngIf="addUser" class="hidden-form">
-  <h3>Add a new hike</h3>
   <form [formGroup]="trailForm" (ngSubmit)="saveTrail(trailForm)" class="form">
+    <h3>Add a new hike:</h3>
     <div class="hike-form">
-      <mat-form-field appearance="fill" color="accent" class="name-form-field">
+      <mat-form-field appearance="fill" class="name-form-field">
         <mat-label>Trail or Section Name</mat-label>
         <input formControlName="trailName" required matInput [matAutocomplete]="auto" />
         <mat-autocomplete #auto="matAutocomplete">
@@ -96,7 +96,7 @@
       </div>
       <ng-template #elseBlock class="edit-form-container">
         <button mat-icon-button class="cancel-btn" *ngIf="enableEdit && enableEditIndex === i" (click)="cancelEdit()"><mat-icon>cancel</mat-icon></button> 
-        <app-hike-form *ngIf="enableEdit && enableEditIndex === i" [userHike]="userHike"></app-hike-form>
+        <app-hike-form class="edit-form" *ngIf="enableEdit && enableEditIndex === i" (saveTrailForm)="saveTrailForm($event)" [userHike]="userHike"></app-hike-form>
       </ng-template>
     </mat-card>
   </div>

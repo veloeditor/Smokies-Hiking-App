@@ -3,6 +3,7 @@
 body {
   font-family: 'proxima-nova-soft', sans-serif;
   font-size: 14px;
+  color: white;
 }
 
 .header {
@@ -24,12 +25,6 @@ body {
   }
 }
 
-.hidden-form {
-  h3 {
-    text-align: center;
-  }
-}
-
 .form {
   display: flex;
   align-items: center;
@@ -42,9 +37,14 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   flex-direction: column;
-  background-color: #202020;
+  background-color: #241810;
   width: 89%;
   border-radius: 12px;
+  color: white;
+
+  h3 {
+    text-align: left;
+  }
 }
 
 .hike-form,
@@ -185,6 +185,7 @@ mat-card {
 
   .edit-form-container {
     display: flex;
+    margin: auto;
   }
 
   .cancel-btn {
@@ -194,10 +195,6 @@ mat-card {
   }
 }
 
-// .mat-card:nth-of-type(odd) {
-//   background-color: #325e8a;
-// }
-
-// .mat-card:nth-of-type(even) {
-//   background-color: #7e561b;
-// }
+.edit-form {
+  margin: auto;
+}

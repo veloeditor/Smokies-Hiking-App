@@ -16,7 +16,7 @@
     <p class="done"><mat-icon class="check-box-icon">check_box</mat-icon> - Trail fully hiked</p>
     <p class="progress"><mat-icon class="in-progress-icon">timelapse</mat-icon> - Trail in progress</p>
   </div>
-  <div class="trail" *ngFor="let trail of trails">
+  <div class="trail" *ngFor="let trail of dataSource">
     <div class="no-section-trails" *ngIf="trail.sections.length < 1; else trailSections">
       <mat-card class="mat-elevation-z2 trail-card">
         <div class="card-title">

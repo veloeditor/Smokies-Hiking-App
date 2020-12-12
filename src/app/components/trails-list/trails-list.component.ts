@@ -24,6 +24,7 @@ export class TrailsListComponent implements OnInit, OnDestroy {
   hikedNames = [];
   hikedSectionNames = [];
   hikedAllSections: false;
+  dataSource: Trail[];
 
   trailListSearchForm: FormGroup;
 
@@ -39,6 +40,7 @@ export class TrailsListComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe((data: any[]) => {
         this.trails = data;
+        this.dataSource = this.trails;
       });
     this.userHikesService.getAllUserHikes().subscribe((data: any[]) => {
       this.hikes = data;
@@ -54,7 +56,7 @@ export class TrailsListComponent implements OnInit, OnDestroy {
   }
 
   private searchList(filter: string): void {
-    this.trails = this.filterSources(this.trails, filter);
+    this.dataSource = this.filterSources(this.trails, filter);
   }
 
   filterSources(trails: Trail[], filter: string): Trail[] {

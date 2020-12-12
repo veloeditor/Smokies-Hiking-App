@@ -87,30 +87,52 @@ body {
   flex-basis: 40%;
 }
 
-.card-header {
-  margin-bottom: 15px;
+.above-card-header {
+  margin-bottom: 25px;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 
   .miles {
-    font-weight: 600;
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+  .miles::before {
+    content: '';
+    position: absolute;
+    margin-bottom: 14px;
+    border: 0;
+    height: 1px;
+    top: 19.7%;
+
+    width: 100px;
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(226, 226, 226, 0.75),
+      rgba(204, 204, 204, 0)
+    );
   }
 }
 
 mat-card {
   display: flex;
-  background-color: #6F4930 !important;
-  flex-basis: 90%;
+  position: absolute;
+  background-color: #6f4930 !important;
+  flex-basis: 30%;
   margin-bottom: 15px;
   flex-wrap: wrap;
   flex-direction: row;
   padding: 0;
   border-radius: 10px;
+  min-height: 600px;
+  
 
   ul {
     list-style: circle;
 
     li {
-      line-height: 0.5;
+      line-height: 1;
     }
   }
 
@@ -168,10 +190,12 @@ mat-card {
     color: #e0f3e1;
   }
 
-  .mat-card-actions{
+  .mat-card-actions {
+    position: absolute;
     margin-top: auto;
     padding-left: 15px;
-    
+    bottom: 0px;
+
     button {
       margin-left: 15px;
       margin-right: 15px;
@@ -181,6 +205,7 @@ mat-card {
   .sections-section {
     padding-left: 15px;
     padding-right: 10px;
+    overflow-y: auto;
   }
 
   .edit-form-container {

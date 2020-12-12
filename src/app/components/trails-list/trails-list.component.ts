@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatExpansionPanel } from '@angular/material/expansion';
-import { getMatIconFailedToSanitizeUrlError } from '@angular/material/icon';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Trail } from 'src/app/interfaces/trail';
@@ -25,9 +25,12 @@ export class TrailsListComponent implements OnInit, OnDestroy {
   hikedSectionNames = [];
   hikedAllSections: false;
 
+  trailListSearchForm: FormGroup;
+
   constructor(
     private trailsService: TrailsService,
-    private userHikesService: UserHikesService
+    private userHikesService: UserHikesService,
+    private fb: FormBuilder
   ) {}
 
   ngOnInit() {
@@ -41,6 +44,25 @@ export class TrailsListComponent implements OnInit, OnDestroy {
       this.hikes = data;
       this.hiked();
     });
+
+    this.trailListSearchForm = this.fb.group({
+      search: ''
+    });
+    this.trailListSearchForm.valueChanges.subscribe((change: { search: string }) => {
+      this.searchList(change.search);
+    });
+  }
+
+  private searchList(filter: string): void {
+    this.trails = this.filterSources(this.trails, filter);
+  }
+
+  filterSources(trails: Trail[], filter: string): Trail[] {
+    const filteredSourceConfigs = trails?.filter((trail: Trail) => {
+      const searchText = `${trail.name}`;
+      return searchText?.toLowerCase().indexOf(filter?.toLowerCase().trim()) !== -1;
+    });
+    return filteredSourceConfigs;
   }
 
   ngOnDestroy() {

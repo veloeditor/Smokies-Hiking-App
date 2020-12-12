@@ -2,6 +2,14 @@
   <h1>Official Trails</h1>
   <h2>in the Great Smoky Mountains</h2>
 </div>
+<div class="search-bar">
+  <form [formGroup]="trailListSearchForm" class="search-field">
+    <mat-form-field class="list-search-field" appearance="fill">
+      <mat-label>Search for a trail</mat-label>
+        <input formControlName="search" matInput placeholder="Search for a trail..." value="">
+    </mat-form-field>
+  </form>
+</div>
 
 <div class="trailList_container">
   <div class="progress-indicators">

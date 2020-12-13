@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatExpansionPanel } from '@angular/material/expansion';
+import { MatTooltip } from '@angular/material/tooltip';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Trail } from 'src/app/interfaces/trail';
@@ -25,6 +26,8 @@ export class TrailsListComponent implements OnInit, OnDestroy {
   hikedSectionNames = [];
   hikedAllSections: false;
   dataSource: Trail[];
+
+  search = false;
 
   trailListSearchForm: FormGroup;
 
@@ -70,6 +73,10 @@ export class TrailsListComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.destroy$.next(true);
     this.destroy$.unsubscribe();
+  }
+
+  openForm() {
+    this.search = !this.search;
   }
 
   // this populates two arrays, one tha contains names of simple trails, the other sectionnames

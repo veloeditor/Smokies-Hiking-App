@@ -6,7 +6,7 @@ import { Trail } from '../../interfaces/trail';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { UserHike } from 'src/app/interfaces/user-hike';
-
+import { Chart } from 'chart.js';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -20,6 +20,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   goalMiles = null;
   currentProgress = null;
   mostRecentHike = null;
+  chart = [];
+  hikeMiles = [];
 
   constructor(private trailsService: TrailsService, private userHikesService: UserHikesService) {
   }
@@ -41,9 +43,11 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.userHikes.forEach(hike => {
         const dateArray = [];
         const date = hike.date;
+        this.hikeMiles.push(hike.totalMiles);
         dateArray.push(date);
         dateArray.reduce((a, b) => b > a ? b : a);
         this.mostRecentHike = dateArray[dateArray.length - 1];
+        console.log(dateArray);
       });
     });
   }

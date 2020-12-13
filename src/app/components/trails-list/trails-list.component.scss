@@ -20,17 +20,22 @@ body {
   margin: auto;
   color: white;
 
-  .expansion-miles {
-    color: white !important;
-  }
-
   .mat-expansion-panel-header-description {
     color: white !important;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-right: 0px;
+
+    material-icon {
+      color: white !important;
+    }
   }
 }
 
 .trail-list-title {
   text-align: center;
+  margin-bottom: 0;
 
   h1 {
     margin-bottom: 0;
@@ -40,6 +45,7 @@ body {
   h2 {
     font-weight: 200;
     font-size: 20px;
+    margin-bottom: 10px;
   }
 }
 
@@ -59,6 +65,15 @@ mat-panel-description {
 mat-card {
   height: fit-content;
   padding-bottom: 5px;
+
+  .expansion-miles {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: white !important;
+    gap: 15px;
+    margin-right: 7px;
+  }
 }
 
 .trail-card {
@@ -133,8 +148,8 @@ mat-card {
 }
 
 .location-icon {
-  padding-right: 15px;
-  color: green;
+  padding-right:10px;
+  // color: green;
 }
 
 .sections-header {
@@ -153,4 +168,24 @@ hr {
     rgba(0, 0, 0, 0.75),
     rgba(0, 0, 0, 0)
   );
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+a {
+  color: white;
+}
+
+.dead-link {
+  color:rgb(109, 108, 108);
+  pointer-events: none;
+  cursor: default;
 }

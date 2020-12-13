@@ -2,13 +2,23 @@
   <h1>Official Trails</h1>
   <h2>in the Great Smoky Mountains</h2>
 </div>
+<div class="search-bar">
+  <form [formGroup]="trailListSearchForm" class="search-field" *ngIf="search">
+    <mat-form-field [style.width.px]=300 class="list-search-field" appearance="fill">
+      <mat-label>Search for a trail</mat-label>
+      <input [style.height.px]=20 formControlName="search" matInput placeholder="Search for a trail..." value="">
+    </mat-form-field>
+  </form>
+  <button *ngIf="!search" mat-icon-button (click)="openForm()"><mat-icon>search</mat-icon></button>
+  <button *ngIf="search" mat-icon-button (click)="openForm()"><mat-icon>cancel</mat-icon></button>
+</div>
 
 <div class="trailList_container">
   <div class="progress-indicators">
     <p class="done"><mat-icon class="check-box-icon">check_box</mat-icon> - Trail fully hiked</p>
     <p class="progress"><mat-icon class="in-progress-icon">timelapse</mat-icon> - Trail in progress</p>
   </div>
-  <div class="trail" *ngFor="let trail of trails">
+  <div class="trail" *ngFor="let trail of dataSource">
     <div class="no-section-trails" *ngIf="trail.sections.length < 1; else trailSections">
       <mat-card class="mat-elevation-z2 trail-card">
         <div class="card-title">
@@ -17,8 +27,9 @@
           </p>
         </div>
         <div class="expansion-miles">
-          <!-- <mat-icon class="location-icon">location_on</mat-icon> -->
           {{ trail.length }} miles
+          <a href="{{trail.trailhead}}" *ngIf="trail.trailhead"><mat-icon matTooltip="Click for trailhead map" class="location-icon">map</mat-icon></a>
+          <a href="{{trail.trailhead}}" *ngIf="!trail.trailhead" class="dead-link"><mat-icon class="location-icon dead-link">map</mat-icon></a>
         </div>
       </mat-card>
     </div>
@@ -29,8 +40,9 @@
             {{ trail.name }}
           </mat-panel-title>
           <mat-panel-description>
-            <!-- <mat-icon class="location-icon">location_on</mat-icon> -->
             {{ trail.length }} miles
+            <a href="{{trail.trailhead}}" *ngIf="trail.trailhead"><mat-icon  matTooltip="Click for trailhead map" class="location-icon">map</mat-icon></a>
+            <a href="{{trail.trailhead}}" *ngIf="!trail.trailhead" class="dead-link"><mat-icon class="location-icon dead-link">map</mat-icon></a>
           </mat-panel-description>
         </mat-expansion-panel-header>
         <div *ngIf="trail.sections.length > 0; else elseBlock">

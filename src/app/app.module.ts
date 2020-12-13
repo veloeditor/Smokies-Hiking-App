@@ -27,6 +27,7 @@ import { SnackbarComponent } from './components/snackbar/snackbar.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HikeFormComponent } from './components/hike-form/hike-form.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { HikeFormComponent } from './components/hike-form/hike-form.component';
     MatSelectModule,
     MatSnackBarModule,
     MatAutocompleteModule,
+    MatTooltipModule
   ],
   providers: [],
   entryComponents: [ConfirmDialogComponent],

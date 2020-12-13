@@ -58,12 +58,12 @@
 </div>
 
 <div class="log_container">
-  <div class="card-header">
+  <div class="above-card-header" *ngIf="userHikes">
     You've hiked <span class="miles">{{ userUniqueMilesHiked }}</span> of miles in the Smokies
     <p *ngIf="!userHikes">You currently do not have any hikes.</p>
   </div>
   <div class="card-container">
-  <mat-card *ngFor="let userHike of userHikes; index as i;" class="mat-elevation-z3 hike-card">
+    <mat-card *ngFor="let userHike of userHikes; index as i;" class="mat-elevation-z3 hike-card">
       <div *ngIf="enableEditIndex !== i; else elseBlock">
         <div class="thumbnail">
           <div class="date">
@@ -89,9 +89,11 @@
             <li>{{ section.sectionName }} -- {{ section.sectionLength }} miles</li>
           </ul>
         </div>
-        <mat-card-actions>
-          <button mat-mini-fab mat-icon-button color="primary" (click)="editHike(userHike, $event, i)"><mat-icon>edit</mat-icon></button>
-          <button mat-mini-fab mat-icon-button color="warn" (click)="deleteHike(userHike)"><mat-icon>delete</mat-icon></button> 
+        <mat-card-actions class="card-footer">
+          <div class="card-buttons">
+            <button mat-mini-fab mat-icon-button color="primary" (click)="editHike(userHike, $event, i)"><mat-icon>edit</mat-icon></button>
+            <button mat-mini-fab mat-icon-button color="warn" (click)="deleteHike(userHike)"><mat-icon>delete</mat-icon></button> 
+          </div>
         </mat-card-actions>
       </div>
       <ng-template #elseBlock class="edit-form-container">

@@ -59,10 +59,9 @@ h2 {
     .current-miles, .percentage, .goal, .latest_hike::after {
         background:
             linear-gradient(
-                rgba(111, 73, 48, 0.3),
-                rgba(111, 73, 48, 0.3)
-            ),
-        url(src/assets/img/topo_map.png);
+                rgba(111, 73, 48, 0.9),
+                rgba(111, 73, 48, 0.9)
+            );
 
     }
 

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { startWith, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -17,7 +17,7 @@ import { EventEmitter } from 'events';
   templateUrl: './trails-log.component.html',
   styleUrls: ['./trails-log.component.scss'],
 })
-export class TrailsLogComponent implements OnInit, AfterViewInit {
+export class TrailsLogComponent implements OnInit {
 
   trailForm: FormGroup;
 
@@ -113,11 +113,6 @@ export class TrailsLogComponent implements OnInit, AfterViewInit {
       }, 0);
       this.trailObjSelectedMiles = miles?.toFixed(1);
     });
-  }
-
-  ngAfterViewInit() {
-    // this.randomPictures();
-    // console.log('ngAfterView has fired');
   }
 
   findOption(val: string) {

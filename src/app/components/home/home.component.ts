@@ -7,10 +7,12 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { UserHike } from 'src/app/interfaces/user-hike';
 import { Chart } from 'chart.js';
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  providers: [DatePipe]
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
@@ -21,9 +23,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   currentProgress = null;
   mostRecentHike = null;
   chart = [];
-  hikeMiles = [];
 
-  constructor(private trailsService: TrailsService, private userHikesService: UserHikesService) {
+  constructor(private trailsService: TrailsService, private userHikesService: UserHikesService, private datePipe: DatePipe) {
   }
 
   ngOnInit() {
@@ -39,15 +40,50 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.goalMiles = miles.toFixed(1);
       const percentage = (this.goalMiles / 800) * 100;
       this.currentProgress = percentage.toFixed(1);
+      const milesArray = [];
+      const hikeDatesArray = [];
+
+      this.userHikes.forEach(hike => {
+        const hikeMiles = hike.totalMiles;
+        milesArray.push(hikeMiles);
+        const hikeDate = hike.date;
+        const convertedDate = new DatePipe('en-US').transform(hikeDate, 'MM-dd-yyyy');
+        hikeDatesArray.push(convertedDate);
+      });
+
+      this.chart = new Chart('canvas', {
+        type: 'line',
+        data: {
+          labels: hikeDatesArray,
+          datasets: [
+            {
+              data: milesArray,
+              borderColor: '#cfc460',
+              fill: false
+            }
+          ]
+        },
+        options: {
+          legend: {
+            display: false
+          },
+          scales: {
+            xAxes: [{
+              display: true
+            }],
+            yAxes: [{
+              display: true
+            }],
+          }
+        }
+      });
 
       this.userHikes.forEach(hike => {
         const dateArray = [];
         const date = hike.date;
-        this.hikeMiles.push(hike.totalMiles);
         dateArray.push(date);
         dateArray.reduce((a, b) => b > a ? b : a);
         this.mostRecentHike = dateArray[dateArray.length - 1];
-        console.log(dateArray);
       });
     });
   }

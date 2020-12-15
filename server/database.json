@@ -2208,6 +2208,23 @@
           "sectionLength": 6.4
         }
       ]
+    },
+    {
+      "trailName": "Martins Gap Trail",
+      "totalMiles": "3.0",
+      "date": "2020-12-15T17:30:57.835Z",
+      "comments": "Knocked out the full trail. Nice 3 mile hike.",
+      "sections": [
+        {
+          "sectionName": "Indian Creek - Sunkota Ridge",
+          "sectionLength": 1.5
+        },
+        {
+          "sectionName": "Sunkota Ridge - Deep Creek",
+          "sectionLength": 1.5
+        }
+      ],
+      "id": 14
     }
   ],
   "users": [

@@ -11,15 +11,15 @@
             <br>
             miles hiked so far
         </p>
-        <canvas id="canvas">{{ chart }}</canvas>
+        <canvas id="lineChart">{{ lineChart }}</canvas>
     </div>
     <div class="percentage">
-        <div class="progress-icon">
+        <!-- <div class="progress-icon">
             <mat-icon class="in-progress-icon">timelapse</mat-icon>
-        </div>
-        <p><span class="big-font">{{ currentProgress }}% </span><br>
-            of goal accomplished so far
-        </p>
+        </div> -->
+        <!-- <p><span class="big-font">{{ currentProgress }}% </span><br> -->
+            <h3>Goal accomplished so far:</h3>
+        <circle-progress [options]="ngCircleOptions"></circle-progress>
     </div>
     <div class="goal">
         <p class="goal-p">Your current goal: <br>

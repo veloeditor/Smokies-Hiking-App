@@ -8,6 +8,9 @@ import { takeUntil } from 'rxjs/operators';
 import { UserHike } from 'src/app/interfaces/user-hike';
 import { Chart } from 'chart.js';
 import { DatePipe } from '@angular/common';
+import { CircleProgressComponent, CircleProgressOptions } from 'ng-circle-progress';
+import { ViewChild } from '@angular/core';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -16,16 +19,20 @@ import { DatePipe } from '@angular/common';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
+  constructor(private trailsService: TrailsService, private userHikesService: UserHikesService, private datePipe: DatePipe) {
+  }
+
+  @ViewChild('circleProgress') circleProgress: CircleProgressComponent;
+
   trails: Trail[];
   userHikes: UserHike[];
   destroy$: Subject<boolean> = new Subject<boolean>();
   goalMiles = null;
   currentProgress = null;
   mostRecentHike = null;
-  chart = [];
-
-  constructor(private trailsService: TrailsService, private userHikesService: UserHikesService, private datePipe: DatePipe) {
-  }
+  lineChart = [];
+  doughnut = [];
+  ngCircleOptions = {};
 
   ngOnInit() {
     this.trailsService.getAllTrails().pipe(takeUntil(this.destroy$)).subscribe((data: any[]) => {
@@ -49,9 +56,34 @@ export class HomeComponent implements OnInit, OnDestroy {
         const hikeDate = hike.date;
         const convertedDate = new DatePipe('en-US').transform(hikeDate, 'MM-dd-yyyy');
         hikeDatesArray.push(convertedDate);
+        hikeDatesArray.sort();
+        console.log(hikeDatesArray);
+
       });
 
-      this.chart = new Chart('canvas', {
+      this.ngCircleOptions = {
+        percent: this.currentProgress,
+        radius: 132,
+        outerStrokeWidth: 9,
+        innerStrokeWidth: 8,
+        outerStrokeColor: '#cfc460',
+        innerStrokeColor: '#1b5e20',
+        animation: true,
+        animationDuration: 300,
+        subtitleFormat: (percent: number): string => {
+          if (percent >= 100){
+            return 'Congratulations!';
+          } else if (percent >= 50) {
+            return 'Halfway!';
+          } else if (percent > 0) {
+            return 'Just getting started';
+          } else {
+            return 'No hikes as of yet';
+          }
+      }
+    };
+
+      this.lineChart = new Chart('lineChart', {
         type: 'line',
         data: {
           labels: hikeDatesArray,
@@ -59,7 +91,7 @@ export class HomeComponent implements OnInit, OnDestroy {
             {
               data: milesArray,
               borderColor: '#cfc460',
-              fill: false
+              fill: true
             }
           ]
         },
@@ -67,6 +99,7 @@ export class HomeComponent implements OnInit, OnDestroy {
           legend: {
             display: false
           },
+          sampleSize: 3,
           scales: {
             xAxes: [{
               display: true
@@ -83,12 +116,13 @@ export class HomeComponent implements OnInit, OnDestroy {
         const date = hike.date;
         dateArray.push(date);
         dateArray.reduce((a, b) => b > a ? b : a);
+        console.log(dateArray);
         this.mostRecentHike = dateArray[dateArray.length - 1];
       });
     });
   }
 
-  ngOnDestroy() {
+ngOnDestroy() {
     this.destroy$.next(true);
     this.destroy$.unsubscribe();
   }

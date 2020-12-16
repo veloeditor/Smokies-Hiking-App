@@ -168,7 +168,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.isUpdatingGoal = false;
       this.ngOnInit();
       // this.percentageGoal();
-      this.snackBar.open('You have udpated your goal!', 'Close', {
+      this.snackBar.open('You have updated your goal!', 'Close', {
         duration: 5000,
       });
     });

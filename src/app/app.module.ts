@@ -28,6 +28,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HikeFormComponent } from './components/hike-form/hike-form.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,23 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatSelectModule,
     MatSnackBarModule,
     MatAutocompleteModule,
-    MatTooltipModule
+    MatTooltipModule,
+    NgCircleProgressModule.forRoot({
+      backgroundGradient: false,
+      backgroundColor: 'lightgrey',
+      backgroundPadding: -10,
+      radius: 60,
+      maxPercent: 100,
+      outerStrokeWidth: 10,
+      outerStrokeColor: '#61A9DC',
+      innerStrokeWidth: 9,
+      innerStrokeColor: '#1b5e20',
+      subtitleColor: '#444444',
+      titleFontSize: '62',
+      unitsFontSize: '17',
+      subtitleFontSize: '13',
+      showInnerStroke: true,
+      startFromZero: false}),
   ],
   providers: [],
   entryComponents: [ConfirmDialogComponent],

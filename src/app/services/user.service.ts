@@ -26,8 +26,9 @@ export class UserService {
   }
 
   editUser(user: User): Observable<User> {
-    return this.httpClient.post<User>(this.REST_API_SERVER, JSON.stringify(user), this.httpOptions)
-    .pipe(
+    const url = `${this.REST_API_SERVER}/${user.id}`;
+    return this.httpClient.patch<User>(url, user, this.httpOptions).pipe(
+    map(() => user),
       catchError(this.errorHandler)
     );
   }

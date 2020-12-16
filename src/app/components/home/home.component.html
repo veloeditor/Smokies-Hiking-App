@@ -25,7 +25,19 @@
     <div class="goal">
         <p class="goal-p">Your current goal: <br>
             <span class="big-font">{{ goal }} miles</span></p>
-        <button mat-mini-fab><mat-icon>edit</mat-icon></button>   
+        <button mat-mini-fab (click)="editUserGoal()"><mat-icon>edit</mat-icon></button>
+        <div class="update-goal-input" *ngIf="isUpdatingGoal">
+            <form [formGroup]="goalForm" (ngSubmit)="updateGoal(goalForm)" class="form">
+                <h2>Edit your mileage goal:</h2>
+                <mat-form-field>
+                    <mat-label>Update your goal</mat-label>
+                    <input formControlName="goal" matInput [value]="goal">
+                </mat-form-field>
+                <button mat-icon-button mat-mini-fab matTooltip="Save" type="submit" [disabled]="!goalForm.valid" class="submit_btn">
+                    <mat-icon class="save_icon">save</mat-icon>
+                  </button>
+            </form>
+        </div>   
     </div>
 </div>
 <div class="latest_hike">

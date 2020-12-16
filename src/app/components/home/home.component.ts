@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable } from 'rxjs';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { TrailsService } from '../../services/trails.service';
 import { UserHikesService } from '../../services/user-hikes.service';
 import { Trail } from '../../interfaces/trail';
@@ -10,6 +10,8 @@ import { Chart } from 'chart.js';
 import { DatePipe } from '@angular/common';
 import { CircleProgressComponent, CircleProgressOptions } from 'ng-circle-progress';
 import { ViewChild } from '@angular/core';
+import { User } from 'src/app/interfaces/user';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -19,33 +21,48 @@ import { ViewChild } from '@angular/core';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  constructor(private trailsService: TrailsService, private userHikesService: UserHikesService, private datePipe: DatePipe) {
-  }
-
   @ViewChild('circleProgress') circleProgress: CircleProgressComponent;
 
   trails: Trail[];
   userHikes: UserHike[];
+  users: User[];
+  user: User;
+  goalForm: FormGroup;
   destroy$: Subject<boolean> = new Subject<boolean>();
   uniqueMiles = null;
   currentProgress = null;
   mostRecentHike = null;
   lineChart = [];
   ngCircleOptions = {};
-  goal = 800;
+  goal = null;
+  isUpdatingGoal = false;
+
+  constructor(private trailsService: TrailsService,
+              private userHikesService: UserHikesService,
+              private datePipe: DatePipe,
+              private userService: UserService,
+              private fb: FormBuilder) {
+}
 
   ngOnInit() {
     this.trailsService.getAllTrails().pipe(takeUntil(this.destroy$)).subscribe((data: any[]) => {
       this.trails = data;
     });
 
+    this.userService.getAllUsers().pipe(takeUntil(this.destroy$)).subscribe((data: any[]) => {
+      this.users = data;
+      this.goal = this.users[0].goal;
+      this.user = this.users[0];
+      console.log(this.user);
+    });
+
     this.userHikesService.getAllUserHikes().subscribe((data: UserHike[]) => {
       this.userHikes = data;
-      const miles =  this.userHikes.reduce((acc, userHike) => {
+      const miles = this.userHikes.reduce((acc, userHike) => {
         return acc + Number(userHike.totalMiles);
-       }, 0);
+      }, 0);
       this.uniqueMiles = miles.toFixed(1);
-      const percentage = (this.uniqueMiles / 800) * 100;
+      const percentage = (this.uniqueMiles / this.goal) * 100;
       this.currentProgress = percentage.toFixed(1);
       const milesArray = [];
       const reduceMilesArray = [];
@@ -59,7 +76,10 @@ export class HomeComponent implements OnInit, OnDestroy {
         const convertedDate = new DatePipe('en-US').transform(hikeDate, 'MM-dd-yyyy');
         hikeDatesArray.push(convertedDate);
         hikeDatesArray.sort();
+      });
 
+      this.goalForm = this.fb.group({
+        goal: [this.goal, [Validators.required]]
       });
 
       this.ngCircleOptions = {
@@ -72,7 +92,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         animation: true,
         animationDuration: 300,
         subtitleFormat: (percent: number): string => {
-          if (percent >= 100){
+          if (percent >= 100) {
             return 'Congratulations!';
           } else if (percent >= 50) {
             return 'Halfway!';
@@ -81,8 +101,8 @@ export class HomeComponent implements OnInit, OnDestroy {
           } else {
             return 'No hikes as of yet';
           }
-      }
-    };
+        }
+      };
 
       this.lineChart = new Chart('lineChart', {
         type: 'line',
@@ -105,9 +125,9 @@ export class HomeComponent implements OnInit, OnDestroy {
             xAxes: [{
               display: true,
               type: 'time',
-                time: {
-                    unit: 'month'
-                }
+              time: {
+                unit: 'month'
+              }
             }],
             yAxes: [{
               display: true
@@ -126,7 +146,24 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
   }
 
-ngOnDestroy() {
+  editUserGoal() {
+    console.log('I was clicked');
+    this.isUpdatingGoal = !this.isUpdatingGoal;
+  }
+
+  updateGoal(goalForm: FormGroup) {
+    const user = {
+      id: this.user.id,
+      goal: this.goalForm.value.goal
+    } as User;
+
+    this.userService.editUser(user).subscribe(_ => {
+      this.isUpdatingGoal = false;
+      this.userService.getAllUsers();
+    });
+  }
+
+  ngOnDestroy() {
     this.destroy$.next(true);
     this.destroy$.unsubscribe();
   }

@@ -39,17 +39,14 @@ export class HikeFormComponent implements OnInit {
       this.trails = data;
       const hikedTrailName = this.userHike.trailName;
       this.trailObjectedEdited = this.trails?.find((t) => t.name === hikedTrailName);
-      console.log('trailObjectedEdited', this.trailObjectedEdited.sections);
-      console.log('this.userHike.sections', this.userHike.sections);
       const results = this.trailObjectedEdited.sections.filter(( { sectionName: id1 }) =>
         this.userHike.sections.some(({ sectionName: id2 }) => id2 === id1));
       this.trailForm.get('sections').setValue(results);
-      console.log('results', results);
     });
 
     this.trailForm = this.fb.group({
       trailName: [this.defaultString(this.userHike?.trailName), [Validators.required]],
-      totalMiles: [this.defaultNumber(this.userHike.totalMiles), [Validators.required]],
+      totalMiles: [this.userHike.totalMiles, [Validators.required]],
       date: [this.userHike?.date, [Validators.required]],
       comments: this.userHike?.comments,
       sections: this.trailObjectedEdited?.sections,
@@ -62,6 +59,15 @@ export class HikeFormComponent implements OnInit {
       startWith(''),
       map(value => this.findOption(value))
     );
+
+      // this makes sure whatever is in the totalMiles input is always sent to database when submitting
+    this.trailForm.controls.totalMiles.valueChanges.subscribe((value) => {
+        this.trailObjSelectedMiles = value;
+        console.log(this.trailObjSelectedMiles);
+    });
+
+    this.trailForm.get('totalMiles').setValue(this.userHike.totalMiles);
+
 
     this.trailForm.controls.trailName.valueChanges.subscribe((change) => {
       const trailObjSelected = this.trails?.find((t) => t.name === change);
@@ -81,21 +87,22 @@ export class HikeFormComponent implements OnInit {
       }
     });
 
+    // NOTE: SOMETHING IN HERE IS BREAKING NON-SECTION TRAIL MILE EDIT
     this.trailForm.controls.sections.valueChanges.subscribe((value) => {
       this.selectedSection = value;
-      const miles = this.selectedSection?.reduce((acc, section) => {
-        if (this.hikedSectionNames.includes(section.sectionName)) {
-          console.log(section.sectionName);
-          return 0;
-        }
-        return acc + Number(section?.sectionLength);
-      }, 0);
-      this.trailObjSelectedMiles = miles?.toFixed(1);
+      if (this.userHike.sections) {
+        const miles = this.selectedSection?.reduce((acc, section) => {
+          if (this.hikedSectionNames.includes(section.sectionName)) {
+            console.log(section.sectionName);
+            return 0;
+          }
+          return acc + Number(section?.sectionLength);
+        }, 0);
+        this.trailObjSelectedMiles = miles?.toFixed(1);
+    }
     });
-    // this makes sure whatever is in the totalMiles input is always sent to database when submitting
-    this.trailForm.controls.totalMiles.valueChanges.subscribe((value) => {
-      this.trailObjSelectedMiles = value;
-    });
+
+    console.log(this.trailForm.value);
   }
 
   private defaultString(value: string): string {

@@ -27,12 +27,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   trails: Trail[];
   userHikes: UserHike[];
   destroy$: Subject<boolean> = new Subject<boolean>();
-  goalMiles = null;
+  uniqueMiles = null;
   currentProgress = null;
   mostRecentHike = null;
   lineChart = [];
-  doughnut = [];
   ngCircleOptions = {};
+  goal = 800;
 
   ngOnInit() {
     this.trailsService.getAllTrails().pipe(takeUntil(this.destroy$)).subscribe((data: any[]) => {
@@ -44,20 +44,21 @@ export class HomeComponent implements OnInit, OnDestroy {
       const miles =  this.userHikes.reduce((acc, userHike) => {
         return acc + Number(userHike.totalMiles);
        }, 0);
-      this.goalMiles = miles.toFixed(1);
-      const percentage = (this.goalMiles / 800) * 100;
+      this.uniqueMiles = miles.toFixed(1);
+      const percentage = (this.uniqueMiles / 800) * 100;
       this.currentProgress = percentage.toFixed(1);
       const milesArray = [];
+      const reduceMilesArray = [];
       const hikeDatesArray = [];
 
       this.userHikes.forEach(hike => {
         const hikeMiles = hike.totalMiles;
         milesArray.push(hikeMiles);
+        milesArray.reduce((prev, curr, i) => reduceMilesArray[i] = prev + curr, 0);
         const hikeDate = hike.date;
         const convertedDate = new DatePipe('en-US').transform(hikeDate, 'MM-dd-yyyy');
         hikeDatesArray.push(convertedDate);
         hikeDatesArray.sort();
-        console.log(hikeDatesArray);
 
       });
 
@@ -89,7 +90,7 @@ export class HomeComponent implements OnInit, OnDestroy {
           labels: hikeDatesArray,
           datasets: [
             {
-              data: milesArray,
+              data: reduceMilesArray,
               borderColor: '#cfc460',
               fill: true
             }
@@ -102,7 +103,11 @@ export class HomeComponent implements OnInit, OnDestroy {
           sampleSize: 3,
           scales: {
             xAxes: [{
-              display: true
+              display: true,
+              type: 'time',
+                time: {
+                    unit: 'month'
+                }
             }],
             yAxes: [{
               display: true
@@ -116,7 +121,6 @@ export class HomeComponent implements OnInit, OnDestroy {
         const date = hike.date;
         dateArray.push(date);
         dateArray.reduce((a, b) => b > a ? b : a);
-        console.log(dateArray);
         this.mostRecentHike = dateArray[dateArray.length - 1];
       });
     });

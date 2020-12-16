@@ -1,13 +1,14 @@
 <div class="app_title">
-    <h1>The 900 Miler Challenge</h1>
+    <h1>The 900* Miler Challenge</h1>
     <h2>Hike all of the trails of the Great Smoky Mountains</h2>
+    <h4>*There are currently just over 800 miles of official trails</h4>
 </div>
 <div class="goals">
     <div class="current-miles">
         <div class="miles-icon">
             <mat-icon class="material-icons">directions_walk</mat-icon>
         </div>
-        <p><span class="big-font">{{ goalMiles }}</span>
+        <p><span class="big-font">{{ uniqueMiles }}</span>
             <br>
             miles hiked so far
         </p>
@@ -23,8 +24,8 @@
     </div>
     <div class="goal">
         <p class="goal-p">Your current goal: <br>
-            <span class="big-font">800 miles</span></p>
-        <mat-icon>edit</mat-icon>   
+            <span class="big-font">{{ goal }} miles</span></p>
+        <button mat-mini-fab><mat-icon>edit</mat-icon></button>   
     </div>
 </div>
 <div class="latest_hike">

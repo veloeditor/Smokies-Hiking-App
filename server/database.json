@@ -2133,8 +2133,8 @@
     {
       "id": 9,
       "trailName": "Balsam Mountain Trail",
-      "totalMiles": "5.2",
-      "date": "2020-11-12T17:42:40.148Z",
+      "totalMiles": 5.2,
+      "date": "2020-09-12T17:42:40.148Z",
       "comments": "Beautiful, but long hike. Enjoyed the scenary.",
       "sections": [
         {
@@ -2162,7 +2162,7 @@
     {
       "trailName": "Abrams Falls Trail",
       "totalMiles": 4.2,
-      "date": "2020-09-12T18:38:07.111Z",
+      "date": "2020-10-12T18:38:07.111Z",
       "comments": "Definitely one of the bussier hikes in the park, but well worth the effort to see the falls. Lots of water",
       "sections": null,
       "id": 11
@@ -2170,7 +2170,7 @@
     {
       "id": 12,
       "trailName": "Anthony Creek Trail",
-      "totalMiles": "3.5",
+      "totalMiles": 3.5,
       "date": "2020-10-30T20:29:55.174Z",
       "comments": "Nunc sed augue lacus viverra vitae congue eu consequat ac felis donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum",
       "sections": [
@@ -2191,7 +2191,7 @@
     {
       "id": 13,
       "trailName": "Appalachian Trail",
-      "totalMiles": "13.2",
+      "totalMiles": 13.2,
       "date": "2020-12-11T01:55:10.403Z",
       "comments": "I did the first section of the Appalachian Trail!!",
       "sections": [
@@ -2208,23 +2208,6 @@
           "sectionLength": 6.4
         }
       ]
-    },
-    {
-      "trailName": "Martins Gap Trail",
-      "totalMiles": "3.0",
-      "date": "2020-12-15T17:30:57.835Z",
-      "comments": "Knocked out the full trail. Nice 3 mile hike.",
-      "sections": [
-        {
-          "sectionName": "Indian Creek - Sunkota Ridge",
-          "sectionLength": 1.5
-        },
-        {
-          "sectionName": "Sunkota Ridge - Deep Creek",
-          "sectionLength": 1.5
-        }
-      ],
-      "id": 14
     }
   ],
   "users": [
@@ -2232,7 +2215,8 @@
       "id": 1,
       "userName": "Brian",
       "email": "brian@email.com",
-      "password": 1234
+      "password": 1234,
+      "goal": 800
     }
   ]
 }

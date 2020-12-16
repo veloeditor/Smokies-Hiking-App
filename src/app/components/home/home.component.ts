@@ -12,6 +12,7 @@ import { CircleProgressComponent, CircleProgressOptions } from 'ng-circle-progre
 import { ViewChild } from '@angular/core';
 import { User } from 'src/app/interfaces/user';
 import { UserService } from 'src/app/services/user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-home',
@@ -41,7 +42,9 @@ export class HomeComponent implements OnInit, OnDestroy {
               private userHikesService: UserHikesService,
               private datePipe: DatePipe,
               private userService: UserService,
-              private fb: FormBuilder) {
+              private fb: FormBuilder,
+              private snackBar: MatSnackBar
+              ) {
 }
 
   ngOnInit() {
@@ -62,8 +65,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         return acc + Number(userHike.totalMiles);
       }, 0);
       this.uniqueMiles = miles.toFixed(1);
-      const percentage = (this.uniqueMiles / this.goal) * 100;
-      this.currentProgress = percentage.toFixed(1);
+      this.percentageGoal();
       const milesArray = [];
       const reduceMilesArray = [];
       const hikeDatesArray = [];
@@ -95,9 +97,9 @@ export class HomeComponent implements OnInit, OnDestroy {
           if (percent >= 100) {
             return 'Congratulations!';
           } else if (percent >= 50) {
-            return 'Halfway!';
+            return 'Halfway there!';
           } else if (percent > 0) {
-            return 'Just getting started';
+            return 'Just getting going!';
           } else {
             return 'No hikes as of yet';
           }
@@ -146,6 +148,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
   }
 
+  private percentageGoal() {
+    const percentage = (this.uniqueMiles / this.goal) * 100;
+    this.currentProgress = percentage.toFixed(1);
+  }
+
   editUserGoal() {
     console.log('I was clicked');
     this.isUpdatingGoal = !this.isUpdatingGoal;
@@ -159,7 +166,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     this.userService.editUser(user).subscribe(_ => {
       this.isUpdatingGoal = false;
-      this.userService.getAllUsers();
+      this.ngOnInit();
+      // this.percentageGoal();
+      this.snackBar.open('You have udpated your goal!', 'Close', {
+        duration: 5000,
+      });
     });
   }
 

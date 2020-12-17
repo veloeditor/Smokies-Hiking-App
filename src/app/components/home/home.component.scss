@@ -8,12 +8,13 @@ h1, h2, h4 {
 h1 {
     margin-bottom: 0;
     font-weight: bold;
-    font-size: 2.2em;
+    font-size: 3em;
 }
 
 h2 {
     font-size: 1.2em;
-    font-weight: 500;
+    font-weight: 200;
+    color:rgb(203, 204, 203);
     margin: 0;
 }
 
@@ -95,24 +96,11 @@ h4 {
     }
 }
 
-.latest_hike {
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 40px;
-    padding-bottom: 20px;
-
-    .date {
-        font-weight: bold;
-        font-size: 1.2em;
-    }
-}
-
 .main_options {
     display: flex;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 25px;
     justify-content: center;
     gap: 30px;
     justify-content: space-evenly;
@@ -130,5 +118,22 @@ a {
     p {
         margin-top: 10px;
     }
-    
+}
+
+.percentage {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    line-height: 1.4 !important;
+
+    h3 {
+        font-size: 1.2em;
+        font-weight: 500;
+    }
+
+    .date {
+        font-weight: bold;
+        font-size: 1.2em;
+    }
 }

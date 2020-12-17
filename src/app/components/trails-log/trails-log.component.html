@@ -58,7 +58,7 @@
 </div>
 
 <div class="log_container">
-  <div class="above-card-header" *ngIf="userHikes">
+  <div class="above-card-header" *ngIf="userHikes && !addUser">
     You've hiked <span class="miles">{{ userUniqueMilesHiked }}</span> of miles in the Smokies
     <p *ngIf="!userHikes">You currently do not have any hikes.</p>
   </div>

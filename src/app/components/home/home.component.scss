@@ -17,6 +17,10 @@ h2 {
     margin: 0;
 }
 
+h3 {
+    font-size: 1.3em;
+}
+
 h4 {
     margin: 0;
     font-size: 1em;
@@ -38,6 +42,7 @@ h4 {
     gap: 20px;
     align-items: center;
     text-align: center;
+    max-width: 1100px;
     // color: black;
 
     .current-miles, .percentage, .goal {
@@ -71,12 +76,37 @@ h4 {
 
     }
 
+    .goal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .current-goal {
+            flex-direction: row;
+        }
+
+        .mat-icon {
+            margin-bottom: 15px;
+        }
+
+        .submit_btn {
+            margin-left: 10px;
+            margin-bottom: 12px;
+        }
+
+        .big-font {
+            padding-right: 10px;
+        }
+        
+    }
+
     .current-miles, .percentage {
         display: flex;
         justify-content: center;
         flex-direction: column;
         line-height: .8;
-        height: 370px;
+        height: 350px;
 
         p {
             display: flex;
@@ -131,4 +161,8 @@ a {
         margin-top: 10px;
     }
     
+}
+
+mat-form-field {
+    width: 120px;
 }

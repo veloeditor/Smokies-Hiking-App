@@ -61,7 +61,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.users = data;
       this.goal = this.users[0].goal;
       this.user = this.users[0];
-      console.log(this.user);
     });
 
     this.userHikesService.getAllUserHikes().subscribe((data: UserHike[]) => {
@@ -182,7 +181,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.snackBar.open('You have updated your goal!', 'Close', {
         duration: 5000,
       });
-      this.router.navigateByUrl('/');
+      // this.router.navigateByUrl('/');
     });
   }
 

@@ -167,7 +167,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   editUserGoal() {
-    console.log('I was clicked');
     this.isUpdatingGoal = !this.isUpdatingGoal;
   }
 
@@ -179,8 +178,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     this.userService.editUser(user).subscribe(_ => {
       this.isUpdatingGoal = false;
-      // this.ngOnInit();
-      // this.percentageGoal();
       this.triggerCircularProgress();
       this.snackBar.open('You have updated your goal!', 'Close', {
         duration: 5000,

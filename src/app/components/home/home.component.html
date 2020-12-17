@@ -1,7 +1,7 @@
 <div class="app_title">
-    <h1>The 900* Miler Challenge</h1>
-    <h2>Hike all of the trails of the Great Smoky Mountains</h2>
-    <h4>*There are currently just over 800 miles of official trails</h4>
+    <h1>The 900 Miler Challenge</h1>
+    <h2>- Hike all of the trails of the Great Smoky Mountains -</h2>
+    <!-- <h4>*There are currently just over 800 miles of official trails</h4> -->
 </div>
 <div class="goals">
     <div class="current-miles">
@@ -15,8 +15,9 @@
         <canvas id="lineChart">{{ lineChart }}</canvas>
     </div>
     <div class="percentage">
-            <h3>Goal accomplished so far:</h3>
+        <h3>Goal accomplished so far:</h3>
         <circle-progress [options]="ngCircleOptions"></circle-progress>
+        <p>Your last hike was on: <span class="date"> {{ mostRecentHike | date }}</span></p>
     </div>
     <div class="goal">
         <div class="current-goal">
@@ -38,9 +39,6 @@
             </form>
         </div>   
     </div>
-</div>
-<div class="latest_hike">
-    <p>Your last hike was on: <span class="date"> {{ mostRecentHike | date }}</span></p>
 </div>
 <div class="main_options">
         <div class="go-to-log">

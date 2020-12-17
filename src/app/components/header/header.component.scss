@@ -2,6 +2,11 @@
     margin-bottom: 25px;
 }
 
+.nav-bar {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .example-spacer {
     flex: 1 1 auto;
 }
@@ -9,4 +14,5 @@
 .logo {
     padding-right: 15px;
     font-weight: bold;
+    font-size: 1.5em;
 }

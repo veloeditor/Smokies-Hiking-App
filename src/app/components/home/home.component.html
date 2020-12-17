@@ -20,9 +20,24 @@
         <p>Your last hike was on: <span class="date"> {{ mostRecentHike | date }}</span></p>
     </div>
     <div class="goal">
-        <p class="goal-p">Your current goal: <br>
-            <span class="big-font">{{ goal }} miles</span></p>
-        <button mat-mini-fab><mat-icon>edit</mat-icon></button>   
+        <div class="current-goal">
+            <p class="goal-p">Your current goal: <br>
+                <span class="big-font">{{ goal }} miles</span>
+            <button mat-icon-button *ngIf="!isUpdatingGoal" (click)="editUserGoal()"><mat-icon>edit</mat-icon></button>
+            <button mat-icon-button (click)="editUserGoal()" *ngIf="isUpdatingGoal"><mat-icon>cancel</mat-icon></button></p>
+        </div>
+        <div class="update-goal-input" *ngIf="isUpdatingGoal">
+            <form [formGroup]="goalForm" (ngSubmit)="updateGoal(goalForm)" class="form">
+                <h2>Edit your mileage goal:</h2>
+                <mat-form-field>
+                    <mat-label>Update your goal</mat-label>
+                    <input formControlName="goal" matInput required [value]="goal">
+                </mat-form-field>
+                <button color="primary" mat-icon-button mat-mini-fab matTooltip="Save" type="submit" [disabled]="!goalForm.valid" class="submit_btn">
+                    <mat-icon class="save_icon">save</mat-icon>
+                  </button>
+            </form>
+        </div>   
     </div>
 </div>
 <div class="main_options">

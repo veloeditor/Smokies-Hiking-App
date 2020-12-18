@@ -26,7 +26,6 @@ export class TrailsLogComponent implements OnInit {
   enableEdit = false;
   enableEditIndex = null;
   pictureLink = '';
-  picArray = ['bridge.jpg', 'cabin.jpg', 'jumpoff.jpg', 'trail_1.jpg', 'trail_2.jpg'];
 
   trails: Trail[];
   hikedNames = [];
@@ -98,9 +97,9 @@ export class TrailsLogComponent implements OnInit {
       }
     });
 
-    this.trailForm.controls.comments.valueChanges.subscribe((comment) => {
-      console.log('comments', comment);
-    });
+    // this.trailForm.controls.comments.valueChanges.subscribe((comment) => {
+    //   console.log('comments', comment);
+    // });
 
     this.trailForm.controls.sections.valueChanges.subscribe((value) => {
       this.selectedSection = value;

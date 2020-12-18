@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   mostRecentHike = null;
   lineChart = [];
   ngCircleOptions = {};
-  goal = null;
+  goal: number;
   isUpdatingGoal = false;
 
   constructor(private trailsService: TrailsService,
@@ -46,11 +46,7 @@ export class HomeComponent implements OnInit, OnDestroy {
               private fb: FormBuilder,
               private snackBar: MatSnackBar,
               private router: Router
-              ) {
-                this.router.routeReuseStrategy.shouldReuseRoute = () => {
-                  return false;
-                };
-}
+              ) {}
 
   ngOnInit() {
     this.trailsService.getAllTrails().pipe(takeUntil(this.destroy$)).subscribe((data: any[]) => {
@@ -63,7 +59,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.user = this.users[0];
     });
 
-    this.userHikesService.getAllUserHikes().subscribe((data: UserHike[]) => {
+    this.userHikesService.getAllUserHikes().pipe(takeUntil(this.destroy$)).subscribe((data: UserHike[]) => {
       this.userHikes = data;
       const miles = this.userHikes.reduce((acc, userHike) => {
         return acc + Number(userHike.totalMiles);
@@ -85,9 +81,9 @@ export class HomeComponent implements OnInit, OnDestroy {
       });
 
       this.goalForm = this.fb.group({
-        goal: [this.goal, [Validators.required]]
+        goal: [this.goal, [Validators.required, Validators.max(800.7)]]
       });
-
+      this.percentageGoal();
       this.triggerCircularProgress();
 
       this.createBarChart(hikeDatesArray, reduceMilesArray);
@@ -111,7 +107,9 @@ export class HomeComponent implements OnInit, OnDestroy {
           {
             data: reduceMilesArray,
             borderColor: '#cfc460',
-            fill: true
+            fill: true,
+            pointStyle: 'rectRounded',
+            backgroundColor: 'rgba(0, 0, 0, 0.4)'
           }
         ]
       },
@@ -136,6 +134,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
   }
 
+  private percentageGoal() {
+    const percentage = (this.uniqueMiles / this.goal) * 100;
+    this.currentProgress = percentage.toFixed(1);
+  }
+
   private triggerCircularProgress() {
     this.ngCircleOptions = {
       percent: this.currentProgress,
@@ -152,7 +155,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         } else if (percent >= 50) {
           return 'Halfway there!';
         } else if (percent > 0) {
-          return 'Just getting going!';
+          return 'Making progress!';
         } else {
           return 'No hikes as of yet';
         }
@@ -160,28 +163,32 @@ export class HomeComponent implements OnInit, OnDestroy {
     };
   }
 
-  private percentageGoal() {
-    const percentage = (this.uniqueMiles / this.goal) * 100;
-    this.currentProgress = percentage.toFixed(1);
-  }
 
   editUserGoal() {
     this.isUpdatingGoal = !this.isUpdatingGoal;
   }
 
+  reloadCurrentRoute() {
+    const currentUrl = this.router.url;
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+        this.router.navigate([currentUrl]);
+    });
+}
+
   updateGoal(goalForm: FormGroup) {
     const user = {
       id: this.user.id,
-      goal: this.goalForm.value.goal
+      goal: Number(this.goalForm.value.goal)
     } as User;
 
     this.userService.editUser(user).subscribe(_ => {
       this.isUpdatingGoal = false;
       this.triggerCircularProgress();
+      // this.ngOnInit();
+      this.reloadCurrentRoute();
       this.snackBar.open('You have updated your goal!', 'Close', {
         duration: 5000,
       });
-      // this.router.navigateByUrl('/');
     });
   }
 

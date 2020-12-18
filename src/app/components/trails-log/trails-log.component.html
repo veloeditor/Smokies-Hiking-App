@@ -19,7 +19,7 @@
       </mat-form-field>
       <mat-form-field appearance="fill" color="primary" class="miles-form-field">
         <mat-label>Total Miles Hiked</mat-label>
-        <input formControlName="totalMiles" required matInput [value]="trailObjSelectedMiles" />
+        <input type="number" formControlName="totalMiles" required matInput [value]="trailObjSelectedMiles" />
       </mat-form-field>
 
       <mat-form-field *ngIf="sectionNameArray" appearance="fill" class="sections-form-field">

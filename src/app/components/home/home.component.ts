@@ -109,7 +109,7 @@ export class HomeComponent implements OnInit, OnDestroy {
             borderColor: '#cfc460',
             fill: true,
             pointStyle: 'rectRounded',
-            backgroundColor: 'rgba(0, 0, 0, 0.4)'
+            backgroundColor: 'rgba(0, 0, 0, 0.3)'
           }
         ]
       },

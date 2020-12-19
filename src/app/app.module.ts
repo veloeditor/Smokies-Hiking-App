@@ -29,6 +29,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HikeFormComponent } from './components/hike-form/hike-form.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     SnackbarComponent,
     ConfirmDialogComponent,
     HikeFormComponent,
+    ScrollToTopComponent,
   ],
   imports: [
     BrowserModule,

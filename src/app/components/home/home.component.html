@@ -28,14 +28,17 @@
         </div>
         <div class="update-goal-input" *ngIf="isUpdatingGoal">
             <form [formGroup]="goalForm" (ngSubmit)="updateGoal(goalForm)" class="form">
-                <h2>Edit your mileage goal:</h2>
-                <mat-form-field>
-                    <mat-label>Update your goal</mat-label>
-                    <input formControlName="goal" matInput required [value]="goal">
-                </mat-form-field>
-                <button color="primary" mat-icon-button mat-mini-fab matTooltip="Save" type="submit" [disabled]="!goalForm.valid" class="submit_btn">
-                    <mat-icon class="save_icon">save</mat-icon>
-                  </button>
+                <p class="above-goal-form-text">By default your goal is to hike (the just over) 800 miles of trails in the Smokies. But you can set a more obtainable goal first.</p>
+                <div class="goal-form">
+                    <!-- <p>Edit your goal:</p> -->
+                    <mat-form-field>
+                        <mat-label>Update your goal</mat-label>
+                        <input formControlName="goal" matInput required [value]="goal">
+                    </mat-form-field>
+                    <button color="primary" mat-icon-button mat-mini-fab matTooltip="Save" type="submit" [disabled]="!goalForm.valid" class="submit_btn">
+                        <mat-icon class="save_icon">save</mat-icon>
+                      </button>
+                </div>
             </form>
         </div>   
     </div>
@@ -48,6 +51,6 @@
         <div class="official-list">
             <a routerLink="/trails"><button mat-icon-button mat-mini-fab color="primary"><mat-icon class="material-icons">library_books</mat-icon></button></a>
             <p>View the official trail list</p> 
-        </div>
-        
+        </div> 
 </div>
+<router-outlet></router-outlet>

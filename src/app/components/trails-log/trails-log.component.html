@@ -19,7 +19,7 @@
       </mat-form-field>
       <mat-form-field appearance="fill" color="primary" class="miles-form-field">
         <mat-label>Total Miles Hiked</mat-label>
-        <input formControlName="totalMiles" required matInput [value]="trailObjSelectedMiles" />
+        <input type="number" formControlName="totalMiles" required matInput [value]="trailObjSelectedMiles" />
       </mat-form-field>
 
       <mat-form-field *ngIf="sectionNameArray" appearance="fill" class="sections-form-field">
@@ -83,7 +83,7 @@
         <mat-card-title> {{ userHike.trailName }}</mat-card-title>
         <mat-card-subtitle>{{ userHike.totalMiles }} miles hiked</mat-card-subtitle>
         <mat-card-content>{{ userHike.comments }}</mat-card-content>
-        <div *ngIf="userHike.sections" class="sections-section">
+        <div *ngIf="userHike?.sections?.length > 1" class="sections-section">
           <h4>Sections hiked:</h4>
           <ul *ngFor="let section of userHike.sections">
             <li>{{ section.sectionName }} -- {{ section.sectionLength }} miles</li>

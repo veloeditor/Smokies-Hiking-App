@@ -46,7 +46,7 @@ export class HikeFormComponent implements OnInit {
 
     this.trailForm = this.fb.group({
       trailName: [this.defaultString(this.userHike?.trailName), [Validators.required]],
-      totalMiles: [this.userHike.totalMiles, [Validators.required]],
+      totalMiles: [this.defaultNumber(this.userHike?.totalMiles), [Validators.required]],
       date: [this.userHike?.date, [Validators.required]],
       comments: this.userHike?.comments,
       sections: this.trailObjectedEdited?.sections,
@@ -63,7 +63,6 @@ export class HikeFormComponent implements OnInit {
       // this makes sure whatever is in the totalMiles input is always sent to database when submitting
     this.trailForm.controls.totalMiles.valueChanges.subscribe((value) => {
         this.trailObjSelectedMiles = value;
-        console.log(this.trailObjSelectedMiles);
     });
 
     this.trailForm.get('totalMiles').setValue(this.userHike.totalMiles);
@@ -71,7 +70,6 @@ export class HikeFormComponent implements OnInit {
 
     this.trailForm.controls.trailName.valueChanges.subscribe((change) => {
       const trailObjSelected = this.trails?.find((t) => t.name === change);
-      console.log('trailName.valueChanges');
       if (trailObjSelected?.sections?.length < 1) {
         if (this.hikedNames.includes(trailObjSelected.name)) {
           window.alert('You already hiked this!');
@@ -87,19 +85,17 @@ export class HikeFormComponent implements OnInit {
       }
     });
 
-    // NOTE: SOMETHING IN HERE IS BREAKING NON-SECTION TRAIL MILE EDIT
     this.trailForm.controls.sections.valueChanges.subscribe((value) => {
       this.selectedSection = value;
       if (this.userHike.sections) {
         const miles = this.selectedSection?.reduce((acc, section) => {
           if (this.hikedSectionNames.includes(section.sectionName)) {
-            console.log(section.sectionName);
             return 0;
           }
           return acc + Number(section?.sectionLength);
         }, 0);
         this.trailObjSelectedMiles = miles?.toFixed(1);
-    }
+      }
     });
 
     console.log(this.trailForm.value);
@@ -122,7 +118,7 @@ export class HikeFormComponent implements OnInit {
     const hike = {
       id: this.userHike.id,
       trailName: this.trailForm.value.trailName,
-      totalMiles: this.trailObjSelectedMiles,
+      totalMiles: Number(this.trailObjSelectedMiles),
       date: this.trailForm.value.date,
       comments: this.trailForm.value.comments,
       sections: this.trailForm.value.sections

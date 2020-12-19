@@ -4,4 +4,5 @@ export interface User {
     email: string;
     password: number;
     goal: number;
+    extraMiles: number;
 }

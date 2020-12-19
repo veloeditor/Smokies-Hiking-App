@@ -34,7 +34,7 @@ export class UserHikesService {
 
   updateHike(userHike: UserHike): Observable<UserHike> {
     const url = `${this.REST_API_SERVER}/${userHike.id}`;
-    return this.httpClient.put<UserHike>(url, userHike, this.httpOptions).pipe(
+    return this.httpClient.put<UserHike>(url, JSON.stringify(userHike), this.httpOptions).pipe(
       map(() => userHike),
       catchError(this.errorHandler)
     );

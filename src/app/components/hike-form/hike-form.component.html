@@ -6,7 +6,7 @@
       <input formControlName="trailName" required matInput [matAutocomplete]="auto" />
       <mat-autocomplete #auto="matAutocomplete">
         <mat-option *ngFor="let trail of filteredTrails | async" [value]="trail.name">
-          {{ trail.name }}
+          {{ trail?.name }}
         </mat-option>
       </mat-autocomplete>
     </mat-form-field>
@@ -15,7 +15,7 @@
       <input type="number" formControlName="totalMiles" required matInput [value]="trailObjSelectedMiles" />
     </mat-form-field>
 
-    <mat-form-field *ngIf="userHike?.sections !== null" appearance="fill" class="sections-form-field">
+    <mat-form-field *ngIf="selectedSection.length > 0" appearance="fill" class="sections-form-field">
       <mat-label>Sections</mat-label>
       <mat-select formControlName="sections" multiple>
         <mat-select-trigger>

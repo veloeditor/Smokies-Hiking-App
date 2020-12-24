@@ -9,4 +9,6 @@ export interface UserHike {
         sectionName: string;
         sectionLength: number;
       }];
+    roundTrip: boolean;
+    roundTripMiles: number;
   }

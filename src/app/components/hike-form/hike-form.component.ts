@@ -46,10 +46,10 @@ export class HikeFormComponent implements OnInit {
 
     this.trailForm = this.fb.group({
       trailName: [this.defaultString(this.userHike?.trailName), [Validators.required]],
-      totalMiles: [this.defaultNumber(this.userHike?.totalMiles), [Validators.required]],
-      date: [this.userHike?.date, [Validators.required]],
-      comments: this.userHike?.comments,
-      sections: this.trailObjectedEdited?.sections,
+      totalMiles: [this.userHike?.totalMiles, [Validators.required]],
+      date: [this.defaultDate(this.userHike?.date), [Validators.required]],
+      comments: this.defaultString(this.userHike?.comments),
+      sections: this.defaultSections(this.trailObjectedEdited?.sections),
     });
 
     this.sectionNameArray = this.userHike.sections;
@@ -107,6 +107,14 @@ export class HikeFormComponent implements OnInit {
 
   private defaultNumber(value: number): number {
     return value ? value : 0;
+  }
+
+  private defaultSections(value: []): [] {
+    return value ? value : [];
+  }
+
+  private defaultDate(value: Date): Date {
+    return value ? value: new Date();
   }
 
   findOption(val: string) {

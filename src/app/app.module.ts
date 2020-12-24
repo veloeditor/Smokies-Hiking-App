@@ -19,6 +19,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -65,6 +66,7 @@ import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.c
     MatSnackBarModule,
     MatAutocompleteModule,
     MatTooltipModule,
+    MatCheckboxModule,
     NgCircleProgressModule.forRoot({
       backgroundGradient: false,
       backgroundColor: 'lightgrey',

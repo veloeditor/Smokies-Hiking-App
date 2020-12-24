@@ -1,5 +1,5 @@
 <div class="header">
-  <h2 class="hikingLogTitle">Hiking Log</h2>
+  <h1 class="hikingLogTitle">Hiking Log</h1>
   <button mat-mini-fab color="primary" (click)="openForm()">
     <span *ngIf="!addUser" class="material-icons">add</span><span *ngIf="addUser" color="warn" class="material-icons">cancel</span>
   </button>
@@ -36,6 +36,7 @@
             section.sectionLength }} miles</mat-option>
         </mat-select>
       </mat-form-field>
+      <mat-checkbox formControlName="roundTrip">Round Trip?</mat-checkbox>
     </div>
 
     <div class="date-comments-form">
@@ -59,7 +60,7 @@
 
 <div class="log_container">
   <div class="above-card-header" *ngIf="userHikes && !addUser">
-    You've hiked <span class="miles">{{ userUniqueMilesHiked }}</span> of miles in the Smokies
+    You've hiked <span class="miles">{{ userUniqueMilesHiked }}</span> of miles of unique trails in the Smokies
     <p *ngIf="!userHikes">You currently do not have any hikes.</p>
   </div>
   <div class="card-container">

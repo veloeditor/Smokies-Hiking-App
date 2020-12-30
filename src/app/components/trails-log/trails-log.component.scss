@@ -127,7 +127,7 @@ mat-card {
   flex-direction: row;
   padding: 0;
   border-radius: 10px;
-  height: 600px;
+  height: 620px;
   
 
   ul {
@@ -190,6 +190,18 @@ mat-card {
     font-weight: 400;
     font-size: 1.1em;
     color: #e0f3e1;
+  }
+
+  .mat-card-content {
+    margin-top: 10px;
+  }
+
+  .total-miles {
+    margin-bottom: 0px;
+  }
+
+  .round-trip {
+    font-size: .9em;
   }
 
   .mat-card-actions {

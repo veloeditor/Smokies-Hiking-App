@@ -2134,6 +2134,7 @@
       "id": 9,
       "trailName": "Balsam Mountain Trail",
       "totalMiles": 5.2,
+      "roundTripMiles": 5.2,
       "date": "2020-09-12T17:42:40.148Z",
       "comments": "Beautiful, but long hike. Enjoyed the scenary.",
       "sections": [
@@ -2150,30 +2151,33 @@
           "sectionLength": 0.9
         }
       ],
-      "roundTrip": false
+      "roundTrip": true
     },
     {
       "id": 10,
       "trailName": "Ace Gap Trail",
       "totalMiles": 5.6,
+      "roundTripMiles": 5.6,
       "date": "2020-11-30T18:36:43.291Z",
       "comments": "Nice hiking trail and just long enough to feel some pain in the legs.",
       "sections": [],
-      "roundTrip": false
+      "roundTrip": true
     },
     {
       "trailName": "Abrams Falls Trail",
       "totalMiles": 4.2,
+      "roundTripMiles": 4.2,
       "date": "2020-10-12T18:38:07.111Z",
       "comments": "Definitely one of the bussier hikes in the park, but well worth the effort to see the falls. Lots of water",
       "sections": null,
-      "roundTrip": false,
+      "roundTrip": true,
       "id": 11
     },
     {
       "id": 12,
       "trailName": "Anthony Creek Trail",
       "totalMiles": 3.5,
+      "roundTripMiles": 3.5,
       "date": "2020-10-30T20:29:55.174Z",
       "comments": "Nunc sed augue lacus viverra vitae congue eu consequat ac felis donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus",
       "sections": [
@@ -2190,8 +2194,7 @@
           "sectionLength": 1.9
         }
       ],
-      "roundTrip": false
-
+      "roundTrip": true
     },
     {
       "id": 13,
@@ -2221,18 +2224,28 @@
           "sectionLength": 0.1
         }
       ],
-      "roundTrip": false
-
+      "roundTrip": true,
+      "roundTripMiles": 16.2
     },
     {
       "id": 14,
       "trailName": "Boogerman Trail",
       "totalMiles": 4.1,
+      "roundTripMiles": 4.1,
       "date": "2020-12-18T02:30:13.175Z",
       "comments": "donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus",
       "sections": [],
-      "roundTrip": false
-
+      "roundTrip": true
+    },
+    {
+      "id": 15,
+      "trailName": "Chestnut Top Trail",
+      "totalMiles": 4.3,
+      "date": "2020-12-30T19:15:19.636Z",
+      "comments": "Dolor sit amet, consectetur adipiscing elit. Aenean cursus euismod nunc a feugiat. Curabitur neque tortor, eleifend.",
+      "sections": [],
+      "roundTrip": true,
+      "roundTripMiles": 4.3
     }
   ],
   "users": [

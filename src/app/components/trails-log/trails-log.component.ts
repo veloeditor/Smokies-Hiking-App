@@ -73,7 +73,8 @@ export class TrailsLogComponent implements OnInit {
       date: [new Date(), [Validators.required]],
       comments: '',
       sections: this.sectionNameArray,
-      roundTrip: false
+      roundTrip: false,
+      roundTripMiles: ''
     });
 
     this.filteredTrails = this.trailForm.controls.trailName.valueChanges
@@ -178,7 +179,7 @@ export class TrailsLogComponent implements OnInit {
     const dialogData = new ConfirmDialogModel('Confirm Delete', message);
 
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
-      maxWidth: '400px',
+      maxWidth: '500px',
       data: dialogData
     });
 

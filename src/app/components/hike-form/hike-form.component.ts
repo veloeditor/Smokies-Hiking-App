@@ -27,6 +27,7 @@ export class HikeFormComponent implements OnInit {
   hikedNames = [];
   hikedSectionNames = [];
   trailObjectedEdited = null;
+  roundTripMileage: number;
 
   constructor(
     private userHikesService: UserHikesService,
@@ -50,6 +51,8 @@ export class HikeFormComponent implements OnInit {
       date: [this.defaultDate(this.userHike?.date), [Validators.required]],
       comments: this.defaultString(this.userHike?.comments),
       sections: this.defaultSections(this.trailObjectedEdited?.sections),
+      roundTrip: this.userHike?.roundTrip,
+      roundTripMiles: this.defaultNumber(this.userHike?.roundTripMiles)
     });
 
     this.sectionNameArray = this.userHike.sections;
@@ -63,6 +66,11 @@ export class HikeFormComponent implements OnInit {
       // this makes sure whatever is in the totalMiles input is always sent to database when submitting
     this.trailForm.controls.totalMiles.valueChanges.subscribe((value) => {
         this.trailObjSelectedMiles = value;
+        if (!this.userHike.roundTrip) {
+          this.roundTripMileage = 0;
+        } else {
+          this.roundTripMileage = this.trailObjSelectedMiles;
+        }
     });
 
     this.trailForm.get('totalMiles').setValue(this.userHike.totalMiles);
@@ -85,9 +93,17 @@ export class HikeFormComponent implements OnInit {
       }
     });
 
+    this.trailForm.controls.roundTrip.valueChanges.subscribe((value) => {
+      if (value) {
+        this.roundTripMileage = this.trailObjSelectedMiles;
+      } else {
+        this.roundTripMileage = 0;
+      }
+    });
+
     this.trailForm.controls.sections.valueChanges.subscribe((value) => {
       this.selectedSection = value;
-      if (this.userHike.sections.length > 0) {
+      if (this.userHike?.sections?.length > 0) {
         const miles = this.selectedSection?.reduce((acc, section) => {
           if (this.hikedSectionNames.includes(section.sectionName)) {
             return 0;
@@ -95,6 +111,11 @@ export class HikeFormComponent implements OnInit {
           return acc + Number(section?.sectionLength);
         }, 0);
         this.trailObjSelectedMiles = miles?.toFixed(1);
+        if (!this.userHike.roundTrip) {
+          this.roundTripMileage = 0;
+        } else {
+          this.roundTripMileage = this.trailObjSelectedMiles;
+        }
       }
     });
 
@@ -129,7 +150,9 @@ export class HikeFormComponent implements OnInit {
       totalMiles: Number(this.trailObjSelectedMiles),
       date: this.trailForm.value.date,
       comments: this.trailForm.value.comments,
-      sections: this.trailForm.value.sections
+      sections: this.trailForm.value.sections,
+      roundTrip: this.trailForm.value.roundTrip,
+      roundTripMiles: Number(this.roundTripMileage)
     } as UserHike;
 
     this.userHikesService.updateHike(hike).subscribe(_ => {

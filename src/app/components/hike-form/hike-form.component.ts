@@ -7,6 +7,7 @@ import { UserHike } from 'src/app/interfaces/user-hike';
 import { Trail } from '../../interfaces/trail';
 import { UserHikesService } from 'src/app/services/user-hikes.service';
 import { TrailsService } from 'src/app/services/trails.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-hike-form',
@@ -32,7 +33,8 @@ export class HikeFormComponent implements OnInit {
   constructor(
     private userHikesService: UserHikesService,
     private fb: FormBuilder,
-    private trailsService: TrailsService
+    private trailsService: TrailsService,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -51,8 +53,8 @@ export class HikeFormComponent implements OnInit {
       date: [this.defaultDate(this.userHike?.date), [Validators.required]],
       comments: this.defaultString(this.userHike?.comments),
       sections: this.defaultSections(this.trailObjectedEdited?.sections),
-      roundTrip: this.userHike?.roundTrip,
-      roundTripMiles: this.defaultNumber(this.userHike?.roundTripMiles)
+      roundTrip: [this.defaultBoolean(this.userHike?.roundTrip)],
+      roundTripMiles: [this.defaultNumber(this.userHike?.roundTripMiles)]
     });
 
     this.sectionNameArray = this.userHike.sections;
@@ -130,6 +132,10 @@ export class HikeFormComponent implements OnInit {
     return value ? value : 0;
   }
 
+  private defaultBoolean(value: boolean): boolean {
+    return (value === true) ? true : false;
+  }
+
   private defaultSections(value: []): [] {
     return value ? value : [];
   }
@@ -156,6 +162,9 @@ export class HikeFormComponent implements OnInit {
     } as UserHike;
 
     this.userHikesService.updateHike(hike).subscribe(_ => {
+      this.snackBar.open('Successfully updated hike', 'Close', {
+        duration: 5000,
+      });
       this.saveTrailForm.emit(false);
       });
   }

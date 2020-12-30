@@ -15,7 +15,7 @@
       <input type="number" formControlName="totalMiles" required matInput [value]="trailObjSelectedMiles" />
     </mat-form-field>
 
-    <mat-checkbox formControlName="roundTrip">Round Trip?</mat-checkbox>
+    <mat-checkbox formControlName="roundTrip" class="round-trip">Round Trip?</mat-checkbox>
 
     <mat-form-field *ngIf="selectedSection.length > 0" appearance="fill" class="sections-form-field">
       <mat-label>Sections</mat-label>

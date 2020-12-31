@@ -142,11 +142,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   private triggerCircularProgress() {
     this.ngCircleOptions = {
       percent: this.currentProgress,
+      space: -10,
       radius: 132,
-      outerStrokeWidth: 9,
-      innerStrokeWidth: 8,
-      outerStrokeColor: '#cfc460',
-      innerStrokeColor: '#1b5e20',
+      outerStrokeWidth: 10,
+      innerStrokeWidth: 9,
+      outerStrokeColor: 'green',
+      innerStrokeColor: '#cfc460',
       animation: true,
       animationDuration: 300,
       subtitleFormat: (percent: number): string => {

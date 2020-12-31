@@ -13,11 +13,13 @@ body {
   margin-right: auto;
   margin-bottom: 5px;
   justify-content: center;
-  align-items: baseline;
+  // align-items: baseline;
   gap: 15px;
 
-  h2 {
+  h1 {
     text-align: center;
+    font-weight: bolder;
+    font-size: 2.2em;
   }
 
   .cancel-btn {
@@ -105,7 +107,7 @@ body {
     height: 1px;
     top: 19.7%;
 
-    width: 100px;
+    width: 120px;
     background-image: linear-gradient(
       to right,
       rgba(0, 0, 0, 0),
@@ -113,6 +115,12 @@ body {
       rgba(204, 204, 204, 0)
     );
   }
+}
+
+.log_container {
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 mat-card {
@@ -124,8 +132,10 @@ mat-card {
   flex-wrap: wrap;
   flex-direction: row;
   padding: 0;
+  margin-left: 10px;
+  margin-right: 10px;
   border-radius: 10px;
-  height: 600px;
+  height: 620px;
   
 
   ul {
@@ -188,6 +198,18 @@ mat-card {
     font-weight: 400;
     font-size: 1.1em;
     color: #e0f3e1;
+  }
+
+  .mat-card-content {
+    margin-top: 10px;
+  }
+
+  .total-miles {
+    margin-bottom: 0px;
+  }
+
+  .round-trip {
+    font-size: .9em;
   }
 
   .mat-card-actions {

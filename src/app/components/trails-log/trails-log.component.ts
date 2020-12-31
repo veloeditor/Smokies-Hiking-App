@@ -26,6 +26,7 @@ export class TrailsLogComponent implements OnInit {
   enableEdit = false;
   enableEditIndex = null;
   pictureLink = '';
+  randomNumber: number;
 
   trails: Trail[];
   hikedNames = [];
@@ -36,6 +37,7 @@ export class TrailsLogComponent implements OnInit {
   sectionNameArray: [{sectionName: string, sectionLength: number}];
   userUniqueMilesHiked = null;
   selectedSection = [];
+  extraMiles = null;
 
   filteredTrails: Observable<Trail[]>;
 
@@ -60,6 +62,11 @@ export class TrailsLogComponent implements OnInit {
         return acc + Number(userHike.totalMiles);
       }, 0);
       this.userUniqueMilesHiked = miles.toFixed(1);
+      this.userHikes.forEach(hike => {
+        this.randomNumber = this.getRandomNumber();
+        const randomPic = `https://source.unsplash.com/random?hiking?sig=${this.randomNumber}`;
+        hike.photoUrl = randomPic;
+      });
     });
 
     this.trailsService.getAllTrails().subscribe((data: any[]) => {
@@ -72,6 +79,8 @@ export class TrailsLogComponent implements OnInit {
       date: [new Date(), [Validators.required]],
       comments: '',
       sections: this.sectionNameArray,
+      roundTrip: false,
+      roundTripMiles: ''
     });
 
     this.filteredTrails = this.trailForm.controls.trailName.valueChanges
@@ -79,6 +88,13 @@ export class TrailsLogComponent implements OnInit {
       startWith(''),
       map(value => this.findOption(value))
     );
+
+    this.trailForm.controls.roundTrip.valueChanges.subscribe((change) => {
+      if (change) {
+          this.extraMiles = this.trailObjSelectedMiles;
+          console.log('extraMiles', this.extraMiles);
+      }
+    });
 
     this.trailForm.controls.trailName.valueChanges.subscribe((change) => {
       const trailObjSelected = this.trails?.find((t) => t.name === change);
@@ -97,10 +113,6 @@ export class TrailsLogComponent implements OnInit {
       }
     });
 
-    // this.trailForm.controls.comments.valueChanges.subscribe((comment) => {
-    //   console.log('comments', comment);
-    // });
-
     this.trailForm.controls.sections.valueChanges.subscribe((value) => {
       this.selectedSection = value;
       const miles = this.selectedSection?.reduce((acc, section) => {
@@ -111,7 +123,16 @@ export class TrailsLogComponent implements OnInit {
         return acc + Number(section?.sectionLength);
       }, 0);
       this.trailObjSelectedMiles = miles?.toFixed(1);
+      if (this.trailForm.controls.roundTrip.value === true) {
+        this.extraMiles = this.trailObjSelectedMiles;
+        console.log('extraMiles', this.extraMiles);
+      }
     });
+  }
+
+  getRandomNumber() {
+    console.log('getRandomNumber is firing');
+    return (Math.floor(Math.random() * 100));
   }
 
   findOption(val: string) {
@@ -124,12 +145,15 @@ export class TrailsLogComponent implements OnInit {
   }
 
   saveTrail(trailForm: FormGroup): void {
+
     const hike = {
       trailName: this.trailForm.value.trailName,
       totalMiles: this.trailObjSelectedMiles,
       date: this.trailForm.value.date,
       comments: this.trailForm.value.comments,
-      sections: this.trailForm.value.sections
+      sections: this.trailForm.value.sections,
+      roundTrip: this.trailForm.value.roundTrip,
+      roundTripMiles: Number(this.extraMiles)
     } as UserHike;
 
     this.userHikesService.postHike(hike).subscribe(_ => {
@@ -166,7 +190,7 @@ export class TrailsLogComponent implements OnInit {
     const dialogData = new ConfirmDialogModel('Confirm Delete', message);
 
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
-      maxWidth: '400px',
+      maxWidth: '500px',
       data: dialogData
     });
 

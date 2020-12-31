@@ -26,6 +26,7 @@ export class TrailsLogComponent implements OnInit {
   enableEdit = false;
   enableEditIndex = null;
   pictureLink = '';
+  randomNumber: number;
 
   trails: Trail[];
   hikedNames = [];
@@ -61,6 +62,11 @@ export class TrailsLogComponent implements OnInit {
         return acc + Number(userHike.totalMiles);
       }, 0);
       this.userUniqueMilesHiked = miles.toFixed(1);
+      this.userHikes.forEach(hike => {
+        this.randomNumber = this.getRandomNumber();
+        const randomPic = `https://source.unsplash.com/random?hiking?sig=${this.randomNumber}`;
+        hike.photoUrl = randomPic;
+      });
     });
 
     this.trailsService.getAllTrails().subscribe((data: any[]) => {
@@ -122,6 +128,11 @@ export class TrailsLogComponent implements OnInit {
         console.log('extraMiles', this.extraMiles);
       }
     });
+  }
+
+  getRandomNumber() {
+    console.log('getRandomNumber is firing');
+    return (Math.floor(Math.random() * 100));
   }
 
   findOption(val: string) {

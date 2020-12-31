@@ -11,4 +11,5 @@ export interface UserHike {
       }];
     roundTrip: boolean;
     roundTripMiles: number;
+    photoUrl: string;
   }

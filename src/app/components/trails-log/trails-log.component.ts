@@ -52,23 +52,7 @@ export class TrailsLogComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.userHikesService.getAllUserHikes().subscribe((data: any[]) => {
-      this.userHikes = data;
-      this.hiked();
-      this.userHikes.sort((a, b) =>
-        new Date(a?.date) > new Date(b?.date) ? -1 : 1
-      );
-      const miles = this.userHikes.reduce((acc, userHike) => {
-        return acc + Number(userHike.totalMiles);
-      }, 0);
-      this.userUniqueMilesHiked = miles.toFixed(1);
-      this.userHikes.forEach(hike => {
-        if (hike.photoUrl === '') {
-          const randomPic = this.randomPictures();
-          hike.photoUrl = randomPic;
-        }
-      });
-    });
+    this.getUserHikes();
 
     this.trailsService.getAllTrails().subscribe((data: any[]) => {
       this.trails = data;
@@ -129,6 +113,25 @@ export class TrailsLogComponent implements OnInit {
         this.extraMiles = this.trailObjSelectedMiles;
         console.log('extraMiles', this.extraMiles);
       }
+    });
+  }
+
+  private getUserHikes() {
+    this.userHikesService.getAllUserHikes().subscribe((data: any[]) => {
+      this.userHikes = data;
+      this.hiked();
+      this.userHikes.sort((a, b) => new Date(a?.date) > new Date(b?.date) ? -1 : 1
+      );
+      const miles = this.userHikes.reduce((acc, userHike) => {
+        return acc + Number(userHike.totalMiles);
+      }, 0);
+      this.userUniqueMilesHiked = miles.toFixed(1);
+      this.userHikes.forEach(hike => {
+        if (hike.photoUrl === '') {
+          const randomPic = this.randomPictures();
+          hike.photoUrl = randomPic;
+        }
+      });
     });
   }
 
@@ -203,24 +206,6 @@ export class TrailsLogComponent implements OnInit {
           this.getUserHikes();
         });
       }
-    });
-  }
-
-  private getUserHikes() {
-    this.userHikesService.getAllUserHikes().subscribe((data: any[]) => {
-      this.userHikes = data;
-      this.userHikes.forEach(hike => {
-        if (hike.photoUrl === '') {
-          const randomPic = this.randomPictures();
-          hike.photoUrl = randomPic;
-        }
-      });
-      this.userHikes.sort((a, b) => new Date(a?.date) > new Date(b?.date) ? -1 : 1
-      );
-      const miles = this.userHikes.reduce((acc, userHike) => {
-        return acc + Number(userHike.totalMiles);
-      }, 0);
-      this.userUniqueMilesHiked = miles.toFixed(1);
     });
   }
 

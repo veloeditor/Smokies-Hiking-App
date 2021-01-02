@@ -38,17 +38,8 @@ export class TrailsListComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.trailsService
-      .getAllTrails()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((data: any[]) => {
-        this.trails = data;
-        this.dataSource = this.trails;
-      });
-    this.userHikesService.getAllUserHikes().subscribe((data: any[]) => {
-      this.hikes = data;
-      this.hiked();
-    });
+    this.getAllTrails();
+    this.getUserHikes();
 
     this.trailListSearchForm = this.fb.group({
       search: ''
@@ -57,6 +48,23 @@ export class TrailsListComponent implements OnInit, OnDestroy {
     this.trailListSearchForm.valueChanges.subscribe((change: { search: string }) => {
       this.searchList(change.search);
     });
+  }
+
+  private getUserHikes() {
+    this.userHikesService.getAllUserHikes().subscribe((data: any[]) => {
+      this.hikes = data;
+      this.hiked();
+    });
+  }
+
+  private getAllTrails() {
+    this.trailsService
+      .getAllTrails()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((data: any[]) => {
+        this.trails = data;
+        this.dataSource = this.trails;
+      });
   }
 
   private searchList(filter: string): void {

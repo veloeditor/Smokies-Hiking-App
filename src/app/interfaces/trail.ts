@@ -3,6 +3,7 @@ export interface Trail {
    name: string;
    length: number;
    trailhead: string;
+   photoUrl: string;
    sections: [
        {
         sectionName: string,

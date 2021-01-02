@@ -210,8 +210,10 @@ export class TrailsLogComponent implements OnInit {
     this.userHikesService.getAllUserHikes().subscribe((data: any[]) => {
       this.userHikes = data;
       this.userHikes.forEach(hike => {
-        const randomPic = this.randomPictures();
-        hike.photoUrl = randomPic;
+        if (hike.photoUrl === '') {
+          const randomPic = this.randomPictures();
+          hike.photoUrl = randomPic;
+        }
       });
       this.userHikes.sort((a, b) => new Date(a?.date) > new Date(b?.date) ? -1 : 1
       );
@@ -243,7 +245,7 @@ export class TrailsLogComponent implements OnInit {
 
   hiked() {
     this.userHikes?.forEach((hike) => {
-      if (hike.sections === null) {
+      if (hike.sections === null || hike.sections.length < 1) {
         const trailName = hike.trailName;
         this.hikedNames.push(trailName);
       } else {

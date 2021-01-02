@@ -22,6 +22,7 @@ export class HikeFormComponent implements OnInit {
   trails: Trail[];
   trailForm: FormGroup;
   filteredTrails: Observable<Trail[]>;
+  pictureLink = '';
   trailObjSelectedMiles = 0;
   sectionNameArray: [{sectionName: string, sectionLength: number}];
   selectedSection = [];
@@ -158,7 +159,8 @@ export class HikeFormComponent implements OnInit {
       comments: this.trailForm.value.comments,
       sections: this.trailForm.value.sections,
       roundTrip: this.trailForm.value.roundTrip,
-      roundTripMiles: Number(this.roundTripMileage)
+      roundTripMiles: Number(this.roundTripMileage),
+      photoUrl: this.userHike.photoUrl
     } as UserHike;
 
     this.userHikesService.updateHike(hike).subscribe(_ => {

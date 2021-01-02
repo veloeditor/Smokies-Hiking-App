@@ -13,7 +13,7 @@
       "name": "Ace Gap Trail",
       "length": 5.6,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.6456453,-83.8047874",
-      "photoUrl": "",
+      "photoUrl": "https://res.cloudinary.com/djxd2b2en/image/upload/v1609610667/smokies-08_l1mmae.jpg",
       "sections": []
     },
     {
@@ -208,7 +208,7 @@
       "name": "Baxter Creek Trail",
       "length": 6.1,
       "trailhead": "",
-      "photoUrl": "",
+      "photoUrl": "https://cdn2.apstatic.com/photos/hike/7006223_medium_1554320273.jpg",
       "sections": []
     },
     {
@@ -256,7 +256,7 @@
       "name": "Big Creek Trail",
       "length": 5.8,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.75188,-83.11024",
-      "photoUrl": "",
+      "photoUrl": "https://cdn2.apstatic.com/photos/hike/7006223_medium_1554320273.jpg",
       "sections": [
         {
           "sectionName": "Big Creek Park Road - Swallow Fork",
@@ -277,7 +277,7 @@
       "name": "Big Fork Ridge Trail",
       "length": 3.2,
       "trailhead": "",
-      "photoUrl": "",
+      "photoUrl": "https://cdn2.apstatic.com/photos/hike/7038460_medium_1555088384.jpg",
       "sections": []
     },
     {
@@ -285,7 +285,7 @@
       "name": "Bone Valley Trail",
       "length": 1.8,
       "trailhead": "",
-      "photoUrl": "",
+      "photoUrl": "https://cdn2.apstatic.com/photos/hike/7010339_medium_1554398296.jpg",
       "sections": []
     },
     {
@@ -301,7 +301,7 @@
       "name": "Bote Mountain Trail",
       "length": 6.9,
       "trailhead": "",
-      "photoUrl": "",
+      "photoUrl": "https://cdn2.apstatic.com/photos/hike/7011413_medium_1554559335.jpg",
       "sections": [
         {
           "sectionName": "Laurel Creek Road - West Prong",
@@ -338,7 +338,7 @@
       "name": "Bradley Fork Trail",
       "length": 7.3,
       "trailhead": "",
-      "photoUrl": "",
+      "photoUrl": "https://cdn2.apstatic.com/photos/hike/7011746_medium_1554559948.jpg",
       "sections": [
         {
           "sectionName": "Smokemont Campground - Chasteen Creek",
@@ -363,7 +363,7 @@
       "name": "Brushy Mountain Trail",
       "length": 4.9,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.68037,-83.46243",
-      "photoUrl": "",
+      "photoUrl": "https://cdn2.apstatic.com/photos/hike/7022515_medium_1554843601.jpg",
       "sections": [
         {
           "sectionName": "Porter's Creek - Trillium Gap",
@@ -380,7 +380,7 @@
       "name": "Bull Head Trail (closed)",
       "length": 5.9,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.67582,-83.48527",
-      "photoUrl": "",
+      "photoUrl": "https://cdn2.apstatic.com/photos/hike/7006923_medium_1554321771.jpg",
       "sections": []
     },
     {
@@ -388,7 +388,7 @@
       "name": "Cabin Flats Trail",
       "length": 0.9,
       "trailhead": "",
-      "photoUrl": "",
+      "photoUrl": "https://cdn2.apstatic.com/photos/hike/7011743_medium_1554559943.jpg",
       "sections": [
         {
           "sectionName": "Bradley Fork - Dry Sluice Gap",
@@ -480,7 +480,7 @@
       "name": "Chasteen Creek Trail",
       "length": 4,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.56307,-83.31062",
-      "photoUrl": "",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7006906_medium_1554321735.jpg",
       "sections": []
     },
     {
@@ -504,7 +504,7 @@
       "name": "Chimney Tops Trail",
       "length": 1.8,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.63538,-83.46979",
-      "photoUrl": "",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7009715_medium_1554397032.jpg",
       "sections": [
         {
           "sectionName": "Newfound Gap Road - Road Prong",
@@ -642,8 +642,8 @@
       "id": 43,
       "name": "Deep Creek Horse Trail",
       "length": 1.7,
-      "trailhead": "",
-      "photoUrl": "",
+      "trailhead": "https://www.google.com/maps/search/?api=1&query=35.4643,-83.4342",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7006914_medium_1554321753.jpg",
       "sections": []
     },
     {
@@ -651,7 +651,7 @@
       "name": "Deep Creek Trail",
       "length": 14.2,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.4643,-83.4342",
-      "photoUrl": "",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7006914_medium_1554321753.jpg",
       "sections": [
         {
           "sectionName": "Newfound Gap Road - Fork Ridge",
@@ -840,8 +840,8 @@
       "id": 55,
       "name": "Gatlinburg Trail",
       "length": 1.9,
-      "trailhead": "",
-      "photoUrl": "",
+      "trailhead": "https://www.google.com/maps/search/?api=1&query=35.70606,-83.52293",
+      "photoUrl": "https://res.cloudinary.com/djxd2b2en/image/upload/v1609620806/IMG_0015_ehwl7h.jpg",
       "sections": []
     },
     {
@@ -1261,7 +1261,7 @@
       "name": "Laurel Falls Trail",
       "length": 4,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.67208,-83.58068",
-      "photoUrl": "",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7014931_medium_1554825575.jpg",
       "sections": [
         {
           "sectionName": "Little River Road - Little Greenbrier",
@@ -1607,15 +1607,15 @@
       "name": "Mount Cammerer Trail",
       "length": 0.6,
       "trailhead": "",
-      "photoUrl": "",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7014429_medium_1554824285.jpg",
       "sections": []
     },
     {
       "id": 110,
       "name": "Mount Sterling Ridge Trail",
       "length": 5.3,
-      "trailhead": "",
-      "photoUrl": "",
+      "trailhead": "https://www.google.com/maps/search/?api=1&query=35.70022,-83.09746",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7006223_medium_1554320273.jpg",
       "sections": [
         {
           "sectionName": "Mt. Sterling - Pretty Hollow Gap",
@@ -1773,7 +1773,7 @@
       "name": "Porters Creek Trail",
       "length": 3.6,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.69696,-83.38773",
-      "photoUrl": "",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7011688_medium_1554559846.jpg",
       "sections": [
         {
           "sectionName": "Greenbrier Road - Brushy Mountain",
@@ -1828,7 +1828,7 @@
       "name": "Rainbow Falls Trail",
       "length": 6.7,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.67582,-83.48527",
-      "photoUrl": "",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7014486_medium_1554824360.jpg",
       "sections": [
         {
           "sectionName": "Cherokee Orchard Road - Trillium Gap",
@@ -1853,7 +1853,7 @@
       "name": "Ramsay Cascades Trail",
       "length": 4,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.70267,-83.35764",
-      "photoUrl": "",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7010250_medium_1554398123.jpg",
       "sections": []
     },
     {
@@ -2316,12 +2316,12 @@
       "id": 10,
       "trailName": "Ace Gap Trail",
       "totalMiles": 5.6,
-      "roundTripMiles": 5.6,
       "date": "2020-11-30T18:36:43.291Z",
-      "comments": "Nice hiking trail and just long enough to feel some pain in the legs.",
-      "photoUrl": "",
+      "comments": "Nice hiking trail and just long enough to feel some pain in the legs. ",
       "sections": [],
-      "roundTrip": true
+      "roundTrip": true,
+      "roundTripMiles": 5.6,
+      "photoUrl": "https://res.cloudinary.com/djxd2b2en/image/upload/v1609610666/smokies-05_txyuwm.jpg"
     },
     {
       "trailName": "Abrams Falls Trail",
@@ -2341,7 +2341,7 @@
       "roundTripMiles": 3.5,
       "date": "2020-10-30T20:29:55.174Z",
       "comments": "Nunc sed augue lacus viverra vitae congue eu consequat ac felis donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus",
-      "photoUrl": "",
+      "photoUrl": "https://res.cloudinary.com/djxd2b2en/image/upload/v1609610667/smokies-08_l1mmae.jpg",
       "sections": [
         {
           "sectionName": "Cades Cove Picnic Area - Crib Gap",
@@ -2364,7 +2364,6 @@
       "totalMiles": 16.2,
       "date": "2020-12-11T01:55:10.403Z",
       "comments": "I did the first section of the Appalachian Trail!!",
-      "photoUrl": "https://cdn-files.apstatic.com/hike/7011319_medium_1554400402.jpg",
       "sections": [
         {
           "sectionName": "Fontana/Lakeview Drive West - Lost Cove",
@@ -2388,7 +2387,8 @@
         }
       ],
       "roundTrip": true,
-      "roundTripMiles": 16.2
+      "roundTripMiles": 16.2,
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7011319_medium_1554400402.jpg"
     },
     {
       "id": 14,

@@ -52,22 +52,7 @@ export class TrailsLogComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.userHikesService.getAllUserHikes().subscribe((data: any[]) => {
-      this.userHikes = data;
-      this.hiked();
-      this.userHikes.sort((a, b) =>
-        new Date(a?.date) > new Date(b?.date) ? -1 : 1
-      );
-      const miles = this.userHikes.reduce((acc, userHike) => {
-        return acc + Number(userHike.totalMiles);
-      }, 0);
-      this.userUniqueMilesHiked = miles.toFixed(1);
-      this.userHikes.forEach(hike => {
-        this.randomNumber = this.getRandomNumber();
-        const randomPic = `https://source.unsplash.com/random?hiking?sig=${this.randomNumber}`;
-        hike.photoUrl = randomPic;
-      });
-    });
+    this.getUserHikes();
 
     this.trailsService.getAllTrails().subscribe((data: any[]) => {
       this.trails = data;
@@ -98,6 +83,7 @@ export class TrailsLogComponent implements OnInit {
 
     this.trailForm.controls.trailName.valueChanges.subscribe((change) => {
       const trailObjSelected = this.trails?.find((t) => t.name === change);
+      this.pictureLink = trailObjSelected.photoUrl;
       if (trailObjSelected?.sections?.length < 1) {
         if (this.hikedNames.includes(trailObjSelected.name)) {
           window.alert('You already hiked this!');
@@ -130,6 +116,25 @@ export class TrailsLogComponent implements OnInit {
     });
   }
 
+  private getUserHikes() {
+    this.userHikesService.getAllUserHikes().subscribe((data: any[]) => {
+      this.userHikes = data;
+      this.hiked();
+      this.userHikes.sort((a, b) => new Date(a?.date) > new Date(b?.date) ? -1 : 1
+      );
+      const miles = this.userHikes.reduce((acc, userHike) => {
+        return acc + Number(userHike.totalMiles);
+      }, 0);
+      this.userUniqueMilesHiked = miles.toFixed(1);
+      this.userHikes.forEach(hike => {
+        if (hike.photoUrl === '') {
+          const randomPic = this.randomPictures();
+          hike.photoUrl = randomPic;
+        }
+      });
+    });
+  }
+
   getRandomNumber() {
     console.log('getRandomNumber is firing');
     return (Math.floor(Math.random() * 100));
@@ -153,7 +158,8 @@ export class TrailsLogComponent implements OnInit {
       comments: this.trailForm.value.comments,
       sections: this.trailForm.value.sections,
       roundTrip: this.trailForm.value.roundTrip,
-      roundTripMiles: Number(this.extraMiles)
+      roundTripMiles: Number(this.extraMiles),
+      photoUrl: this.pictureLink
     } as UserHike;
 
     this.userHikesService.postHike(hike).subscribe(_ => {
@@ -170,7 +176,7 @@ export class TrailsLogComponent implements OnInit {
   editHike(userHike, e, i): void {
     this.enableEdit = true;
     this.enableEditIndex = i;
-    this.getUserHikes();
+    // this.getUserHikes();
   }
 
   saveTrailForm(value: boolean): void {
@@ -203,18 +209,6 @@ export class TrailsLogComponent implements OnInit {
     });
   }
 
-  private getUserHikes() {
-    this.userHikesService.getAllUserHikes().subscribe((data: any[]) => {
-      this.userHikes = data;
-      this.userHikes.sort((a, b) => new Date(a?.date) > new Date(b?.date) ? -1 : 1
-      );
-      const miles = this.userHikes.reduce((acc, userHike) => {
-        return acc + Number(userHike.totalMiles);
-      }, 0);
-      this.userUniqueMilesHiked = miles.toFixed(1);
-    });
-  }
-
   openForm() {
     this.addUser = !this.addUser;
   }
@@ -226,16 +220,17 @@ export class TrailsLogComponent implements OnInit {
 
   randomPictures() {
     const path = '../../../assets/img/';
-    const picArray = ['bridge.jpg', 'cabin.jpg', 'jumpoff.jpg', 'trail_1.jpg', 'trail_2.jpg'];
+    const picArray = ['bridge.jpg', 'jumpoff.jpg', 'trail_1.jpg', 'trail_2.jpg', 'mountains_illustration.png', 'shutterstock_226674508.png', 'sky-is-on-fire.jpeg',
+                     'smokies-01.jpg', 'smokies-02.jpg', 'smokies-03.jpg', 'smokies-04.jpg', 'smokies-05.jpeg', 'smokies-06.jpeg', 'smokies-07.jpeg', 'smokies-08.jpeg',
+                     'smokies-09.jpeg', 'smokies-10.jpeg', 'smokies-11.jpeg', 'smokies-12.jpeg'];
     const i = Math.floor(Math.random() * picArray.length);
     this.pictureLink = `${path}${picArray[i]}`;
-    console.log(this.pictureLink);
     return this.pictureLink;
   }
 
   hiked() {
     this.userHikes?.forEach((hike) => {
-      if (hike.sections === null) {
+      if (hike.sections === null || hike.sections.length < 1) {
         const trailName = hike.trailName;
         this.hikedNames.push(trailName);
       } else {

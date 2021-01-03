@@ -5,6 +5,7 @@
       "name": "Abrams Falls Trail",
       "length": 4.2,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.59126,-83.85250",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7011224_medium_1554400194.jpg",
       "sections": []
     },
     {
@@ -12,6 +13,7 @@
       "name": "Ace Gap Trail",
       "length": 5.6,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.6456453,-83.8047874",
+      "photoUrl": "https://res.cloudinary.com/djxd2b2en/image/upload/v1609610667/smokies-08_l1mmae.jpg",
       "sections": []
     },
     {
@@ -19,6 +21,7 @@
       "name": "Albright Grove Loop",
       "length": 0.7,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.76948,-83.26678",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7009715_medium_1554397032.jpg",
       "sections": []
     },
     {
@@ -26,6 +29,7 @@
       "name": "Alum Cave Trail",
       "length": 5,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.63014,-83.44396",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7006906_medium_1554321735.jpg",
       "sections": []
     },
     {
@@ -33,6 +37,7 @@
       "name": "Anthony Creek Trail",
       "length": 3.6,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.604986,-83.770098",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Cades Cove Picnic Area - Crib Gap",
@@ -53,6 +58,7 @@
       "name": "Appalachian Trail",
       "length": 71.7,
       "trailhead": "",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7011319_medium_1554400402.jpg",
       "sections": [
         {
           "sectionName": "Fontana/Lakeview Drive West - Lost Cove",
@@ -169,6 +175,7 @@
       "name": "Balsam Mountain Trail",
       "length": 10.1,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.62405,-83.2113",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7011414_medium_1554559338.jpg",
       "sections": [
         {
           "sectionName": "Balsam Mountain Road - Beech Gap I",
@@ -193,6 +200,7 @@
       "name": "Baskins Creek Trail",
       "length": 2.7,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.62405,-83.2113",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7010250_medium_1554398123.jpg",
       "sections": []
     },
     {
@@ -200,6 +208,7 @@
       "name": "Baxter Creek Trail",
       "length": 6.1,
       "trailhead": "",
+      "photoUrl": "https://cdn2.apstatic.com/photos/hike/7006223_medium_1554320273.jpg",
       "sections": []
     },
     {
@@ -207,6 +216,7 @@
       "name": "Bear Creek Trail ",
       "length": 5.9,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -214,6 +224,7 @@
       "name": "Beard Cane Trail",
       "length": 4.2,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -221,6 +232,7 @@
       "name": "Beech Gap Trail I",
       "length": 2.5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -228,6 +240,7 @@
       "name": "Beech Gap Trail II",
       "length": 2.8,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -235,6 +248,7 @@
       "name": "Benton MacKaye Connector Trail in Smokemont",
       "length": 0.8,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -242,6 +256,7 @@
       "name": "Big Creek Trail",
       "length": 5.8,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.75188,-83.11024",
+      "photoUrl": "https://cdn2.apstatic.com/photos/hike/7006223_medium_1554320273.jpg",
       "sections": [
         {
           "sectionName": "Big Creek Park Road - Swallow Fork",
@@ -262,6 +277,7 @@
       "name": "Big Fork Ridge Trail",
       "length": 3.2,
       "trailhead": "",
+      "photoUrl": "https://cdn2.apstatic.com/photos/hike/7038460_medium_1555088384.jpg",
       "sections": []
     },
     {
@@ -269,6 +285,7 @@
       "name": "Bone Valley Trail",
       "length": 1.8,
       "trailhead": "",
+      "photoUrl": "https://cdn2.apstatic.com/photos/hike/7010339_medium_1554398296.jpg",
       "sections": []
     },
     {
@@ -276,6 +293,7 @@
       "name": "Boogerman Trail",
       "length": 4.1,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.63157,-83.08865",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -283,6 +301,7 @@
       "name": "Bote Mountain Trail",
       "length": 6.9,
       "trailhead": "",
+      "photoUrl": "https://cdn2.apstatic.com/photos/hike/7011413_medium_1554559335.jpg",
       "sections": [
         {
           "sectionName": "Laurel Creek Road - West Prong",
@@ -310,7 +329,8 @@
       "id": 19,
       "name": "Boulevard Trail",
       "length": 5.4,
-      "trailhead": "",
+      "trailhead": "https://www.google.com/maps/search/?api=1&query=35.67582,-83.48527",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7046006_medium_1555533760.jpg",
       "sections": []
     },
     {
@@ -318,6 +338,7 @@
       "name": "Bradley Fork Trail",
       "length": 7.3,
       "trailhead": "",
+      "photoUrl": "https://cdn2.apstatic.com/photos/hike/7011746_medium_1554559948.jpg",
       "sections": [
         {
           "sectionName": "Smokemont Campground - Chasteen Creek",
@@ -342,6 +363,7 @@
       "name": "Brushy Mountain Trail",
       "length": 4.9,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.68037,-83.46243",
+      "photoUrl": "https://cdn2.apstatic.com/photos/hike/7022515_medium_1554843601.jpg",
       "sections": [
         {
           "sectionName": "Porter's Creek - Trillium Gap",
@@ -358,6 +380,7 @@
       "name": "Bull Head Trail (closed)",
       "length": 5.9,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.67582,-83.48527",
+      "photoUrl": "https://cdn2.apstatic.com/photos/hike/7006923_medium_1554321771.jpg",
       "sections": []
     },
     {
@@ -365,6 +388,7 @@
       "name": "Cabin Flats Trail",
       "length": 0.9,
       "trailhead": "",
+      "photoUrl": "https://cdn2.apstatic.com/photos/hike/7011743_medium_1554559943.jpg",
       "sections": [
         {
           "sectionName": "Bradley Fork - Dry Sluice Gap",
@@ -381,6 +405,7 @@
       "name": "Caldwell Fork Trail",
       "length": 6.3,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Cataloochee Road - Boogerman N",
@@ -413,6 +438,7 @@
       "name": "Camel Gap Trail",
       "length": 4.7,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Big Creek/CS #36 - Gunter Fork",
@@ -429,6 +455,7 @@
       "name": "Cane Creek Trail",
       "length": 2.1,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -436,6 +463,7 @@
       "name": "Cataloochie Divide Trail",
       "length": 6.4,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Cove Creek Mountain Road - McKee Branch",
@@ -452,6 +480,7 @@
       "name": "Chasteen Creek Trail",
       "length": 4,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.56307,-83.31062",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7006906_medium_1554321735.jpg",
       "sections": []
     },
     {
@@ -459,6 +488,7 @@
       "name": "Chestnut Branch Trail",
       "length": 2.1,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -466,6 +496,7 @@
       "name": "Chestnut Top Trail",
       "length": 4.3,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.66055,-83.70892",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -473,6 +504,7 @@
       "name": "Chimney Tops Trail",
       "length": 1.8,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.63538,-83.46979",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7009715_medium_1554397032.jpg",
       "sections": [
         {
           "sectionName": "Newfound Gap Road - Road Prong",
@@ -489,6 +521,7 @@
       "name": "Clingmans Dome Nature Trail (asphalt)",
       "length": 0.5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -496,6 +529,7 @@
       "name": "Clingmans Dome Bypass Trail",
       "length": 0.5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -503,6 +537,7 @@
       "name": "Cold Spring Gap Trail",
       "length": 3.5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -510,6 +545,7 @@
       "name": "Cooper Creek Trail (avoid area at Park's request)",
       "length": 0.5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -517,6 +553,7 @@
       "name": "Cooper Road Trail",
       "length": 10.5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Abrams Creek Campground - Little Bottoms",
@@ -549,6 +586,7 @@
       "name": "Cosby Campground Trails",
       "length": 2.5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -556,6 +594,7 @@
       "name": "Cove Mountain Trail (to tower)",
       "length": 8.5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -563,6 +602,7 @@
       "name": "Crib Gap Trail ",
       "length": 1.8,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Anthony Creek - Turkeypen Ridge",
@@ -579,6 +619,7 @@
       "name": "Crooked Arm Ridge Trail",
       "length": 2.2,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -586,6 +627,7 @@
       "name": "Cucumber Gap Trail",
       "length": 2.4,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -593,13 +635,15 @@
       "name": "Curry Mountain Trail",
       "length": 3.3,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
       "id": 43,
       "name": "Deep Creek Horse Trail",
       "length": 1.7,
-      "trailhead": "",
+      "trailhead": "https://www.google.com/maps/search/?api=1&query=35.4643,-83.4342",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7006914_medium_1554321753.jpg",
       "sections": []
     },
     {
@@ -607,6 +651,7 @@
       "name": "Deep Creek Trail",
       "length": 14.2,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.4643,-83.4342",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7006914_medium_1554321753.jpg",
       "sections": [
         {
           "sectionName": "Newfound Gap Road - Fork Ridge",
@@ -647,6 +692,7 @@
       "name": "Deeplow Gap Trail",
       "length": 6.1,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Indian Creek - Indian Creek Motor",
@@ -671,6 +717,7 @@
       "name": "Dry Sluice Gap Trail",
       "length": 4.2,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Cabin Flats - Grassy Branch",
@@ -687,6 +734,7 @@
       "name": "Eagle Creek Trail",
       "length": 8.9,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -694,6 +742,7 @@
       "name": "Enloe Creek Trail",
       "length": 3.6,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -701,6 +750,7 @@
       "name": "Finley Cane Trail",
       "length": 2.8,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Bote Mountain - Crib Gap",
@@ -717,6 +767,7 @@
       "name": "Flat Creek Trail",
       "length": 2.6,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -724,6 +775,7 @@
       "name": "Fork Ridge Trail",
       "length": 5.1,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -731,6 +783,7 @@
       "name": "Forney Creek Trail",
       "length": 11.4,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Forney Ridge - Jonas Creek",
@@ -759,6 +812,7 @@
       "name": "Forney Ridge Trail",
       "length": 5.6,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Clingmans Dome Parking Area - Dome Bypass",
@@ -779,13 +833,15 @@
       "name": "Gabes Mountain Trail",
       "length": 6.6,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
       "id": 55,
       "name": "Gatlinburg Trail",
       "length": 1.9,
-      "trailhead": "",
+      "trailhead": "https://www.google.com/maps/search/?api=1&query=35.70606,-83.52293",
+      "photoUrl": "https://res.cloudinary.com/djxd2b2en/image/upload/v1609620806/IMG_0015_ehwl7h.jpg",
       "sections": []
     },
     {
@@ -793,6 +849,7 @@
       "name": "Gold Mine Trail",
       "length": 0.8,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -800,6 +857,7 @@
       "name": "Goldmine Loop Trail",
       "length": 2,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -807,6 +865,7 @@
       "name": "Goshen Prong Trail",
       "length": 7.6,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Little River - Camp #23",
@@ -823,6 +882,7 @@
       "name": "Grapeyard Ridge Trail",
       "length": 7.6,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -830,6 +890,7 @@
       "name": "Grassy Branch Trail",
       "length": 2.5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -837,6 +898,7 @@
       "name": "Greenbrier Ridge Trail",
       "length": 4.2,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -844,6 +906,7 @@
       "name": "Gregory Bald Trail",
       "length": 7.3,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Parsons Branch Road - Wolf Ridge",
@@ -868,6 +931,7 @@
       "name": "Gregory Ridge Trail",
       "length": 5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -875,6 +939,7 @@
       "name": "Gunter Fork Trail",
       "length": 4.1,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -882,6 +947,7 @@
       "name": "Hannah Mountain Trail",
       "length": 9.5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Hatcher Mountain Trail - Rabbit Creek Trail",
@@ -898,6 +964,7 @@
       "name": "Hatcher Mountain Trail (Little Bottoms - Cooper Road)",
       "length": 2.6,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -905,6 +972,7 @@
       "name": "Hazel Creek Trail",
       "length": 14.7,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Lakeshore - Jenkins Ridge",
@@ -929,6 +997,7 @@
       "name": "Hazel Creek Trail Access to Fontana Lake Landing",
       "length": 0.7,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -936,6 +1005,7 @@
       "name": "Hemphill Bald Trail",
       "length": 8.4,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Heintooga Road - Cataloochee Divide",
@@ -952,6 +1022,7 @@
       "name": "High Rocks Trail",
       "length": 0.3,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -959,6 +1030,7 @@
       "name": "Hughes Ridge Trail",
       "length": 5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Chasteen Creek - Enloe Creek",
@@ -979,6 +1051,7 @@
       "name": "Huskey Gap Trail",
       "length": 4.1,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Newfound Gap Road - Sugarland Mountain",
@@ -995,6 +1068,7 @@
       "name": "Hyatt Ridge Trail",
       "length": 4.4,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Straight Fork Road - Enloe Creek",
@@ -1015,6 +1089,7 @@
       "name": "Indian Creek Motor Trail",
       "length": 1.8,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1022,6 +1097,7 @@
       "name": "Indian Creek Trail",
       "length": 3.6,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Deep Creek - Stonepile Gap",
@@ -1046,6 +1122,7 @@
       "name": "Indian Grave Gap Trail",
       "length": 3.7,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Rich MountainRoad - Rich Mountain Loop",
@@ -1066,6 +1143,7 @@
       "name": "Jakes Creek Trail",
       "length": 3.7,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Elkmont Road - Cucumber Gap",
@@ -1086,6 +1164,7 @@
       "name": "Jenkins Ridge Trail",
       "length": 8.9,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1093,6 +1172,7 @@
       "name": "Jonas Creek Trail",
       "length": 4.1,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1100,6 +1180,7 @@
       "name": "Juney Whank Falls Trail (Deep Creek parking to falls and back to Deep Creek Trail)",
       "length": 0.5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1107,6 +1188,7 @@
       "name": "Kanati Fork Trail",
       "length": 2.9,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1114,6 +1196,7 @@
       "name": "Kephart Prong Trail",
       "length": 2,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1121,6 +1204,7 @@
       "name": "Lakeshore Trail",
       "length": 34.6,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Lakeview Drive East - Tunnel Bypass",
@@ -1177,6 +1261,7 @@
       "name": "Laurel Falls Trail",
       "length": 4,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.67208,-83.58068",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7014931_medium_1554825575.jpg",
       "sections": [
         {
           "sectionName": "Little River Road - Little Greenbrier",
@@ -1193,6 +1278,7 @@
       "name": "Lead Cove Trail",
       "length": 1.8,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1200,6 +1286,7 @@
       "name": "Little Bottoms Trail",
       "length": 2.5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Cooper Road - Hatcher Mountain",
@@ -1216,6 +1303,7 @@
       "name": "Little Brier Gap Trail",
       "length": 1.4,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1223,6 +1311,7 @@
       "name": "Little Cataloochee Trail",
       "length": 5.2,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Pretty Hollow Gap - Long Bunk",
@@ -1239,6 +1328,7 @@
       "name": "Little Greenbrier Trail",
       "length": 4.3,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Wear Cove Gap Road - Little Brier Gap",
@@ -1255,6 +1345,7 @@
       "name": "Little River Trail",
       "length": 6.2,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Elkmont Road - Cucumber Gap",
@@ -1283,6 +1374,7 @@
       "name": "Long Bunk Trail",
       "length": 3.6,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1290,6 +1382,7 @@
       "name": "Long Hungry Ridge Trail",
       "length": 4.5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1297,6 +1390,7 @@
       "name": "Loop Trail",
       "length": 1.2,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Indian Creek - Sunkota Ridge",
@@ -1313,6 +1407,7 @@
       "name": "Lost Cove Trail",
       "length": 2.7,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1320,6 +1415,7 @@
       "name": "Low Gap Trail I",
       "length": 2.5,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.75595,-83.20765",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1327,6 +1423,7 @@
       "name": "Low Gap Trail II",
       "length": 2.9,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Cosby Campground - Lower Mt. Cammerer",
@@ -1343,6 +1440,7 @@
       "name": "Lower Mount Cammerer Trail",
       "length": 7.5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Cosby Campground - Low Gap II",
@@ -1359,6 +1457,7 @@
       "name": "Lumber Ridge Trail",
       "length": 4.1,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1366,6 +1465,7 @@
       "name": "Lynn Camp Prong Trail",
       "length": 3.7,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1373,6 +1473,7 @@
       "name": "Maddron Bald Trail",
       "length": 7.3,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Laurel Springs Road - Old Settlers",
@@ -1397,6 +1498,7 @@
       "name": "Martins Gap Trail",
       "length": 3,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Indian Creek - Sunkota Ridge",
@@ -1413,6 +1515,7 @@
       "name": "McKee Branch Trail",
       "length": 2.3,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1420,6 +1523,7 @@
       "name": "Meigs Creek Trail",
       "length": 3.5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1427,6 +1531,7 @@
       "name": "Meigs Mountain Trail",
       "length": 6.1,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Jakes Creek - Curry Mountain",
@@ -1443,6 +1548,7 @@
       "name": "Metcalf Bottoms Trail",
       "length": 0.7,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1450,6 +1556,7 @@
       "name": "Middle Prong Trail",
       "length": 4.1,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Tremont Road - Panther Creek",
@@ -1466,6 +1573,7 @@
       "name": "Mingus Creek Trail",
       "length": 5.8,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Newfound Gap Road - Deeplow Gap",
@@ -1482,6 +1590,7 @@
       "name": "Miry Ridge Trail",
       "length": 5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Jakes Creek - Lynn Camp Prong",
@@ -1498,13 +1607,15 @@
       "name": "Mount Cammerer Trail",
       "length": 0.6,
       "trailhead": "",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7014429_medium_1554824285.jpg",
       "sections": []
     },
     {
       "id": 110,
       "name": "Mount Sterling Ridge Trail",
       "length": 5.3,
-      "trailhead": "",
+      "trailhead": "https://www.google.com/maps/search/?api=1&query=35.70022,-83.09746",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7006223_medium_1554320273.jpg",
       "sections": [
         {
           "sectionName": "Mt. Sterling - Pretty Hollow Gap",
@@ -1521,6 +1632,7 @@
       "name": "Mount Sterling Trail",
       "length": 2.7,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Old NC 284 Road - Long Bunk",
@@ -1541,6 +1653,7 @@
       "name": "Newton Bald Trail",
       "length": 5.3,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Newfound Gap Road - Mingus Creek",
@@ -1557,6 +1670,7 @@
       "name": "Noland Creek Trail",
       "length": 10.3,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Camp #66 - Lakeview Drive East",
@@ -1577,6 +1691,7 @@
       "name": "Noland Divide Trail",
       "length": 11.6,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "West Deep Creek Road - Pole Road Creek",
@@ -1593,6 +1708,7 @@
       "name": "Oconaluftee River Trail",
       "length": 1.6,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1600,6 +1716,7 @@
       "name": "Old Settlers Trail",
       "length": 15.8,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1607,6 +1724,7 @@
       "name": "Old Sugarlands Trail",
       "length": 3.9,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Newfound Gap Road - Bull Head",
@@ -1623,6 +1741,7 @@
       "name": "Ollie Cove",
       "length": 0.3,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1630,6 +1749,7 @@
       "name": "Palmer Creek Trail",
       "length": 3.3,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1637,6 +1757,7 @@
       "name": "Panther Creek Trail",
       "length": 2.3,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1644,6 +1765,7 @@
       "name": "Pole Road Creek Trail",
       "length": 3.3,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1651,6 +1773,7 @@
       "name": "Porters Creek Trail",
       "length": 3.6,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.69696,-83.38773",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7011688_medium_1554559846.jpg",
       "sections": [
         {
           "sectionName": "Greenbrier Road - Brushy Mountain",
@@ -1667,6 +1790,7 @@
       "name": "Pretty Hollow Gap Trail",
       "length": 5.6,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Cataloochee Road - Little Cataloochee",
@@ -1687,6 +1811,7 @@
       "name": "Rabbit Creek Trail",
       "length": 7.8,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Abrams Creek Ranger Station - Hannah Mountain",
@@ -1703,6 +1828,7 @@
       "name": "Rainbow Falls Trail",
       "length": 6.7,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.67582,-83.48527",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7014486_medium_1554824360.jpg",
       "sections": [
         {
           "sectionName": "Cherokee Orchard Road - Trillium Gap",
@@ -1727,6 +1853,7 @@
       "name": "Ramsay Cascades Trail",
       "length": 4,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.70267,-83.35764",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7010250_medium_1554398123.jpg",
       "sections": []
     },
     {
@@ -1734,6 +1861,7 @@
       "name": "Rich Mountain Loop Trail",
       "length": 3.3,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Cades Cove Loop Road - Crooked Arm Ridge",
@@ -1750,6 +1878,7 @@
       "name": "Rich Mountain Trail",
       "length": 2.3,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1757,6 +1886,7 @@
       "name": "Road Prong Trail",
       "length": 2.4,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1764,6 +1894,7 @@
       "name": "Rough Creek Trail",
       "length": 2.8,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1771,6 +1902,7 @@
       "name": "Rough Fork Trail",
       "length": 6.4,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Cataloochee Road - Caldwell Fork",
@@ -1787,6 +1919,7 @@
       "name": "Roundtop Trail",
       "length": 7.5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1794,6 +1927,7 @@
       "name": "Russell Field Trail",
       "length": 3.5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1801,6 +1935,7 @@
       "name": "Schoolhouse Gap Trail",
       "length": 2.2,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Laurel River Road - Turkeypen Ridge",
@@ -1821,6 +1956,7 @@
       "name": "Scott Mountain Trail (closed, open to CS6)",
       "length": 3.6,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1828,6 +1964,7 @@
       "name": "Smokemont Loop Trail",
       "length": 3.9,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1835,6 +1972,7 @@
       "name": "Snake Den Ridge Trail",
       "length": 5.3,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Cosby Campground - Maddron Bald",
@@ -1851,6 +1989,7 @@
       "name": "Springhouse Branch Trail",
       "length": 7.1,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Forney Creek - Forney Ridge",
@@ -1867,6 +2006,7 @@
       "name": "Spruce Mountain Trail (to CS42)",
       "length": 1,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1874,6 +2014,7 @@
       "name": "Stone Pile Gap Trail",
       "length": 0.9,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1881,6 +2022,7 @@
       "name": "Sugarland Mountain Trail",
       "length": 11.9,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Little River Road - Huskey Gap",
@@ -1901,6 +2043,7 @@
       "name": "Sunkota Ridge Trail",
       "length": 8.6,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Loop - Martins Gap",
@@ -1917,6 +2060,7 @@
       "name": "Swallow Fork Trail",
       "length": 4,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1924,6 +2068,7 @@
       "name": "Sweat Heifer Creek Trail",
       "length": 3.7,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1931,6 +2076,7 @@
       "name": "Thomas Divide Trail",
       "length": 13.6,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Newfound Gap Road - Kanati Fork",
@@ -1967,6 +2113,7 @@
       "name": "Tow String Trail",
       "length": 2.2,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -1974,6 +2121,7 @@
       "name": "Trillium Gap Trail",
       "length": 9,
       "trailhead": "https://www.google.com/maps/search/?api=1&query=35.68037,-83.46243",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Cherokee Orchard Road - Baskins Creek",
@@ -2002,6 +2150,7 @@
       "name": "Tunnel Bypass Trail",
       "length": 1.6,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Lakeview Drive East - Goldmine Loop",
@@ -2018,6 +2167,7 @@
       "name": "Turkeypen Ridge Trail",
       "length": 3.6,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Laurel River Road - Crib Gap",
@@ -2034,6 +2184,7 @@
       "name": "Twentymile Loop Trail",
       "length": 2.9,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -2041,6 +2192,7 @@
       "name": "Twentymile Trail",
       "length": 5,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Twentymile Ranger Station- Wolf Ridge",
@@ -2061,6 +2213,7 @@
       "name": "Twin Creeks Trail",
       "length": 1.9,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -2068,6 +2221,7 @@
       "name": "Welch Ridge Trail",
       "length": 7.3,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "AT- Hazel Creek",
@@ -2096,6 +2250,7 @@
       "name": "West Prong Trail",
       "length": 2.7,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -2103,6 +2258,7 @@
       "name": "Wet Bottom Trail",
       "length": 1,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -2110,6 +2266,7 @@
       "name": "Whiteoak Branch Trail",
       "length": 1.8,
       "trailhead": "",
+      "photoUrl": "",
       "sections": []
     },
     {
@@ -2117,6 +2274,7 @@
       "name": "Wolf Ridge Trail",
       "length": 6.3,
       "trailhead": "",
+      "photoUrl": "",
       "sections": [
         {
           "sectionName": "Twentymile - Twentymile Loop",
@@ -2137,6 +2295,7 @@
       "roundTripMiles": 5.2,
       "date": "2020-09-12T17:42:40.148Z",
       "comments": "Beautiful, but long hike. Enjoyed the scenary.",
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7011414_medium_1554559338.jpg",
       "sections": [
         {
           "sectionName": "Balsam Mountain Road - Beech Gap I",
@@ -2157,11 +2316,12 @@
       "id": 10,
       "trailName": "Ace Gap Trail",
       "totalMiles": 5.6,
-      "roundTripMiles": 5.6,
       "date": "2020-11-30T18:36:43.291Z",
-      "comments": "Nice hiking trail and just long enough to feel some pain in the legs.",
+      "comments": "Nice hiking trail and just long enough to feel some pain in the legs. ",
       "sections": [],
-      "roundTrip": true
+      "roundTrip": true,
+      "roundTripMiles": 5.6,
+      "photoUrl": "https://res.cloudinary.com/djxd2b2en/image/upload/v1609610666/smokies-05_txyuwm.jpg"
     },
     {
       "trailName": "Abrams Falls Trail",
@@ -2171,6 +2331,7 @@
       "comments": "Definitely one of the bussier hikes in the park, but well worth the effort to see the falls. Lots of water",
       "sections": null,
       "roundTrip": true,
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7011224_medium_1554400194.jpg",
       "id": 11
     },
     {
@@ -2180,6 +2341,7 @@
       "roundTripMiles": 3.5,
       "date": "2020-10-30T20:29:55.174Z",
       "comments": "Nunc sed augue lacus viverra vitae congue eu consequat ac felis donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus",
+      "photoUrl": "https://res.cloudinary.com/djxd2b2en/image/upload/v1609610667/smokies-08_l1mmae.jpg",
       "sections": [
         {
           "sectionName": "Cades Cove Picnic Area - Crib Gap",
@@ -2225,24 +2387,27 @@
         }
       ],
       "roundTrip": true,
-      "roundTripMiles": 16.2
+      "roundTripMiles": 16.2,
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7011319_medium_1554400402.jpg"
     },
     {
       "id": 14,
       "trailName": "Boogerman Trail",
       "totalMiles": 4.1,
-      "roundTripMiles": 4.1,
       "date": "2020-12-18T02:30:13.175Z",
-      "comments": "donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus",
+      "comments": "Donnec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus",
+      "photoUrl": "",
       "sections": [],
-      "roundTrip": true
+      "roundTrip": true,
+      "roundTripMiles": 4.1
     },
     {
       "id": 15,
       "trailName": "Chestnut Top Trail",
       "totalMiles": 4.3,
       "date": "2020-12-30T19:15:19.636Z",
-      "comments": "Dolor sit amet, consectetur adipiscing elit. Aenean cursus euismod nunc a feugiat. Curabitur neque tortor, eleifend.",
+      "comments": "Coma Dolor sit amet, consectetur adipiscing elit. Aenean cursus euismod nunc a feugiat. Curabitur neque tortor, eleifend.",
+      "photoUrl": "",
       "sections": [],
       "roundTrip": true,
       "roundTripMiles": 4.3

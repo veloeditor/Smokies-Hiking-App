@@ -38,6 +38,26 @@ export class TrailsListComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
+    this.getAllTrails();
+    this.getUserHikes();
+
+    this.trailListSearchForm = this.fb.group({
+      search: ''
+    });
+    console.log(this.hikedNames);
+    this.trailListSearchForm.valueChanges.subscribe((change: { search: string }) => {
+      this.searchList(change.search);
+    });
+  }
+
+  private getUserHikes() {
+    this.userHikesService.getAllUserHikes().subscribe((data: any[]) => {
+      this.hikes = data;
+      this.hiked();
+    });
+  }
+
+  private getAllTrails() {
     this.trailsService
       .getAllTrails()
       .pipe(takeUntil(this.destroy$))
@@ -45,17 +65,6 @@ export class TrailsListComponent implements OnInit, OnDestroy {
         this.trails = data;
         this.dataSource = this.trails;
       });
-    this.userHikesService.getAllUserHikes().subscribe((data: any[]) => {
-      this.hikes = data;
-      this.hiked();
-    });
-
-    this.trailListSearchForm = this.fb.group({
-      search: ''
-    });
-    this.trailListSearchForm.valueChanges.subscribe((change: { search: string }) => {
-      this.searchList(change.search);
-    });
   }
 
   private searchList(filter: string): void {
@@ -82,7 +91,7 @@ export class TrailsListComponent implements OnInit, OnDestroy {
   // this populates two arrays, one tha contains names of simple trails, the other sectionnames
   hiked() {
     this.hikes?.forEach((hike) => {
-      if (hike.sections === null) {
+      if (hike.sections === null || hike.sections.length < 1) {
         const trailName = hike.trailName;
         this.hikedNames.push(trailName);
       } else {

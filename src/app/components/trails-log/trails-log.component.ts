@@ -124,9 +124,10 @@ export class TrailsLogComponent implements OnInit {
       this.hiked();
       this.userHikes.sort((a, b) => new Date(a?.date) > new Date(b?.date) ? -1 : 1
       );
-      this.mileageService.userUniqueHikes().subscribe(mileage => {
-        this.userUniqueMilesHiked = mileage;
-      });
+      const miles = this.userHikes.reduce((acc, userHike) => {
+        return acc + Number(userHike.totalMiles);
+      }, 0);
+      this.userUniqueMilesHiked = miles.toFixed(1);
       this.userHikes.forEach(hike => {
         if (hike.photoUrl === '') {
           const randomPic = this.randomPictures();
@@ -177,7 +178,6 @@ export class TrailsLogComponent implements OnInit {
   editHike(userHike, e, i): void {
     this.enableEdit = true;
     this.enableEditIndex = i;
-    // this.getUserHikes();
   }
 
   saveTrailForm(value: boolean): void {

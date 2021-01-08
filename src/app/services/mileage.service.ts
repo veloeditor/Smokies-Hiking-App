@@ -23,14 +23,12 @@ export class MileageService {
   userUniqueHikes(): Observable<number> {
     this.userHikesService.getAllUserHikes().subscribe((data: UserHike[]) => {
       this.userHikes = data;
-      console.log(data);
       const miles = this.userHikes?.reduce((acc, userHike) => {
           return acc + Number(userHike.totalMiles);
         }, 0);
       this.mileage = Number(miles?.toFixed(1));
       this.uniqueMileObserverable$.next(this.mileage);
       this.uniqueMileObserverable$.complete();
-      console.log(this.mileage);
       return this.uniqueMileObserverable$.asObservable();
     });
     return this.uniqueMileObserverable$.asObservable();

@@ -33,7 +33,6 @@ export class MileageChartComponent implements OnInit {
 
   private dataForChart(milesArray: any[], reduceMilesArray: any[], hikeDatesArray: any[]) {
       this.userHikes?.forEach(hike => {
-      console.log(hike);
       const hikeMiles = hike.totalMiles;
       milesArray.push(hikeMiles);
       milesArray.reduce((prev, curr, i) => reduceMilesArray[i] = prev + curr, 0);

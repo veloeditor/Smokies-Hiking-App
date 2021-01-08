@@ -17,7 +17,8 @@
     </div>
     <div class="percentage">
         <h3>Goal accomplished so far:</h3>
-        <circle-progress [options]="ngCircleOptions"></circle-progress>
+        <app-circular-progress></app-circular-progress>
+        <!-- <circle-progress [options]="ngCircleOptions"></circle-progress> -->
         <p>Your last hike was on: <span class="date"> {{ mostRecentHike | date }}</span></p>
     </div>
     <div class="goal">

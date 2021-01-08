@@ -1,4 +1,3 @@
-import { Input } from '@angular/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CircleProgressComponent, CircleProgressOptions } from 'ng-circle-progress';
 import { User } from 'src/app/interfaces/user';

@@ -6,7 +6,6 @@ import { Trail } from '../../interfaces/trail';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { UserHike } from 'src/app/interfaces/user-hike';
-import { Chart } from 'chart.js';
 import { DatePipe } from '@angular/common';
 import { CircleProgressComponent, CircleProgressOptions } from 'ng-circle-progress';
 import { ViewChild } from '@angular/core';
@@ -86,7 +85,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.mostRecentHike = dateArray[dateArray.length - 1];
     });
   }
-  
+
   editUserGoal() {
     this.isUpdatingGoal = !this.isUpdatingGoal;
   }

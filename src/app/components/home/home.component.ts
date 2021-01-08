@@ -14,6 +14,7 @@ import { User } from 'src/app/interfaces/user';
 import { UserService } from 'src/app/services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { MileageService } from 'src/app/services/mileage.service';
 
 @Component({
   selector: 'app-home',
@@ -41,6 +42,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(private trailsService: TrailsService,
               private userHikesService: UserHikesService,
+              private mileageService: MileageService,
               private datePipe: DatePipe,
               private userService: UserService,
               private fb: FormBuilder,
@@ -53,6 +55,11 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.trails = data;
     });
 
+    this.mileageService.userUniqueHikes().subscribe(mileage => {
+      this.uniqueMiles = mileage;
+      console.log('mileage', mileage);
+    });
+
     this.userService.getAllUsers().pipe(takeUntil(this.destroy$)).subscribe((data: any[]) => {
       this.users = data;
       this.goal = this.users[0].goal;
@@ -61,40 +68,50 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     this.userHikesService.getAllUserHikes().pipe(takeUntil(this.destroy$)).subscribe((data: UserHike[]) => {
       this.userHikes = data;
-      const miles = this.userHikes.reduce((acc, userHike) => {
-        return acc + Number(userHike.totalMiles);
-      }, 0);
-      this.uniqueMiles = miles.toFixed(1);
+      // const miles = this.userHikes.reduce((acc, userHike) => {
+      //   return acc + Number(userHike.totalMiles);
+      // }, 0);
+      // this.uniqueMiles = miles.toFixed(1);
+
       this.percentageGoal();
+
       const milesArray = [];
       const reduceMilesArray = [];
       const hikeDatesArray = [];
 
-      this.userHikes.forEach(hike => {
-        const hikeMiles = hike.totalMiles;
-        milesArray.push(hikeMiles);
-        milesArray.reduce((prev, curr, i) => reduceMilesArray[i] = prev + curr, 0);
-        const hikeDate = hike.date;
-        const convertedDate = new DatePipe('en-US').transform(hikeDate, 'MM-dd-yyyy');
-        hikeDatesArray.push(convertedDate);
-        hikeDatesArray.sort();
-      });
+      this.dataForChart(milesArray, reduceMilesArray, hikeDatesArray);
 
       this.goalForm = this.fb.group({
         goal: [this.goal, [Validators.required, Validators.max(800.7)]]
       });
-      this.percentageGoal();
       this.triggerCircularProgress();
 
-      this.createBarChart(hikeDatesArray, reduceMilesArray);
+      // this.createBarChart(hikeDatesArray, reduceMilesArray);
 
-      this.userHikes.forEach(hike => {
-        const dateArray = [];
-        const date = hike.date;
-        dateArray.push(date);
-        dateArray.reduce((a, b) => b > a ? b : a);
-        this.mostRecentHike = dateArray[dateArray.length - 1];
-      });
+      this.getMostRecentHikeDate();
+    });
+
+  }
+
+  private getMostRecentHikeDate() {
+    this.userHikes.forEach(hike => {
+      const dateArray = [];
+      const date = hike.date;
+      dateArray.push(date);
+      dateArray.reduce((a, b) => b > a ? b : a);
+      this.mostRecentHike = dateArray[dateArray.length - 1];
+    });
+  }
+
+  private dataForChart(milesArray: any[], reduceMilesArray: any[], hikeDatesArray: any[]) {
+    this.userHikes.forEach(hike => {
+      const hikeMiles = hike.totalMiles;
+      milesArray.push(hikeMiles);
+      milesArray.reduce((prev, curr, i) => reduceMilesArray[i] = prev + curr, 0);
+      const hikeDate = hike.date;
+      const convertedDate = new DatePipe('en-US').transform(hikeDate, 'MM-dd-yyyy');
+      hikeDatesArray.push(convertedDate);
+      hikeDatesArray.sort();
     });
   }
 
@@ -146,8 +163,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       radius: 132,
       outerStrokeWidth: 10,
       innerStrokeWidth: 9,
-      outerStrokeColor: 'green',
-      innerStrokeColor: '#cfc460',
+      outerStrokeColor: '#1b5e20',
+      innerStrokeColor: 'white',
       animation: true,
       animationDuration: 300,
       subtitleFormat: (percent: number): string => {
@@ -163,7 +180,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       }
     };
   }
-
 
   editUserGoal() {
     this.isUpdatingGoal = !this.isUpdatingGoal;

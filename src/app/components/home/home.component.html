@@ -10,9 +10,10 @@
         </div>
         <p><span class="big-font">{{ uniqueMiles }}</span>
             <br>
-            miles hiked so far
+            unique miles hiked so far
         </p>
-        <canvas id="lineChart">{{ lineChart }}</canvas>
+        <!-- <canvas id="lineChart">{{ lineChart }}</canvas> -->
+        <app-mileage-chart></app-mileage-chart>
     </div>
     <div class="percentage">
         <h3>Goal accomplished so far:</h3>
@@ -34,6 +35,7 @@
                     <mat-form-field>
                         <mat-label>Update your goal</mat-label>
                         <input formControlName="goal" matInput required [value]="goal">
+                        <mat-hint>800.7 miles max</mat-hint>
                     </mat-form-field>
                     <button color="primary" mat-icon-button mat-mini-fab matTooltip="Save" type="submit" [disabled]="!goalForm.valid" class="submit_btn">
                         <mat-icon class="save_icon">save</mat-icon>

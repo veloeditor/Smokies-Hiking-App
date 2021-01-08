@@ -41,11 +41,7 @@ export class HikeFormComponent implements OnInit {
   ngOnInit(): void {
     this.trailsService.getAllTrails().subscribe((data: any[]) => {
       this.trails = data;
-      const hikedTrailName = this.userHike.trailName;
-      this.trailObjectedEdited = this.trails?.find((t) => t.name === hikedTrailName);
-      const results = this.trailObjectedEdited.sections.filter(( { sectionName: id1 }) =>
-        this.userHike.sections.some(({ sectionName: id2 }) => id2 === id1));
-      this.trailForm.get('sections').setValue(results);
+      this.rebuildTrailSections();
     });
 
     this.trailForm = this.fb.group({
@@ -123,6 +119,15 @@ export class HikeFormComponent implements OnInit {
     });
 
     console.log(this.trailForm.value);
+  }
+
+  // when edited trail with sections, the following grabs all the trail's sections, not just those part of edited obj
+  private rebuildTrailSections() {
+    const hikedTrailName = this.userHike.trailName;
+    this.trailObjectedEdited = this.trails?.find((t) => t.name === hikedTrailName);
+    const results = this.trailObjectedEdited.sections.filter(({ sectionName: id1 }) => this.userHike.sections
+                                                     .some(({ sectionName: id2 }) => id2 === id1));
+    this.trailForm.get('sections').setValue(results);
   }
 
   private defaultString(value: string): string {

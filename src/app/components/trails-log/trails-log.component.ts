@@ -151,32 +151,33 @@ export class TrailsLogComponent implements OnInit {
     return this.trailForm.get('sections') as FormControl;
   }
 
-  saveTrail(trailForm: FormGroup): void {
+  // saveTrail(trailForm: FormGroup): void {
 
-    const hike = {
-      trailName: this.trailForm.value.trailName,
-      totalMiles: this.trailObjSelectedMiles,
-      date: this.trailForm.value.date,
-      comments: this.trailForm.value.comments,
-      sections: this.trailForm.value.sections,
-      roundTrip: this.trailForm.value.roundTrip,
-      roundTripMiles: Number(this.extraMiles),
-      photoUrl: this.pictureLink
-    } as UserHike;
+  //   const hike = {
+  //     trailName: this.trailForm.value.trailName,
+  //     totalMiles: this.trailObjSelectedMiles,
+  //     date: this.trailForm.value.date,
+  //     comments: this.trailForm.value.comments,
+  //     sections: this.trailForm.value.sections,
+  //     roundTrip: this.trailForm.value.roundTrip,
+  //     roundTripMiles: Number(this.extraMiles),
+  //     photoUrl: this.pictureLink
+  //   } as UserHike;
 
-    this.userHikesService.postHike(hike).subscribe(_ => {
-      this.snackBar.open('Successfully added hike', 'Close', {
-        duration: 5000,
-      });
-    });
-    this.getUserHikes();
-    this.addUser = false;
-    this.trailForm.markAsPristine();
-    this.trailForm.reset();
-  }
+  //   this.userHikesService.postHike(hike).subscribe(_ => {
+  //     this.snackBar.open('Successfully added hike', 'Close', {
+  //       duration: 5000,
+  //     });
+  //   });
+  //   this.getUserHikes();
+  //   this.addUser = false;
+  //   this.trailForm.markAsPristine();
+  //   this.trailForm.reset();
+  // }
 
   editHike(userHike, e, i): void {
     this.enableEdit = true;
+    this.addUser = false;
     this.enableEditIndex = i;
   }
 
@@ -213,6 +214,8 @@ export class TrailsLogComponent implements OnInit {
 
   openForm() {
     this.addUser = !this.addUser;
+    this.enableEdit = false;
+    this.enableEditIndex = null;
   }
 
   hasError = (controlName: string, errorName: string) => {

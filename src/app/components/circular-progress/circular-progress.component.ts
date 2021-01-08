@@ -29,7 +29,6 @@ export class CircularProgressComponent implements OnInit {
     this.userService.getAllUsers().subscribe((user: any[]) => {
       this.users = user;
       this.goal = this.users[0].goal;
-      console.log(this.goal);
       this.userHikesService.getAllUserHikes().subscribe((data: UserHike[]) => {
         this.userHikes = data;
         const miles = this.userHikes.reduce((acc, userHike) => {
@@ -46,14 +45,9 @@ export class CircularProgressComponent implements OnInit {
   private percentageGoal() {
     const percentage = (this.uniqueMiles / this.goal) * 100;
     this.currentProgress = Number(percentage.toFixed(1));
-    console.log('this.uniqueMiles', this.uniqueMiles);
-    console.log('this.goal', this.goal);
-    console.log('percentageGoal() fired');
-    console.log('currentProgress', this.currentProgress);
   }
 
   private triggerCircularProgress() {
-    console.log(this.currentProgress);
     this.ngCircleOptions = {
       percent: this.currentProgress,
       space: -10,

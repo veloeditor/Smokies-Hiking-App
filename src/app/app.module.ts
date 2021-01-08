@@ -31,6 +31,8 @@ import { HikeFormComponent } from './components/hike-form/hike-form.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
+import { MileageChartComponent } from './components/mileage-chart/mileage-chart.component';
+import { CircularProgressComponent } from './components/circular-progress/circular-progress.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.c
     ConfirmDialogComponent,
     HikeFormComponent,
     ScrollToTopComponent,
+    MileageChartComponent,
+    CircularProgressComponent,
   ],
   imports: [
     BrowserModule,

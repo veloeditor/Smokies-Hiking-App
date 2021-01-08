@@ -11,6 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent, ConfirmDialogModel } from '../confirm-dialog/confirm-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EventEmitter } from 'events';
+import { MileageService } from 'src/app/services/mileage.service';
 
 @Component({
   selector: 'app-trails-log',
@@ -45,6 +46,7 @@ export class TrailsLogComponent implements OnInit {
 
   constructor(
     private userHikesService: UserHikesService,
+    private mileageService: MileageService,
     private fb: FormBuilder,
     private trailsService: TrailsService,
     public dialog: MatDialog,
@@ -176,7 +178,6 @@ export class TrailsLogComponent implements OnInit {
   editHike(userHike, e, i): void {
     this.enableEdit = true;
     this.enableEditIndex = i;
-    // this.getUserHikes();
   }
 
   saveTrailForm(value: boolean): void {

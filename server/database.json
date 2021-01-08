@@ -2361,7 +2361,7 @@
     {
       "id": 13,
       "trailName": "Appalachian Trail",
-      "totalMiles": 16.2,
+      "totalMiles": 16.5,
       "date": "2020-12-11T01:55:10.403Z",
       "comments": "I did the first section of the Appalachian Trail!!",
       "sections": [
@@ -2384,10 +2384,14 @@
         {
           "sectionName": "Eagle Creek - Bote Mountain",
           "sectionLength": 0.1
+        },
+        {
+          "sectionName": "Bote Mountain - Jenkins Ridge",
+          "sectionLength": 0.3
         }
       ],
       "roundTrip": true,
-      "roundTripMiles": 16.2,
+      "roundTripMiles": 16.5,
       "photoUrl": "https://cdn-files.apstatic.com/hike/7011319_medium_1554400402.jpg"
     },
     {

@@ -1,7 +1,6 @@
 <div class="app_title">
     <h1>The 900 Miler Challenge</h1>
     <h2>- Hike all of the trails of the Great Smoky Mountains -</h2>
-    <!-- <h4>*There are currently just over 800 miles of official trails</h4> -->
 </div>
 <div class="goals">
     <div class="current-miles">
@@ -10,47 +9,58 @@
         </div>
         <p><span class="big-font">{{ uniqueMiles }}</span>
             <br>
-            miles hiked so far
+            unique miles hiked so far
         </p>
-        <canvas id="lineChart">{{ lineChart }}</canvas>
+        <app-mileage-chart></app-mileage-chart>
     </div>
     <div class="percentage">
         <h3>Goal accomplished so far:</h3>
-        <circle-progress [options]="ngCircleOptions"></circle-progress>
+        <app-circular-progress></app-circular-progress>
         <p>Your last hike was on: <span class="date"> {{ mostRecentHike | date }}</span></p>
     </div>
     <div class="goal">
         <div class="current-goal">
             <p class="goal-p">Your current goal: <br>
                 <span class="big-font">{{ goal }} miles</span>
-            <button mat-icon-button *ngIf="!isUpdatingGoal" (click)="editUserGoal()"><mat-icon>edit</mat-icon></button>
-            <button mat-icon-button (click)="editUserGoal()" *ngIf="isUpdatingGoal"><mat-icon>cancel</mat-icon></button></p>
+                <button mat-icon-button *ngIf="!isUpdatingGoal" (click)="editUserGoal()">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button (click)="editUserGoal()" *ngIf="isUpdatingGoal">
+                    <mat-icon>cancel</mat-icon>
+                </button>
+            </p>
         </div>
         <div class="update-goal-input" *ngIf="isUpdatingGoal">
             <form [formGroup]="goalForm" (ngSubmit)="updateGoal(goalForm)" class="form">
-                <p class="above-goal-form-text">By default your goal is to hike (the just over) 800 miles of trails in the Smokies. But you can set a more obtainable goal first.</p>
+                <p class="above-goal-form-text">By default your goal is to hike (the just over) 800 miles of trails in
+                    the Smokies. But you can set a more obtainable goal first.</p>
                 <div class="goal-form">
-                    <!-- <p>Edit your goal:</p> -->
                     <mat-form-field>
                         <mat-label>Update your goal</mat-label>
                         <input formControlName="goal" matInput required [value]="goal">
+                        <mat-hint>800.7 miles max</mat-hint>
                     </mat-form-field>
-                    <button color="primary" mat-icon-button mat-mini-fab matTooltip="Save" type="submit" [disabled]="!goalForm.valid" class="submit_btn">
+                    <button color="primary" mat-icon-button mat-mini-fab matTooltip="Save" type="submit"
+                        [disabled]="!goalForm.valid" class="submit_btn">
                         <mat-icon class="save_icon">save</mat-icon>
-                      </button>
+                    </button>
                 </div>
             </form>
-        </div>   
+        </div>
     </div>
 </div>
 <div class="main_options">
-        <div class="go-to-log">
-            <a routerLink="/log"><button mat-icon-button mat-mini-fab color="primary"><mat-icon class="material-icons">edit</mat-icon></button></a>
-            <p>View & add a new hike</p>  
-        </div>
-        <div class="official-list">
-            <a routerLink="/trails"><button mat-icon-button mat-mini-fab color="primary"><mat-icon class="material-icons">library_books</mat-icon></button></a>
-            <p>View the official trail list</p> 
-        </div> 
+    <div class="go-to-log">
+        <a routerLink="/log"><button mat-icon-button mat-mini-fab color="primary">
+                <mat-icon class="material-icons">edit</mat-icon>
+            </button></a>
+        <p>View & add a new hike</p>
+    </div>
+    <div class="official-list">
+        <a routerLink="/trails"><button mat-icon-button mat-mini-fab color="primary">
+                <mat-icon class="material-icons">library_books</mat-icon>
+            </button></a>
+        <p>View the official trail list</p>
+    </div>
 </div>
 <router-outlet></router-outlet>

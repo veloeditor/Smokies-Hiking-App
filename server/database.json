@@ -2410,11 +2410,21 @@
       "trailName": "Chestnut Top Trail",
       "totalMiles": 4.3,
       "date": "2020-12-30T19:15:19.636Z",
-      "comments": "Coma Dolor sit amet, consectetur adipiscing elit. Aenean cursus euismod nunc a feugiat. Curabitur neque tortor, eleifend.",
-      "photoUrl": "",
+      "comments": "Csdsdoma Dolor sit amet, consectetur adipiscing elit. Aenean cursus euismod nunc a feugiat. Curabitur neque tortor, eleifend.",
       "sections": [],
       "roundTrip": true,
-      "roundTripMiles": 4.3
+      "roundTripMiles": 4.3,
+      "photoUrl": "../../../assets/img/smokies-08.jpeg"
+    },
+    {
+      "trailName": "Baskins Creek Trail",
+      "totalMiles": 2.7,
+      "date": "2021-01-08T20:39:57.294Z",
+      "comments": "Awesome hike along the roaring Baskins Creek. It has been raining a lot lately.",
+      "roundTrip": true,
+      "roundTripMiles": 2.7,
+      "photoUrl": "",
+      "id": 16
     }
   ],
   "users": [

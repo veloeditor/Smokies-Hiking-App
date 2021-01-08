@@ -5,7 +5,8 @@
   </button>
 </div>
 <div *ngIf="addUser" class="hidden-form">
-  <form [formGroup]="trailForm" (ngSubmit)="saveTrail(trailForm)" class="form">
+  <app-hike-form (saveTrailForm)="saveTrailForm($event)"></app-hike-form>
+  <!-- <form [formGroup]="trailForm" (ngSubmit)="saveTrail(trailForm)" class="form">
     <h3>Add a new hike:</h3>
     <div class="hike-form">
       <mat-form-field appearance="fill" class="name-form-field">
@@ -55,7 +56,7 @@
         <mat-icon class="save_icon">save</mat-icon>
       </button>
     </div>
-  </form>
+  </form> -->
 </div>
 
 <div class="log_container">

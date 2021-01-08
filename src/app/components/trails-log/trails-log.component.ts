@@ -183,6 +183,7 @@ export class TrailsLogComponent implements OnInit {
   saveTrailForm(value: boolean): void {
     this.enableEdit = false;
     this.enableEditIndex = null;
+    this.addUser = false;
     this.getUserHikes();
   }
 
@@ -231,11 +232,11 @@ export class TrailsLogComponent implements OnInit {
 
   hiked() {
     this.userHikes?.forEach((hike) => {
-      if (hike.sections === null || hike.sections.length < 1) {
+      if (hike?.sections === null || hike.sections?.length < 1) {
         const trailName = hike.trailName;
         this.hikedNames.push(trailName);
       } else {
-        hike.sections.forEach((section) => {
+        hike?.sections?.forEach((section) => {
           const sectionName = section.sectionName;
           this.hikedSectionNames.push(sectionName);
         });

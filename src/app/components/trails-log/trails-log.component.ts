@@ -85,7 +85,7 @@ export class TrailsLogComponent implements OnInit {
 
     this.trailForm.controls.trailName.valueChanges.subscribe((change) => {
       const trailObjSelected = this.trails?.find((t) => t.name === change);
-      this.pictureLink = trailObjSelected.photoUrl;
+      this.pictureLink = trailObjSelected?.photoUrl;
       if (trailObjSelected?.sections?.length < 1) {
         if (this.hikedNames.includes(trailObjSelected.name)) {
           window.alert('You already hiked this!');

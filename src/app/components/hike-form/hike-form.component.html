@@ -19,17 +19,17 @@
   
       <mat-checkbox formControlName="roundTrip" class="round-trip">Round Trip?</mat-checkbox>
   
-      <mat-form-field *ngIf="selectedSection?.length > 0" appearance="fill" class="sections-form-field">
+      <mat-form-field *ngIf="sectionNameArray" appearance="fill" class="sections-form-field">
         <mat-label>Sections</mat-label>
         <mat-select formControlName="sections" multiple>
-          <mat-select-trigger>
+          <!-- <mat-select-trigger>
             {{ selectedSection[0]?.sectionName }}
-            <span *ngIf="selectedSection.length > 1" class="example-additional-selection">
-              (+{{ selectedSection.length - 1 }}
-              {{ selectedSection.length === 2 ? "other" : "others" }})
+            <span *ngIf="selectedSection?.length > 1" class="example-additional-selection">
+              (+{{ selectedSection?.length - 1 }}
+              {{ selectedSection?.length === 2 ? "other" : "others" }})
             </span>
-          </mat-select-trigger>
-          <mat-option *ngFor="let section of trailObjectedEdited?.sections" [value]="section">{{ section.sectionName }} - {{
+          </mat-select-trigger> -->
+          <mat-option *ngFor="let section of sectionNameArray" [value]="section">{{ section.sectionName }} - {{
             section.sectionLength }} miles</mat-option>
         </mat-select>
       </mat-form-field>

@@ -2413,15 +2413,24 @@
       "photoUrl": "../../../assets/img/smokies-08.jpeg"
     },
     {
-      "id": 16,
       "trailName": "Baskins Creek Trail",
       "totalMiles": 2.7,
-      "date": "2021-01-01T06:00:00.000Z",
-      "comments": "Awesome hike along the roaring Baskins Creek. It has been raining a lot lately.",
-      "sections": [],
+      "date": "2021-01-09T15:52:43.793Z",
+      "comments": "Beautiful hike along the roaring Baskins Creek. They've had a lot of rain in the area and the creeks were full.",
       "roundTrip": true,
       "roundTripMiles": 2.7,
-      "photoUrl": "../../../assets/img/smokies-11.jpeg"
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7010250_medium_1554398123.jpg",
+      "id": 16
+    },
+    {
+      "trailName": "Twentymile Loop Trail",
+      "totalMiles": 2.9,
+      "date": "2021-01-09T15:53:50.754Z",
+      "comments": "Nice little hike. I have never been in this part of the park before.",
+      "roundTrip": true,
+      "roundTripMiles": 2.9,
+      "photoUrl": "",
+      "id": 17
     }
   ],
   "users": [

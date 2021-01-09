@@ -60,62 +60,62 @@ export class TrailsLogComponent implements OnInit {
       this.trails = data;
     });
 
-    this.trailForm = this.fb.group({
-      trailName: ['', [Validators.required]],
-      totalMiles: [this.trailObjSelectedMiles, [Validators.required]],
-      date: [new Date(), [Validators.required]],
-      comments: '',
-      sections: this.sectionNameArray,
-      roundTrip: false,
-      roundTripMiles: ''
-    });
+    // this.trailForm = this.fb.group({
+    //   trailName: ['', [Validators.required]],
+    //   totalMiles: [this.trailObjSelectedMiles, [Validators.required]],
+    //   date: [new Date(), [Validators.required]],
+    //   comments: '',
+    //   sections: this.sectionNameArray,
+    //   roundTrip: false,
+    //   roundTripMiles: ''
+    // });
 
-    this.filteredTrails = this.trailForm.controls.trailName.valueChanges
-    .pipe(
-      startWith(''),
-      map(value => this.findOption(value))
-    );
+    // this.filteredTrails = this.trailForm.controls.trailName.valueChanges
+    // .pipe(
+    //   startWith(''),
+    //   map(value => this.findOption(value))
+    // );
 
-    this.trailForm.controls.roundTrip.valueChanges.subscribe((change) => {
-      if (change) {
-          this.extraMiles = this.trailObjSelectedMiles;
-          console.log('extraMiles', this.extraMiles);
-      }
-    });
+    // this.trailForm.controls.roundTrip.valueChanges.subscribe((change) => {
+    //   if (change) {
+    //       this.extraMiles = this.trailObjSelectedMiles;
+    //       console.log('extraMiles', this.extraMiles);
+    //   }
+    // });
 
-    this.trailForm.controls.trailName.valueChanges.subscribe((change) => {
-      const trailObjSelected = this.trails?.find((t) => t.name === change);
-      this.pictureLink = trailObjSelected.photoUrl;
-      if (trailObjSelected?.sections?.length < 1) {
-        if (this.hikedNames.includes(trailObjSelected.name)) {
-          window.alert('You already hiked this!');
-        }
-        if (trailObjSelected?.length !== undefined && !this.hikedNames.includes(trailObjSelected.name)) {
-          this.trailObjSelectedMiles = trailObjSelected?.length;
-        } else {
-          this.trailObjSelectedMiles = 0;
-        }
-      } else {
-        this.trailObjSelectedMiles = 0;
-        this.sectionNameArray = trailObjSelected?.sections;
-      }
-    });
+    // this.trailForm.controls.trailName.valueChanges.subscribe((change) => {
+    //   const trailObjSelected = this.trails?.find((t) => t.name === change);
+    //   this.pictureLink = trailObjSelected.photoUrl;
+    //   if (trailObjSelected?.sections?.length < 1) {
+    //     if (this.hikedNames.includes(trailObjSelected.name)) {
+    //       window.alert('You already hiked this!');
+    //     }
+    //     if (trailObjSelected?.length !== undefined && !this.hikedNames.includes(trailObjSelected.name)) {
+    //       this.trailObjSelectedMiles = trailObjSelected?.length;
+    //     } else {
+    //       this.trailObjSelectedMiles = 0;
+    //     }
+    //   } else {
+    //     this.trailObjSelectedMiles = 0;
+    //     this.sectionNameArray = trailObjSelected?.sections;
+    //   }
+    // });
 
-    this.trailForm.controls.sections.valueChanges.subscribe((value) => {
-      this.selectedSection = value;
-      const miles = this.selectedSection?.reduce((acc, section) => {
-        if (this.hikedSectionNames.includes(section.sectionName)) {
-          console.log(section.sectionName);
-          return 0;
-        }
-        return acc + Number(section?.sectionLength);
-      }, 0);
-      this.trailObjSelectedMiles = miles?.toFixed(1);
-      if (this.trailForm.controls.roundTrip.value === true) {
-        this.extraMiles = this.trailObjSelectedMiles;
-        console.log('extraMiles', this.extraMiles);
-      }
-    });
+    // this.trailForm.controls.sections.valueChanges.subscribe((value) => {
+    //   this.selectedSection = value;
+    //   const miles = this.selectedSection?.reduce((acc, section) => {
+    //     if (this.hikedSectionNames.includes(section.sectionName)) {
+    //       console.log(section.sectionName);
+    //       return 0;
+    //     }
+    //     return acc + Number(section?.sectionLength);
+    //   }, 0);
+    //   this.trailObjSelectedMiles = miles?.toFixed(1);
+    //   if (this.trailForm.controls.roundTrip.value === true) {
+    //     this.extraMiles = this.trailObjSelectedMiles;
+    //     console.log('extraMiles', this.extraMiles);
+    //   }
+    // });
   }
 
   private getUserHikes() {

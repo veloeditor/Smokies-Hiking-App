@@ -2415,6 +2415,17 @@
       "sections": [],
       "roundTrip": true,
       "roundTripMiles": 4.3
+    },
+    {
+      "trailName": "Baskins Creek Trail",
+      "totalMiles": 2.7,
+      "date": "2021-01-09T21:37:45.444Z",
+      "comments": "Nice hiking trail and just long enough to feel some pain in the legs.",
+      "sections": null,
+      "roundTrip": true,
+      "roundTripMiles": 2.7,
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7010250_medium_1554398123.jpg",
+      "id": 16
     }
   ],
   "users": [

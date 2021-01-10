@@ -2313,17 +2313,6 @@
       "roundTrip": true
     },
     {
-      "id": 10,
-      "trailName": "Ace Gap Trail",
-      "totalMiles": 5.6,
-      "date": "2020-11-30T18:36:43.291Z",
-      "comments": "Nice hiking trail and just long enough to feel some pain in the legs. ",
-      "sections": [],
-      "roundTrip": true,
-      "roundTripMiles": 5.6,
-      "photoUrl": "https://res.cloudinary.com/djxd2b2en/image/upload/v1609610666/smokies-05_txyuwm.jpg"
-    },
-    {
       "trailName": "Abrams Falls Trail",
       "totalMiles": 4.2,
       "roundTripMiles": 4.2,
@@ -2357,6 +2346,17 @@
         }
       ],
       "roundTrip": true
+    },
+    {
+      "id": 10,
+      "trailName": "Ace Gap Trail",
+      "totalMiles": 5.6,
+      "date": "2020-11-30T18:36:43.291Z",
+      "comments": "Nice hiking trail and just long enough to feel some pain in the legs. ",
+      "sections": [],
+      "roundTrip": true,
+      "roundTripMiles": 5.6,
+      "photoUrl": "https://res.cloudinary.com/djxd2b2en/image/upload/v1609610666/smokies-05_txyuwm.jpg"
     },
     {
       "id": 13,

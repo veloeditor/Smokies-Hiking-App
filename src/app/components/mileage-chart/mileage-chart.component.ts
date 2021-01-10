@@ -32,22 +32,22 @@ export class MileageChartComponent implements OnInit {
   }
 
   private dataForChart(milesArray: any[], reduceMilesArray: any[], hikeDatesArray: any[]) {
-      this.userHikes?.forEach(hike => {
-      const hikeMiles = hike.totalMiles;
-      milesArray.push(hikeMiles);
-      milesArray.reduce((prev, curr, i) => reduceMilesArray[i] = prev + curr, 0);
-      const hikeDate = hike.date;
-      const convertedDate = new DatePipe('en-US').transform(hikeDate, 'MM-dd-yyyy');
-      hikeDatesArray.push(convertedDate);
-      hikeDatesArray.sort();
-    });
-  }
+    this.userHikes?.forEach(hike => {
+    const hikeMiles = hike.totalMiles;
+    milesArray.push(hikeMiles);
+    milesArray.reduce((prev, curr, i) => reduceMilesArray[i] = prev + curr, 0);
+    const hikeDate = hike.date;
+    const convertedDate = new DatePipe('en-US').transform(hikeDate, 'MM-dd-yyyy');
+    hikeDatesArray.push(convertedDate);
+    hikeDatesArray.sort((a, b) => b.data - a.date);
+  });
+}
 
   private createBarChart(hikeDatesArray: any[], reduceMilesArray: any[]) {
     this.lineChart = new Chart('lineChart', {
       type: 'line',
       data: {
-        labels: hikeDatesArray,
+        labels: hikeDatesArray.sort((a, b) => b.data - a.date),
         datasets: [
           {
             data: reduceMilesArray,

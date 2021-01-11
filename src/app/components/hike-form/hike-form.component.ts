@@ -75,12 +75,11 @@ export class HikeFormComponent implements OnInit {
       // this makes sure whatever is in the totalMiles input is always sent to database when submitting
     this.trailForm.controls.totalMiles.valueChanges.subscribe((value) => {
         this.trailObjSelectedMiles = value;
+        console.log(this.trailObjSelectedMiles);
         if (!this.userHike?.roundTrip) {
           this.roundTripMileage = 0;
-          console.log(this.trailObjectedEdited);
         } else {
           this.roundTripMileage = this.trailObjSelectedMiles;
-          console.log(this.trailObjectedEdited);
         }
     });
 
@@ -113,40 +112,34 @@ export class HikeFormComponent implements OnInit {
       }
     });
 
-    this.trailForm.controls.sections.valueChanges.subscribe((value) => {
-      this.selectedSection = value;
-      const miles = this.selectedSection?.reduce((acc, section) => {
-        if (this.hikedSectionNames.includes(section.sectionName)) {
-          console.log(section.sectionName);
-          return 0;
-        }
-        return acc + Number(section?.sectionLength);
-      }, 0);
-      this.trailObjSelectedMiles = miles?.toFixed(1);
-      if (this.trailForm.controls.roundTrip.value === true) {
-        this.extraMiles = this.trailObjSelectedMiles;
-        console.log('extraMiles', this.extraMiles);
+    this.trailForm.controls.roundTrip.valueChanges.subscribe((value) => {
+      if (value) {
+        this.roundTripMileage = this.trailObjSelectedMiles;
+      } else {
+        this.roundTripMileage = 0;
       }
     });
 
-    // this.trailForm.controls.sections.valueChanges.subscribe((value) => {
-    //   this.selectedSection = value;
-    //   if (this.userHike?.sections?.length > 0) {
-    //     const miles = this.selectedSection?.reduce((acc, section) => {
-    //       if (this.hikedSectionNames.includes(section.sectionName)) {
-    //         return 0;
-    //       }
-    //       return acc + Number(section?.sectionLength);
-    //     }, 0);
-    //     this.trailObjSelectedMiles = miles?.toFixed(1);
-    //     if (!this.userHike.roundTrip) {
-    //       this.roundTripMileage = 0;
-    //     } else {
-    //       this.roundTripMileage = this.trailObjSelectedMiles;
-    //     }
-    //   }
-    // });
-
+    // something in here is breaking totalMiles when editing
+    this.trailForm.controls.sections.valueChanges.subscribe((value) => {
+      this.selectedSection = value;
+      console.log(this.selectedSection);
+      if (this.selectedSection) {
+        const miles = this.selectedSection?.reduce((acc, section) => {
+          if (this.hikedSectionNames.includes(section.sectionName)) {
+            console.log(section.sectionName);
+            return 0;
+          }
+          return acc + Number(section?.sectionLength);
+        }, 0);
+        this.trailObjSelectedMiles = miles?.toFixed(1);
+        console.log(this.trailObjSelectedMiles);
+        if (this.trailForm.controls.roundTrip.value === true) {
+          this.extraMiles = this.trailObjSelectedMiles;
+          this.roundTripMileage = this.extraMiles;
+        }
+      }
+    });
   }
 
   // when edited trail with sections, the following grabs all the trail's sections, not just those part of edited obj

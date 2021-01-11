@@ -2357,7 +2357,7 @@
     {
       "id": 13,
       "trailName": "Appalachian Trail",
-      "totalMiles": 22.7,
+      "totalMiles": 16.2,
       "date": "2020-12-11T01:55:10.403Z",
       "comments": "I did the first section of the Appalachian Trail!!",
       "sections": [
@@ -2380,30 +2380,11 @@
         {
           "sectionName": "Eagle Creek - Bote Mountain",
           "sectionLength": 0.1
-        },
-        {
-          "sectionName": "Bote Mountain - Jenkins Ridge",
-          "sectionLength": 0.3
-        },
-        {
-          "sectionName": "Jenkins Ridge - Greenbrier Ridge",
-          "sectionLength": 6.2
         }
       ],
       "roundTrip": true,
-      "roundTripMiles": 16.5,
+      "roundTripMiles": 16.2,
       "photoUrl": ""
-    },
-    {
-      "id": 14,
-      "trailName": "Boogerman Trail",
-      "totalMiles": 4.1,
-      "date": "2020-12-18T02:30:13.175Z",
-      "comments": "Donnec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus",
-      "photoUrl": "",
-      "sections": [],
-      "roundTrip": true,
-      "roundTripMiles": 4.1
     },
     {
       "id": 15,
@@ -2427,14 +2408,38 @@
       "id": 16
     },
     {
-      "trailName": "Twentymile Loop Trail",
-      "totalMiles": 2.9,
-      "date": "2021-01-11T14:38:01.203Z",
-      "comments": "Nice little hike despite it being extremely cold.",
+      "trailName": "Boogerman Trail",
+      "totalMiles": 4.1,
+      "date": "2021-01-11T16:02:47.434Z",
+      "comments": "Csdsdoma Dolor sit amet, consectetur adipiscing elit. Aenean cursus euismod nunc a feugiat. Curabitur neque tortor, eleifend.",
       "roundTrip": true,
-      "roundTripMiles": 2.9,
+      "roundTripMiles": 4.1,
       "photoUrl": "",
       "id": 17
+    },
+    {
+      "id": 18,
+      "trailName": "Balsam Mountain Trail",
+      "totalMiles": 5.2,
+      "date": "2021-01-11T16:30:22.548Z",
+      "comments": "Finally knocked out this trail and was able to complete all of the sections.",
+      "sections": [
+        {
+          "sectionName": "Balsam Mountain Road - Beech Gap I",
+          "sectionLength": 2.3
+        },
+        {
+          "sectionName": "Beech Gap I - Mt. Sterling Ridge",
+          "sectionLength": 2
+        },
+        {
+          "sectionName": "Mt. Sterling Ridge - Gunter Fork",
+          "sectionLength": 0.9
+        }
+      ],
+      "roundTrip": true,
+      "roundTripMiles": 5.2,
+      "photoUrl": ""
     }
   ],
   "users": [

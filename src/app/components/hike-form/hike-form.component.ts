@@ -77,8 +77,10 @@ export class HikeFormComponent implements OnInit {
         this.trailObjSelectedMiles = value;
         if (!this.userHike?.roundTrip) {
           this.roundTripMileage = 0;
+          console.log(this.trailObjectedEdited);
         } else {
           this.roundTripMileage = this.trailObjSelectedMiles;
+          console.log(this.trailObjectedEdited);
         }
     });
 
@@ -111,14 +113,6 @@ export class HikeFormComponent implements OnInit {
       }
     });
 
-    this.trailForm.controls.roundTrip.valueChanges.subscribe((value) => {
-      if (value) {
-        this.roundTripMileage = this.trailObjSelectedMiles;
-      } else {
-        this.roundTripMileage = 0;
-      }
-    });
-
     this.trailForm.controls.sections.valueChanges.subscribe((value) => {
       this.selectedSection = value;
       const miles = this.selectedSection?.reduce((acc, section) => {
@@ -135,6 +129,24 @@ export class HikeFormComponent implements OnInit {
       }
     });
 
+    // this.trailForm.controls.sections.valueChanges.subscribe((value) => {
+    //   this.selectedSection = value;
+    //   if (this.userHike?.sections?.length > 0) {
+    //     const miles = this.selectedSection?.reduce((acc, section) => {
+    //       if (this.hikedSectionNames.includes(section.sectionName)) {
+    //         return 0;
+    //       }
+    //       return acc + Number(section?.sectionLength);
+    //     }, 0);
+    //     this.trailObjSelectedMiles = miles?.toFixed(1);
+    //     if (!this.userHike.roundTrip) {
+    //       this.roundTripMileage = 0;
+    //     } else {
+    //       this.roundTripMileage = this.trailObjSelectedMiles;
+    //     }
+    //   }
+    // });
+
   }
 
   // when edited trail with sections, the following grabs all the trail's sections, not just those part of edited obj
@@ -144,6 +156,7 @@ export class HikeFormComponent implements OnInit {
     const results = this.trailObjectedEdited?.sections.filter(({ sectionName: id1 }) => this.userHike.sections
                                                      .some(({ sectionName: id2 }) => id2 === id1));
     this.trailForm.get('sections').setValue(results);
+    console.log('results', results);
   }
 
   private defaultString(value: string): string {

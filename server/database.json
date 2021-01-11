@@ -2357,7 +2357,7 @@
     {
       "id": 13,
       "trailName": "Appalachian Trail",
-      "totalMiles": 16.5,
+      "totalMiles": 22.7,
       "date": "2020-12-11T01:55:10.403Z",
       "comments": "I did the first section of the Appalachian Trail!!",
       "sections": [
@@ -2384,11 +2384,15 @@
         {
           "sectionName": "Bote Mountain - Jenkins Ridge",
           "sectionLength": 0.3
+        },
+        {
+          "sectionName": "Jenkins Ridge - Greenbrier Ridge",
+          "sectionLength": 6.2
         }
       ],
       "roundTrip": true,
       "roundTripMiles": 16.5,
-      "photoUrl": "https://cdn-files.apstatic.com/hike/7011319_medium_1554400402.jpg"
+      "photoUrl": ""
     },
     {
       "id": 14,
@@ -2425,8 +2429,8 @@
     {
       "trailName": "Twentymile Loop Trail",
       "totalMiles": 2.9,
-      "date": "2021-01-09T15:53:50.754Z",
-      "comments": "Nice little hike. I have never been in this part of the park before.",
+      "date": "2021-01-11T14:38:01.203Z",
+      "comments": "Nice little hike despite it being extremely cold.",
       "roundTrip": true,
       "roundTripMiles": 2.9,
       "photoUrl": "",

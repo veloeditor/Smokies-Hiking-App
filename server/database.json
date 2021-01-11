@@ -2418,28 +2418,24 @@
       "id": 17
     },
     {
-      "id": 18,
-      "trailName": "Balsam Mountain Trail",
-      "totalMiles": 5.2,
-      "date": "2021-01-11T16:30:22.548Z",
-      "comments": "Finally knocked out this trail and was able to complete all of the sections.",
+      "trailName": "Laurel Falls Trail",
+      "totalMiles": 4,
+      "date": "2021-01-11T20:12:10.048Z",
+      "comments": "Finally knocked out this always-busy hike. Lots of people on the trails, but at least the falls were roaring.",
       "sections": [
         {
-          "sectionName": "Balsam Mountain Road - Beech Gap I",
-          "sectionLength": 2.3
+          "sectionName": "Little River Road - Little Greenbrier",
+          "sectionLength": 3.1
         },
         {
-          "sectionName": "Beech Gap I - Mt. Sterling Ridge",
-          "sectionLength": 2
-        },
-        {
-          "sectionName": "Mt. Sterling Ridge - Gunter Fork",
+          "sectionName": "Little Greenbrier - Cove Mountain",
           "sectionLength": 0.9
         }
       ],
       "roundTrip": true,
-      "roundTripMiles": 5.2,
-      "photoUrl": ""
+      "roundTripMiles": 4,
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7014931_medium_1554825575.jpg",
+      "id": 18
     }
   ],
   "users": [

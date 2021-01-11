@@ -59,63 +59,6 @@ export class TrailsLogComponent implements OnInit {
     this.trailsService.getAllTrails().subscribe((data: any[]) => {
       this.trails = data;
     });
-
-    // this.trailForm = this.fb.group({
-    //   trailName: ['', [Validators.required]],
-    //   totalMiles: [this.trailObjSelectedMiles, [Validators.required]],
-    //   date: [new Date(), [Validators.required]],
-    //   comments: '',
-    //   sections: this.sectionNameArray,
-    //   roundTrip: false,
-    //   roundTripMiles: ''
-    // });
-
-    // this.filteredTrails = this.trailForm.controls.trailName.valueChanges
-    // .pipe(
-    //   startWith(''),
-    //   map(value => this.findOption(value))
-    // );
-
-    // this.trailForm.controls.roundTrip.valueChanges.subscribe((change) => {
-    //   if (change) {
-    //       this.extraMiles = this.trailObjSelectedMiles;
-    //       console.log('extraMiles', this.extraMiles);
-    //   }
-    // });
-
-    // this.trailForm.controls.trailName.valueChanges.subscribe((change) => {
-    //   const trailObjSelected = this.trails?.find((t) => t.name === change);
-    //   this.pictureLink = trailObjSelected.photoUrl;
-    //   if (trailObjSelected?.sections?.length < 1) {
-    //     if (this.hikedNames.includes(trailObjSelected.name)) {
-    //       window.alert('You already hiked this!');
-    //     }
-    //     if (trailObjSelected?.length !== undefined && !this.hikedNames.includes(trailObjSelected.name)) {
-    //       this.trailObjSelectedMiles = trailObjSelected?.length;
-    //     } else {
-    //       this.trailObjSelectedMiles = 0;
-    //     }
-    //   } else {
-    //     this.trailObjSelectedMiles = 0;
-    //     this.sectionNameArray = trailObjSelected?.sections;
-    //   }
-    // });
-
-    // this.trailForm.controls.sections.valueChanges.subscribe((value) => {
-    //   this.selectedSection = value;
-    //   const miles = this.selectedSection?.reduce((acc, section) => {
-    //     if (this.hikedSectionNames.includes(section.sectionName)) {
-    //       console.log(section.sectionName);
-    //       return 0;
-    //     }
-    //     return acc + Number(section?.sectionLength);
-    //   }, 0);
-    //   this.trailObjSelectedMiles = miles?.toFixed(1);
-    //   if (this.trailForm.controls.roundTrip.value === true) {
-    //     this.extraMiles = this.trailObjSelectedMiles;
-    //     console.log('extraMiles', this.extraMiles);
-    //   }
-    // });
   }
 
   private getUserHikes() {
@@ -150,30 +93,6 @@ export class TrailsLogComponent implements OnInit {
   get sections(): FormControl {
     return this.trailForm.get('sections') as FormControl;
   }
-
-  // saveTrail(trailForm: FormGroup): void {
-
-  //   const hike = {
-  //     trailName: this.trailForm.value.trailName,
-  //     totalMiles: this.trailObjSelectedMiles,
-  //     date: this.trailForm.value.date,
-  //     comments: this.trailForm.value.comments,
-  //     sections: this.trailForm.value.sections,
-  //     roundTrip: this.trailForm.value.roundTrip,
-  //     roundTripMiles: Number(this.extraMiles),
-  //     photoUrl: this.pictureLink
-  //   } as UserHike;
-
-  //   this.userHikesService.postHike(hike).subscribe(_ => {
-  //     this.snackBar.open('Successfully added hike', 'Close', {
-  //       duration: 5000,
-  //     });
-  //   });
-  //   this.getUserHikes();
-  //   this.addUser = false;
-  //   this.trailForm.markAsPristine();
-  //   this.trailForm.reset();
-  // }
 
   editHike(userHike, e, i): void {
     this.enableEdit = true;

@@ -59,10 +59,12 @@ export class MileageChartComponent implements OnInit {
         ]
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
         legend: {
           display: false
         },
-        sampleSize: 3,
+        // sampleSize: 3,
         scales: {
           xAxes: [{
             display: true,

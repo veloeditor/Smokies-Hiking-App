@@ -2418,10 +2418,11 @@
       "id": 17
     },
     {
+      "id": 18,
       "trailName": "Laurel Falls Trail",
       "totalMiles": 4,
       "date": "2021-01-11T20:12:10.048Z",
-      "comments": "Finally knocked out this always-busy hike. Lots of people on the trails, but at least the falls were roaring.",
+      "comments": "Finally knocked out this VERY busy hike. Lots of people on the trails, but at least the falls were roaring.",
       "sections": [
         {
           "sectionName": "Little River Road - Little Greenbrier",
@@ -2434,8 +2435,7 @@
       ],
       "roundTrip": true,
       "roundTripMiles": 4,
-      "photoUrl": "https://cdn-files.apstatic.com/hike/7014931_medium_1554825575.jpg",
-      "id": 18
+      "photoUrl": ""
     }
   ],
   "users": [

@@ -51,11 +51,11 @@ export class CircularProgressComponent implements OnInit {
     this.ngCircleOptions = {
       percent: this.currentProgress,
       space: -10,
-      radius: 132,
+      radius: 120,
       outerStrokeWidth: 10,
-      innerStrokeWidth: 9,
-      outerStrokeColor: '#1b5e20',
-      innerStrokeColor: 'white',
+      innerStrokeWidth: 10,
+      outerStrokeColor: '#329439',
+      innerStrokeColor: 'rgba(0, 0, 0, 0.3)',
       animation: true,
       animationDuration: 300,
       subtitleFormat: (percent: number): string => {

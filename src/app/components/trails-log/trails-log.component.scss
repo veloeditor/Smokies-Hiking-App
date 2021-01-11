@@ -27,60 +27,6 @@ body {
   }
 }
 
-.form {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 15px;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  flex-direction: column;
-  background-color: #241810;
-  width: 89%;
-  border-radius: 12px;
-  color: white;
-
-  h3 {
-    text-align: left;
-  }
-}
-
-.hike-form,
-.date-comments-form {
-  display: flex;
-  justify-content: space-evenly;
-  margin: auto;
-  gap: 40px;
-}
-
-.date-comments-form {
-  align-items: center;
-}
-
-.name-form-field {
-  width: 300px;
-}
-
-.miles-form-field {
-  width: 110px;
-}
-
-.sections-form-field {
-  width: 330px;
-}
-
-.date-form-field {
-  width: 170px;
-}
-
-.comments-form-field {
-  width: 450px;
-}
-
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -272,3 +218,18 @@ mat-card {
 ::-webkit-scrollbar-thumb:window-inactive {
 background: "#1b5e20"; 
 }
+
+@media only screen and (max-width: 1100px) {
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+
+    .hike-card {
+      flex-basis: 370px;
+      min-width: 300px;
+    }
+  }
+}
+

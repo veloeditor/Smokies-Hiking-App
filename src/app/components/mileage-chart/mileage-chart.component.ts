@@ -39,7 +39,7 @@ export class MileageChartComponent implements OnInit {
       const hikeDate = hike.date;
       const convertedDate = new DatePipe('en-US').transform(hikeDate, 'MM-dd-yyyy');
       hikeDatesArray.push(convertedDate);
-      hikeDatesArray.sort();
+      hikeDatesArray.sort((a, b) => b.data - a.date);
     });
   }
 
@@ -72,7 +72,8 @@ export class MileageChartComponent implements OnInit {
             }
           }],
           yAxes: [{
-            display: true
+            display: true,
+            beginAtZero: true
           }],
         }
       }

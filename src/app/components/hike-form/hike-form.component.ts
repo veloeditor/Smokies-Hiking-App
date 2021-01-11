@@ -20,16 +20,19 @@ export class HikeFormComponent implements OnInit {
   @Output() saveTrailForm: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   trails: Trail[];
+  hikes: UserHike[];
   trailForm: FormGroup;
   filteredTrails: Observable<Trail[]>;
   pictureLink = '';
   trailObjSelectedMiles = 0;
-  sectionNameArray: [{sectionName: string, sectionLength: number}];
+  sectionNameArray: [{ sectionName: string, sectionLength: number }];
   selectedSection = [];
   hikedNames = [];
   hikedSectionNames = [];
+  trailObjSelected: Trail[];
   trailObjectedEdited = null;
   roundTripMileage: number;
+  extraMiles: number;
 
   constructor(
     private userHikesService: UserHikesService,
@@ -39,6 +42,8 @@ export class HikeFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getUserHikes();
+
     this.trailsService.getAllTrails().subscribe((data: any[]) => {
       this.trails = data;
       this.rebuildTrailSections();
@@ -51,29 +56,35 @@ export class HikeFormComponent implements OnInit {
       comments: this.defaultString(this.userHike?.comments),
       sections: this.defaultSections(this.trailObjectedEdited?.sections),
       roundTrip: [this.defaultBoolean(this.userHike?.roundTrip)],
-      roundTripMiles: [this.defaultNumber(this.userHike?.roundTripMiles)]
+      roundTripMiles: [this.defaultNumber(this.userHike?.roundTripMiles)],
+      photoUrl: this.defaultString(this.userHike?.photoUrl)
     });
 
-    this.sectionNameArray = this.userHike.sections;
+    this.sectionNameArray = this.userHike?.sections;
 
     this.filteredTrails = this.trailForm.controls.trailName.valueChanges
-    .pipe(
-      startWith(''),
-      map(value => this.findOption(value))
-    );
+      .pipe(
+        startWith(''),
+        map(value => this.findOption(value))
+      );
 
-      // this makes sure whatever is in the totalMiles input is always sent to database when submitting
-    this.trailForm.controls.totalMiles.valueChanges.subscribe((value) => {
-        this.trailObjSelectedMiles = value;
-        if (!this.userHike.roundTrip) {
-          this.roundTripMileage = 0;
-        } else {
-          this.roundTripMileage = this.trailObjSelectedMiles;
-        }
+    this.trailForm.controls.roundTrip.valueChanges.subscribe((change) => {
+      if (change) {
+        this.extraMiles = this.trailObjSelectedMiles;
+      }
     });
 
-    this.trailForm.get('totalMiles').setValue(this.userHike.totalMiles);
+    // this makes sure whatever is in the totalMiles input is always sent to database when submitting
+    this.trailForm.controls.totalMiles.valueChanges.subscribe((value) => {
+      this.trailObjSelectedMiles = value;
+      if (!this.userHike?.roundTrip) {
+        this.roundTripMileage = 0;
+      } else {
+        this.roundTripMileage = this.trailObjSelectedMiles;
+      }
+    });
 
+    this.trailForm?.get('totalMiles').setValue(this.userHike?.totalMiles);
 
     this.trailForm.controls.trailName.valueChanges.subscribe((change) => {
       const trailObjSelected = this.trails?.find((t) => t.name === change);
@@ -92,6 +103,15 @@ export class HikeFormComponent implements OnInit {
       }
     });
 
+    this.trailForm.controls.trailName.valueChanges.subscribe((change) => {
+      const trailObjSelected = this.trails?.find((t) => t.name === change);
+      if (trailObjSelected?.photoUrl !== '') {
+        this.pictureLink = trailObjSelected?.photoUrl;
+      } else {
+        this.pictureLink = '';
+      }
+    });
+
     this.trailForm.controls.roundTrip.valueChanges.subscribe((value) => {
       if (value) {
         this.roundTripMileage = this.trailObjSelectedMiles;
@@ -100,33 +120,39 @@ export class HikeFormComponent implements OnInit {
       }
     });
 
+    // something in here is breaking totalMiles when editing
     this.trailForm.controls.sections.valueChanges.subscribe((value) => {
       this.selectedSection = value;
-      if (this.userHike?.sections?.length > 0) {
+      console.log(this.selectedSection);
+      if (this.selectedSection?.length > 1 || !this.userHike?.id) {
         const miles = this.selectedSection?.reduce((acc, section) => {
-          if (this.hikedSectionNames.includes(section.sectionName)) {
+          if (!this.userHike?.id && this.hikedSectionNames.includes(section.sectionName)) {
             return 0;
           }
           return acc + Number(section?.sectionLength);
         }, 0);
         this.trailObjSelectedMiles = miles?.toFixed(1);
-        if (!this.userHike.roundTrip) {
-          this.roundTripMileage = 0;
-        } else {
-          this.roundTripMileage = this.trailObjSelectedMiles;
+        if (this.trailForm.controls.roundTrip.value === true) {
+          this.extraMiles = this.trailObjSelectedMiles;
+          this.roundTripMileage = this.extraMiles;
         }
       }
     });
+  }
 
-    console.log(this.trailForm.value);
+  private getUserHikes() {
+    this.userHikesService.getAllUserHikes().subscribe((data: any[]) => {
+      this.hikes = data;
+      this.hiked();
+    });
   }
 
   // when edited trail with sections, the following grabs all the trail's sections, not just those part of edited obj
   private rebuildTrailSections() {
-    const hikedTrailName = this.userHike.trailName;
+    const hikedTrailName = this.userHike?.trailName;
     this.trailObjectedEdited = this.trails?.find((t) => t.name === hikedTrailName);
-    const results = this.trailObjectedEdited.sections.filter(({ sectionName: id1 }) => this.userHike.sections
-                                                     .some(({ sectionName: id2 }) => id2 === id1));
+    const results = this.trailObjectedEdited?.sections.filter(({ sectionName: id1 }) => this.userHike.sections
+      .some(({ sectionName: id2 }) => id2 === id1));
     this.trailForm.get('sections').setValue(results);
   }
 
@@ -155,9 +181,10 @@ export class HikeFormComponent implements OnInit {
     return this.trails?.filter(option => option.name.toLowerCase().includes(filterValue));
   }
 
+
   saveTrail(trailForm: FormGroup) {
     const hike = {
-      id: this.userHike.id,
+      id: this.userHike?.id,
       trailName: this.trailForm.value.trailName,
       totalMiles: Number(this.trailObjSelectedMiles),
       date: this.trailForm.value.date,
@@ -165,15 +192,38 @@ export class HikeFormComponent implements OnInit {
       sections: this.trailForm.value.sections,
       roundTrip: this.trailForm.value.roundTrip,
       roundTripMiles: Number(this.roundTripMileage),
-      photoUrl: this.userHike.photoUrl
+      photoUrl: this.pictureLink
     } as UserHike;
 
-    this.userHikesService.updateHike(hike).subscribe(_ => {
-      this.snackBar.open('Successfully updated hike', 'Close', {
-        duration: 5000,
+    if (this.userHike?.id) {
+      this.userHikesService.updateHike(hike).subscribe(_ => {
+        this.snackBar.open('Successfully updated hike', 'Close', {
+          duration: 5000,
+        });
+        this.saveTrailForm.emit(false);
+      });
+    } else {
+      this.userHikesService.postHike(hike).subscribe(_ => {
+        this.snackBar.open('Successfully added hike', 'Close', {
+          duration: 5000,
+        });
       });
       this.saveTrailForm.emit(false);
-      });
+    }
+  }
+
+  hiked() {
+    this.hikes?.forEach((hike) => {
+      if (hike?.sections === null || hike.sections?.length < 1) {
+        const trailName = hike.trailName;
+        this.hikedNames.push(trailName);
+      } else {
+        hike?.sections?.forEach((section) => {
+          const sectionName = section.sectionName;
+          this.hikedSectionNames.push(sectionName);
+        });
+      }
+    });
   }
 
 }

@@ -5,57 +5,7 @@
   </button>
 </div>
 <div *ngIf="addUser" class="hidden-form">
-  <form [formGroup]="trailForm" (ngSubmit)="saveTrail(trailForm)" class="form">
-    <h3>Add a new hike:</h3>
-    <div class="hike-form">
-      <mat-form-field appearance="fill" class="name-form-field">
-        <mat-label>Trail or Section Name</mat-label>
-        <input formControlName="trailName" required matInput [matAutocomplete]="auto" />
-        <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let trail of filteredTrails | async" [value]="trail.name">
-            {{ trail.name }}
-          </mat-option>
-        </mat-autocomplete>
-      </mat-form-field>
-      <mat-form-field appearance="fill" color="primary" class="miles-form-field">
-        <mat-label>Total Miles Hiked</mat-label>
-        <input type="number" formControlName="totalMiles" required matInput [value]="trailObjSelectedMiles" />
-      </mat-form-field>
-
-      <mat-form-field *ngIf="sectionNameArray" appearance="fill" class="sections-form-field">
-        <mat-label>Sections</mat-label>
-        <mat-select formControlName="sections" multiple>
-          <mat-select-trigger>
-            {{ selectedSection[0]?.sectionName }}
-            <span *ngIf="selectedSection.length > 1" class="example-additional-selection">
-              (+{{ selectedSection.length - 1 }}
-              {{ selectedSection.length === 2 ? "other" : "others" }})
-            </span>
-          </mat-select-trigger>
-          <mat-option *ngFor="let section of sectionNameArray" [value]="section">{{ section.sectionName }} - {{
-            section.sectionLength }} miles</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-checkbox formControlName="roundTrip">Round Trip?</mat-checkbox>
-    </div>
-
-    <div class="date-comments-form">
-      <mat-form-field appearance="fill" color="primary" class="date-form-field">
-        <mat-label>Hike Date</mat-label>
-        <input matInput [matDatepicker]="hikeDate" formControlName="date" (click)="$event.stopPropagation()" />
-        <mat-datepicker-toggle matSuffix [for]="hikeDate"></mat-datepicker-toggle>
-        <mat-datepicker #hikeDate></mat-datepicker>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill" color="primary" class="comments-form-field">
-        <mat-label>Comments</mat-label>
-        <input formControlName="comments" matInput />
-      </mat-form-field>
-      <button mat-icon-button mat-mini-fab matTooltip="Save" type="submit" [disabled]="!trailForm.valid" class="submit_btn">
-        <mat-icon class="save_icon">save</mat-icon>
-      </button>
-    </div>
-  </form>
+  <app-hike-form (saveTrailForm)="saveTrailForm($event)"></app-hike-form>
 </div>
 
 <div class="log_container">

@@ -2313,17 +2313,6 @@
       "roundTrip": true
     },
     {
-      "id": 10,
-      "trailName": "Ace Gap Trail",
-      "totalMiles": 5.6,
-      "date": "2020-11-30T18:36:43.291Z",
-      "comments": "Nice hiking trail and just long enough to feel some pain in the legs. ",
-      "sections": [],
-      "roundTrip": true,
-      "roundTripMiles": 5.6,
-      "photoUrl": "https://res.cloudinary.com/djxd2b2en/image/upload/v1609610666/smokies-05_txyuwm.jpg"
-    },
-    {
       "trailName": "Abrams Falls Trail",
       "totalMiles": 4.2,
       "roundTripMiles": 4.2,
@@ -2337,11 +2326,9 @@
     {
       "id": 12,
       "trailName": "Anthony Creek Trail",
-      "totalMiles": 3.5,
-      "roundTripMiles": 3.5,
+      "totalMiles": 1.6,
       "date": "2020-10-30T20:29:55.174Z",
       "comments": "Nunc sed augue lacus viverra vitae congue eu consequat ac felis donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus",
-      "photoUrl": "https://res.cloudinary.com/djxd2b2en/image/upload/v1609610667/smokies-08_l1mmae.jpg",
       "sections": [
         {
           "sectionName": "Cades Cove Picnic Area - Crib Gap",
@@ -2350,18 +2337,27 @@
         {
           "sectionName": "Crib Gap - Russell Field",
           "sectionLength": 1.4
-        },
-        {
-          "sectionName": "Russell Field - Bote Mountain",
-          "sectionLength": 1.9
         }
       ],
-      "roundTrip": true
+      "roundTrip": true,
+      "roundTripMiles": 1.6,
+      "photoUrl": "https://res.cloudinary.com/djxd2b2en/image/upload/v1609610667/smokies-08_l1mmae.jpg"
+    },
+    {
+      "id": 10,
+      "trailName": "Ace Gap Trail",
+      "totalMiles": 5.6,
+      "date": "2020-11-30T18:36:43.291Z",
+      "comments": "Nice hiking trail and just long enough to feel some pain in the legs. ",
+      "sections": [],
+      "roundTrip": true,
+      "roundTripMiles": 5.6,
+      "photoUrl": "https://res.cloudinary.com/djxd2b2en/image/upload/v1609610666/smokies-05_txyuwm.jpg"
     },
     {
       "id": 13,
       "trailName": "Appalachian Trail",
-      "totalMiles": 16.5,
+      "totalMiles": 16.2,
       "date": "2020-12-11T01:55:10.403Z",
       "comments": "I did the first section of the Appalachian Trail!!",
       "sections": [
@@ -2384,37 +2380,62 @@
         {
           "sectionName": "Eagle Creek - Bote Mountain",
           "sectionLength": 0.1
-        },
-        {
-          "sectionName": "Bote Mountain - Jenkins Ridge",
-          "sectionLength": 0.3
         }
       ],
       "roundTrip": true,
-      "roundTripMiles": 16.5,
-      "photoUrl": "https://cdn-files.apstatic.com/hike/7011319_medium_1554400402.jpg"
-    },
-    {
-      "id": 14,
-      "trailName": "Boogerman Trail",
-      "totalMiles": 4.1,
-      "date": "2020-12-18T02:30:13.175Z",
-      "comments": "Donnec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus",
-      "photoUrl": "",
-      "sections": [],
-      "roundTrip": true,
-      "roundTripMiles": 4.1
+      "roundTripMiles": 16.2,
+      "photoUrl": ""
     },
     {
       "id": 15,
       "trailName": "Chestnut Top Trail",
       "totalMiles": 4.3,
       "date": "2020-12-30T19:15:19.636Z",
-      "comments": "Coma Dolor sit amet, consectetur adipiscing elit. Aenean cursus euismod nunc a feugiat. Curabitur neque tortor, eleifend.",
-      "photoUrl": "",
+      "comments": "Csdsdoma Dolor sit amet, consectetur adipiscing elit. Aenean cursus euismod nunc a feugiat. Curabitur neque tortor, eleifend.",
       "sections": [],
       "roundTrip": true,
-      "roundTripMiles": 4.3
+      "roundTripMiles": 4.3,
+      "photoUrl": "../../../assets/img/smokies-08.jpeg"
+    },
+    {
+      "trailName": "Baskins Creek Trail",
+      "totalMiles": 2.7,
+      "date": "2021-01-09T15:52:43.793Z",
+      "comments": "Beautiful hike along the roaring Baskins Creek. They've had a lot of rain in the area and the creeks were full.",
+      "roundTrip": true,
+      "roundTripMiles": 2.7,
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7010250_medium_1554398123.jpg",
+      "id": 16
+    },
+    {
+      "trailName": "Boogerman Trail",
+      "totalMiles": 4.1,
+      "date": "2021-01-11T16:02:47.434Z",
+      "comments": "Csdsdoma Dolor sit amet, consectetur adipiscing elit. Aenean cursus euismod nunc a feugiat. Curabitur neque tortor, eleifend.",
+      "roundTrip": true,
+      "roundTripMiles": 4.1,
+      "photoUrl": "",
+      "id": 17
+    },
+    {
+      "trailName": "Laurel Falls Trail",
+      "totalMiles": 4,
+      "date": "2021-01-11T20:12:10.048Z",
+      "comments": "Finally knocked out this always-busy hike. Lots of people on the trails, but at least the falls were roaring.",
+      "sections": [
+        {
+          "sectionName": "Little River Road - Little Greenbrier",
+          "sectionLength": 3.1
+        },
+        {
+          "sectionName": "Little Greenbrier - Cove Mountain",
+          "sectionLength": 0.9
+        }
+      ],
+      "roundTrip": true,
+      "roundTripMiles": 4,
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7014931_medium_1554825575.jpg",
+      "id": 18
     }
   ],
   "users": [

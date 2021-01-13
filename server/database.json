@@ -2408,14 +2408,15 @@
       "id": 16
     },
     {
+      "id": 17,
       "trailName": "Boogerman Trail",
       "totalMiles": 4.1,
       "date": "2021-01-11T16:02:47.434Z",
       "comments": "Csdsdoma Dolor sit amet, consectetur adipiscing elit. Aenean cursus euismod nunc a feugiat. Curabitur neque tortor, eleifend.",
+      "sections": [],
       "roundTrip": true,
       "roundTripMiles": 4.1,
-      "photoUrl": "",
-      "id": 17
+      "photoUrl": ""
     },
     {
       "id": 18,
@@ -2436,6 +2437,16 @@
       "roundTrip": true,
       "roundTripMiles": 4,
       "photoUrl": ""
+    },
+    {
+      "trailName": "Beard Cane Trail",
+      "totalMiles": 4.2,
+      "date": "2021-01-13T19:45:01.684Z",
+      "comments": "adfadfafafdafd",
+      "roundTrip": false,
+      "roundTripMiles": 0,
+      "photoUrl": "",
+      "id": 19
     }
   ],
   "users": [

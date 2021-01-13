@@ -20,10 +20,15 @@ export class SnackBarInterceptorService implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     return next.handle(request).pipe(
       tap(event => {
-        if (event instanceof HttpResponse && event.status === 200) {
-          if (request.method === 'POST' || request.method === 'PUT') {
+        if (event instanceof HttpResponse && event.status === 200 || 201) {
+          if (request.method === 'POST') {
             const postMessage = 'Your hike was added successfully!';
             this.snackBar.open(postMessage, 'Close',
+            {duration: 4000, panelClass: 'successSnack'});
+          }
+          if (request.method === 'PUT') {
+            const editMessage = 'Your hike was updated successfully!';
+            this.snackBar.open(editMessage, 'Close',
             {duration: 4000, panelClass: 'successSnack'});
           }
           else if (request.method === 'DELETE') {

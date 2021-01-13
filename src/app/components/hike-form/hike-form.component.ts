@@ -201,10 +201,6 @@ export class HikeFormComponent implements OnInit {
       });
     } else {
       this.userHikesService.postHike(hike).subscribe(_ => {
-        this.snackBar.open('You successfully added your hike!', 'Close', {
-          duration: 5000,
-          panelClass: 'successSnack'
-        });
       });
       this.saveTrailForm.emit(false);
     }

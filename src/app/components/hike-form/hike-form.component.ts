@@ -199,6 +199,7 @@ export class HikeFormComponent implements OnInit {
       this.userHikesService.updateHike(hike).subscribe(_ => {
         this.snackBar.open('Successfully updated hike', 'Close', {
           duration: 5000,
+          panelClass: 'successSnack'
         });
         this.saveTrailForm.emit(false);
       });

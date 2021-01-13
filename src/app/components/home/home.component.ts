@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   goalForm: FormGroup;
   destroy$: Subject<boolean> = new Subject<boolean>();
   uniqueMiles = null;
+  totalMilesHiked: number;
   currentProgress = null;
   mostRecentHike = null;
   lineChart = [];
@@ -66,6 +67,11 @@ export class HomeComponent implements OnInit, OnDestroy {
         return acc + Number(userHike.totalMiles);
       }, 0);
       this.uniqueMiles = miles.toFixed(1);
+
+      const totalMiles = this.userHikes.reduce((acc, userHike) => {
+        return acc + Number(userHike.roundTripMiles);
+      }, 0);
+      this.totalMilesHiked = Number(this.uniqueMiles) + Number(totalMiles.toFixed(1));
 
       this.goalForm = this.fb.group({
         goal: [this.goal, [Validators.required, Validators.max(800.7)]]

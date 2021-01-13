@@ -119,7 +119,8 @@ export class TrailsLogComponent implements OnInit {
 
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       maxWidth: '500px',
-      data: dialogData
+      data: dialogData,
+      panelClass: 'deleteSnack'
     });
 
     dialogRef.afterClosed().subscribe(dialogResult => {

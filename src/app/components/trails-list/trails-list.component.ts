@@ -91,11 +91,11 @@ export class TrailsListComponent implements OnInit, OnDestroy {
   // this populates two arrays, one tha contains names of simple trails, the other sectionnames
   hiked() {
     this.hikes?.forEach((hike) => {
-      if (hike.sections === null || hike.sections.length < 1) {
+      if (hike.sections === null || hike.sections?.length < 1 || !hike.sections) {
         const trailName = hike.trailName;
         this.hikedNames.push(trailName);
       } else {
-        hike.sections.forEach((section) => {
+        hike.sections?.forEach((section) => {
           const sectionName = section.sectionName;
           this.hikedSectionNames.push(sectionName);
         });

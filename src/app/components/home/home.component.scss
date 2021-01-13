@@ -50,7 +50,7 @@ h4 {
         align-items: center;
         flex-basis: 40%;
         margin: auto;
-        background-color: #6F4930;
+        // background-color: #6F4930;
         padding: 10px 10px 10px 10px;
         border-radius: 12px;
         width: 250px;
@@ -125,6 +125,33 @@ h4 {
             color: rgb(211, 223, 211);
         }
     }
+
+    .current-miles {
+        display: flex;
+        flex-direction: column;
+
+        .mileage {
+            display: flex;
+            flex-direction: row;
+            // gap: 50px;
+            justify-content: space-evenly;
+
+            .unique-miles, .total-miles {
+                // background-color:  rgba(0, 0, 0, 0.2);
+                padding-left: 25px;
+                padding-right: 25px;
+                // border-radius: 15px;
+
+                .big-font {
+                    font-size: 3em;
+                }
+            }
+
+            // .unique-miles {
+            //     border-right: 1px solid rgba(0, 0, 0, 0.2);
+            // }
+        }
+    }
 }
 
 .main_options {
@@ -188,4 +215,39 @@ mat-form-field {
 
 .above-goal-form-text {
     text-align: left;
+}
+
+@media only screen and (max-width: 900px) {
+    .goals {
+      display: flex;
+
+      .current-miles, .percentage, .goal {
+          display: flex;
+          width: 50%;
+      }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    h1 {
+        margin-bottom: 0;
+        font-weight: bold;
+        font-size: 2.8em;
+    }
+    
+    h2 {
+        font-size: 1em;
+        font-weight: 200;
+        color:rgb(203, 204, 203);
+        margin: 0;
+    }
+    .goals {
+      display: flex;
+      flex-direction: column;
+
+      .current-miles, .percentage, .goal {
+          display: flex;
+          width: 80%;
+      }
+    }
 }

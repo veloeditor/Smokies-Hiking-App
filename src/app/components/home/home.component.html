@@ -4,14 +4,29 @@
 </div>
 <div class="goals">
     <div class="current-miles">
-        <div class="miles-icon">
-            <mat-icon class="material-icons">directions_walk</mat-icon>
+        <div class="mileage">
+            <div class="unique-miles">
+                <div class="miles-icon">
+                    <mat-icon class="material-icons">follow_the_signs</mat-icon>
+                </div>
+                <p><span class="big-font">{{ uniqueMiles || 0 }}</span>
+                    <br>
+                    unique miles hiked so far
+                </p>
+            </div>
+            <!-- <div class="total-miles">
+                <div class="miles-icon">
+                    <mat-icon class="material-icons">done_all</mat-icon>
+                </div>
+                <p><span class="big-font">{{ totalMilesHiked || 0 }}</span>
+                    <br>
+                    total miles hiked
+                </p>
+            </div> -->
         </div>
-        <p><span class="big-font">{{ uniqueMiles }}</span>
-            <br>
-            unique miles hiked so far
-        </p>
-        <app-mileage-chart></app-mileage-chart>
+        <div class="chart">
+            <app-mileage-chart></app-mileage-chart>
+        </div>
     </div>
     <div class="percentage">
         <h3>Goal accomplished so far:</h3>
@@ -21,7 +36,7 @@
     <div class="goal">
         <div class="current-goal">
             <p class="goal-p">Your current goal: <br>
-                <span class="big-font">{{ goal }} miles</span>
+                <span class="big-font">{{ goal || 0 }} miles</span>
                 <button mat-icon-button *ngIf="!isUpdatingGoal" (click)="editUserGoal()">
                     <mat-icon>edit</mat-icon>
                 </button>

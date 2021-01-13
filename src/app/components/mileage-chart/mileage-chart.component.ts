@@ -54,15 +54,18 @@ export class MileageChartComponent implements OnInit {
             borderColor: '#cfc460',
             fill: true,
             pointStyle: 'rectRounded',
-            backgroundColor: 'rgba(0, 0, 0, 0.3)'
+            backgroundColor: 'rgba(0, 0, 0, 0.3)',
+            pointBackgroundColor: 'rgba(0, 0, 0, 0.8)'
           }
         ]
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
         legend: {
           display: false
         },
-        sampleSize: 3,
+        // sampleSize: 3,
         scales: {
           xAxes: [{
             display: true,
@@ -72,6 +75,12 @@ export class MileageChartComponent implements OnInit {
             }
           }],
           yAxes: [{
+            ticks: {
+              // Include a dollar sign in the ticks
+              callback(value, index, values) {
+                  return value + ' mi';
+              },
+            },
             display: true,
             beginAtZero: true
           }],

@@ -57,16 +57,13 @@ export class CircularProgressComponent implements OnInit {
       outerStrokeColor: '#329439',
       innerStrokeColor: 'rgba(0, 0, 0, 0.3)',
       animation: true,
+      showTitle: true,
       animationDuration: 300,
       subtitleFormat: (percent: number): string => {
         if (percent >= 100) {
-          return 'Congratulations!';
-        } else if (percent >= 50) {
-          return 'Halfway there!';
-        } else if (percent > 0) {
-          return 'Making progress!';
+          return 'Congratulations you met your goal!';
         } else {
-          return 'No hikes as of yet';
+          return 'of goal completed';
         }
       }
     };

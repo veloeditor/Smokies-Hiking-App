@@ -197,17 +197,10 @@ export class HikeFormComponent implements OnInit {
 
     if (this.userHike?.id) {
       this.userHikesService.updateHike(hike).subscribe(_ => {
-        this.snackBar.open('Successfully updated hike', 'Close', {
-          duration: 5000,
-          panelClass: 'successSnack'
-        });
         this.saveTrailForm.emit(false);
       });
     } else {
       this.userHikesService.postHike(hike).subscribe(_ => {
-        this.snackBar.open('Successfully added hike', 'Close', {
-          duration: 5000,
-        });
       });
       this.saveTrailForm.emit(false);
     }

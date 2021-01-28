@@ -19,5 +19,9 @@ body {
     color: white;
 }
 
+.mat-option.mat-selected:not(.mat-option-disabled) {
+    color: white !important;
+}
+
 
 

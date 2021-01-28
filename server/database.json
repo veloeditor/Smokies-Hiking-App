@@ -2408,21 +2408,22 @@
       "id": 16
     },
     {
+      "id": 17,
       "trailName": "Boogerman Trail",
       "totalMiles": 4.1,
       "date": "2021-01-11T16:02:47.434Z",
       "comments": "Csdsdoma Dolor sit amet, consectetur adipiscing elit. Aenean cursus euismod nunc a feugiat. Curabitur neque tortor, eleifend.",
+      "sections": [],
       "roundTrip": true,
       "roundTripMiles": 4.1,
-      "photoUrl": "",
-      "id": 17
+      "photoUrl": ""
     },
     {
       "id": 18,
       "trailName": "Laurel Falls Trail",
       "totalMiles": 4,
       "date": "2021-01-11T20:12:10.048Z",
-      "comments": "Finally knocked out this VERY busy hike. Lots of people on the trails, but at least the falls were roaring.",
+      "comments": "Finally knocked out this very busy hike. Lots of people on the trails, but at least the falls were roaring.",
       "sections": [
         {
           "sectionName": "Little River Road - Little Greenbrier",
@@ -2436,6 +2437,17 @@
       "roundTrip": true,
       "roundTripMiles": 4,
       "photoUrl": ""
+    },
+    {
+      "id": 19,
+      "trailName": "Beard Cane Trail",
+      "totalMiles": 4.2,
+      "date": "2021-01-13T19:45:01.684Z",
+      "comments": "This was an awesome hike. I didn't see any beards.",
+      "sections": [],
+      "roundTrip": false,
+      "roundTripMiles": 0,
+      "photoUrl": ""
     }
   ],
   "users": [
@@ -2444,7 +2456,7 @@
       "userName": "Brian",
       "email": "brian@email.com",
       "password": 1234,
-      "goal": 200,
+      "goal": 800.7,
       "extraMiles": 0
     }
   ]

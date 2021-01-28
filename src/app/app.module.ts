@@ -7,7 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { TrailsLogComponent } from './components/trails-log/trails-log.component';
 import { TrailsListComponent } from './components/trails-list/trails-list.component';
 import { HeaderComponent } from './components/header/header.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -33,6 +33,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
 import { MileageChartComponent } from './components/mileage-chart/mileage-chart.component';
 import { CircularProgressComponent } from './components/circular-progress/circular-progress.component';
+import { SnackBarInterceptorService } from './interceptors/snack-bar-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,9 @@ import { CircularProgressComponent } from './components/circular-progress/circul
       showInnerStroke: true,
       startFromZero: false}),
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: SnackBarInterceptorService, multi: true}
+  ],
   entryComponents: [ConfirmDialogComponent],
   bootstrap: [AppComponent]
 })

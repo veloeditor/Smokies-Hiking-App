@@ -24,10 +24,18 @@
   }
 
   .hike-form,
-  .date-comments-form {
+  .date-form, .comments-form {
     display: flex;
     justify-content: left;
     flex-direction: column;
+  }
+
+  .miles-form {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
   }
 
   .name-form-field {
@@ -93,18 +101,28 @@
   }
 
 
-  .hike-form,
-  .date-comments-form {
+  .hike-form, .comments-form, .date-form {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     flex-direction: row;
     align-items: center;
     align-content: center;
     gap: 35px;
   }
 
+  .miles-form {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    gap: 35px;
+  }
+
+
+
   .name-form-field {
-    width: 300px;
+    width: 400px;
   }
 
   .miles-form-field {
@@ -112,7 +130,7 @@
   }
 
   .sections-form-field {
-    width: 330px;
+    width: 400px;
   }
 
   .date-form-field {

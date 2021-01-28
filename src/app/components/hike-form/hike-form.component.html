@@ -2,6 +2,7 @@
   <form [formGroup]="trailForm" (ngSubmit)="saveTrail(trailForm)" class="form">
     <h2 *ngIf="userHike?.id">Edit your <span>{{ userHike?.trailName }}</span> hike:</h2>
     <h2 *ngIf="!userHike?.id">Add a Hike:</h2>
+    
     <div class="hike-form">
       <mat-form-field appearance="outline" class="name-form-field">
         <mat-label>Trail or Section Name</mat-label>
@@ -12,16 +13,12 @@
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
-      <mat-form-field appearance="outline" color="primary" class="miles-form-field">
-        <mat-label>New Miles Hiked</mat-label>
-        <input type="number" formControlName="totalMiles" required matInput [value]="trailObjSelectedMiles" />
-      </mat-form-field>
-  
-      <mat-checkbox formControlName="roundTrip" class="round-trip">Round Trip?</mat-checkbox>
-  
+    </div>
+    
+    <div class="sections-form">
       <mat-form-field *ngIf="sectionNameArray" appearance="outline" class="sections-form-field">
         <mat-label *ngIf="sectionNameArray.length > 0">Sections</mat-label>
-        <mat-label *ngIf="sectionNameArray.length === 0">No Sections</mat-label>
+        <mat-label *ngIf="sectionNameArray.length < 1">No Sections</mat-label>
         <mat-select *ngIf="!userHike?.id" formControlName="sections" multiple class="sections-select-text">
           <mat-option *ngFor="let section of sectionNameArray" [value]="section">{{ section.sectionName }} - {{
             section.sectionLength }} miles</mat-option>
@@ -32,15 +29,26 @@
         </mat-select>
       </mat-form-field>
     </div>
+
+    <div class="miles-form">
+      <mat-form-field appearance="outline" color="primary" class="miles-form-field">
+        <mat-label>New Miles Hiked</mat-label>
+        <input type="number" formControlName="totalMiles" required matInput [value]="trailObjSelectedMiles" />
+      </mat-form-field>
   
-    <div class="date-comments-form">
+      <mat-checkbox formControlName="roundTrip" class="round-trip">Round Trip?</mat-checkbox>
+    </div>
+  
+    <div class="date-form">
       <mat-form-field appearance="outline" color="primary" class="date-form-field">
         <mat-label>Hike Date</mat-label>
         <input matInput [matDatepicker]="hikeDate" formControlName="date" (click)="$event.stopPropagation()" />
         <mat-datepicker-toggle matSuffix [for]="hikeDate"></mat-datepicker-toggle>
         <mat-datepicker #hikeDate></mat-datepicker>
-      </mat-form-field>
-  
+      </mat-form-field>  
+    </div>
+
+    <div class="comments-form">
       <mat-form-field appearance="outline" color="primary" class="comments-form-field">
         <mat-label>Comments</mat-label>
         <textarea formControlName="comments" matInput></textarea>

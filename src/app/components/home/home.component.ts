@@ -57,8 +57,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     this.userService.getAllUsers().pipe(takeUntil(this.destroy$)).subscribe((data: any[]) => {
       this.users = data;
-      this.goal = this.users[0].goal;
       this.user = this.users[0];
+      this.goal = this.users[0].goal;
     });
 
     this.userHikesService.getAllUserHikes().subscribe((data: UserHike[]) => {
@@ -79,7 +79,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
       this.getMostRecentHikeDate();
     });
-
   }
 
   private getMostRecentHikeDate() {
@@ -112,11 +111,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.userService.editUser(user).subscribe(_ => {
       this.isUpdatingGoal = false;
       // this.ngOnInit();
-      this.reloadCurrentRoute();
       this.snackBar.open('You have updated your goal!', 'Close', {
-        duration: 5000,
+          duration: 5000,
+        });
       });
-    });
+    this.reloadCurrentRoute();
   }
 
   ngOnDestroy() {

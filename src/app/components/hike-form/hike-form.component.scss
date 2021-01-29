@@ -2,6 +2,8 @@
 
   .form {
     display: flex;
+    position: absolute;
+    top: 25px;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
@@ -13,6 +15,7 @@
     flex-direction: column;
     border-radius: 12px;
     color: white;
+    width: 90%;
 
     h2 {
       font-size: 1.6em;
@@ -24,14 +27,22 @@
   }
 
   .hike-form,
-  .date-comments-form {
+  .date-form, .comments-form {
     display: flex;
     justify-content: left;
     flex-direction: column;
   }
 
+  .miles-form {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+  }
+
   .name-form-field {
-    width: 300px;
+    max-width: 98%;
   }
 
   .miles-form-field {
@@ -39,7 +50,8 @@
   }
 
   .sections-form-field {
-    width: 330px;
+    width: 98%;
+    max-width: 98%;
   }
 
   .date-form-field {
@@ -47,8 +59,7 @@
   }
 
   .comments-form-field {
-    width: 350px;
-    max-height: 80px;
+    max-width: 98%;
 
     .mat-form-field-flex {
       max-height: 80px;
@@ -57,6 +68,13 @@
 
   .round-trip {
     margin-bottom: 15px;
+  }
+
+  .submit_btn {
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: 10px;
+    vertical-align: center;
   }
 
 }
@@ -92,19 +110,36 @@
     }
   }
 
+  .submit_btn {
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: 10px;
+    vertical-align: center;
+  }
 
-  .hike-form,
-  .date-comments-form {
+
+  .hike-form, .comments-form, .date-form {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     flex-direction: row;
     align-items: center;
     align-content: center;
     gap: 35px;
   }
 
+  .miles-form {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    gap: 35px;
+  }
+
+
+
   .name-form-field {
-    width: 300px;
+    width: 400px;
   }
 
   .miles-form-field {
@@ -112,7 +147,7 @@
   }
 
   .sections-form-field {
-    width: 330px;
+    width: 400px;
   }
 
   .date-form-field {
@@ -136,4 +171,8 @@
 
 .sections-select-text {
   color: white;
+}
+
+::ng-deep .map-form-field-appearance-outline, mat-form-field-outline {
+  background-color: white !important;
 }

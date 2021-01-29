@@ -11,10 +11,10 @@
                 </div>
                 <p><span class="big-font">{{ uniqueMiles || 0 }}</span>
                     <br>
-                    unique miles hiked so far
+                    unique miles hiked
                 </p>
             </div>
-            <!-- <div class="total-miles">
+            <div class="total-miles">
                 <div class="miles-icon">
                     <mat-icon class="material-icons">done_all</mat-icon>
                 </div>
@@ -22,16 +22,15 @@
                     <br>
                     total miles hiked
                 </p>
-            </div> -->
+            </div>
         </div>
         <div class="chart">
-            <app-mileage-chart></app-mileage-chart>
+            <app-circular-progress></app-circular-progress>
         </div>
     </div>
     <div class="percentage">
-        <h3>Goal accomplished so far:</h3>
-        <app-circular-progress></app-circular-progress>
-        <p>Your last hike was on: <span class="date"> {{ mostRecentHike | date }}</span></p>
+        <app-mileage-chart></app-mileage-chart>
+        <!-- <p>Your last hike was on: <span class="date"> {{ mostRecentHike | date }}</span></p> -->
     </div>
     <div class="goal">
         <div class="current-goal">

@@ -72,22 +72,7 @@ import { SnackBarInterceptorService } from './interceptors/snack-bar-interceptor
     MatAutocompleteModule,
     MatTooltipModule,
     MatCheckboxModule,
-    NgCircleProgressModule.forRoot({
-      backgroundGradient: false,
-      backgroundColor: 'rgba(0, 0, 0, 0.3)',
-      backgroundPadding: -10,
-      radius: 60,
-      maxPercent: 100,
-      outerStrokeColor: '#61A9DC',
-      innerStrokeColor: '#1b5e20',
-      titleColor: '#cfc460',
-      subtitleColor: 'white',
-      unitsColor: '#cfc460',
-      titleFontSize: '62',
-      unitsFontSize: '17',
-      subtitleFontSize: '13',
-      showInnerStroke: true,
-      startFromZero: false}),
+    NgCircleProgressModule.forRoot({}),
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: SnackBarInterceptorService, multi: true}

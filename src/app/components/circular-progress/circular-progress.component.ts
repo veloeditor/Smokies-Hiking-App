@@ -20,7 +20,7 @@ export class CircularProgressComponent implements OnInit {
   userHikes: UserHike[];
   goal: number;
   uniqueMiles: number;
-  currentProgress: number;
+  currentProgress = 0;
 
   constructor(private userService: UserService,
               private userHikesService: UserHikesService) { }
@@ -49,16 +49,29 @@ export class CircularProgressComponent implements OnInit {
 
   private triggerCircularProgress() {
     this.ngCircleOptions = {
+      lazy: false,
       percent: this.currentProgress,
       space: -10,
-      radius: 120,
+      radius: 110,
       outerStrokeWidth: 10,
       innerStrokeWidth: 10,
       outerStrokeColor: '#329439',
-      innerStrokeColor: 'rgba(0, 0, 0, 0.3)',
+      innerStrokeColor: 'rgba(0, 0, 0, 0.4)',
       animation: true,
       showTitle: true,
       animationDuration: 300,
+      backgroundGradient: false,
+      backgroundColor: 'rgba(0, 0, 0, 0.4)',
+      backgroundPadding: -10,
+      maxPercent: 100,
+      titleColor: '#cfc460',
+      subtitleColor: 'white',
+      unitsColor: '#cfc460',
+      titleFontSize: '68',
+      unitsFontSize: '17',
+      subtitleFontSize: '17',
+      showInnerStroke: true,
+      startFromZero: false,
       subtitleFormat: (percent: number): string => {
         if (percent >= 100) {
           return 'Congratulations you met your goal!';

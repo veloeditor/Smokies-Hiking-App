@@ -44,6 +44,7 @@ export class MileageChartComponent implements OnInit {
   }
 
   private createBarChart(hikeDatesArray: any[], reduceMilesArray: any[]) {
+    Chart.defaults.global.defaultFontColor = 'white';
     this.lineChart = new Chart('lineChart', {
       type: 'line',
       data: {
@@ -62,6 +63,7 @@ export class MileageChartComponent implements OnInit {
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        defaultFontColor: 'white',
         legend: {
           display: false
         },

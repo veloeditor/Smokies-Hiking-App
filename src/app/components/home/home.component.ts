@@ -68,10 +68,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       }, 0);
       this.uniqueMiles = miles.toFixed(1);
 
-      const totalMiles = this.userHikes.reduce((acc, userHike) => {
+      const extraMiles = this.userHikes.reduce((acc, userHike) => {
         return acc + Number(userHike.roundTripMiles);
       }, 0);
-      this.totalMilesHiked = Number(this.uniqueMiles) + Number(totalMiles.toFixed(1));
+      this.totalMilesHiked = Number(this.uniqueMiles) + Number(extraMiles.toFixed(1));
 
       this.goalForm = this.fb.group({
         goal: [this.goal, [Validators.required, Validators.max(800.7)]]

@@ -68,13 +68,20 @@ h4 {
         }
     }
 
+    .unique-miles, .total-miles {
+        background-color: rgba(0, 0, 0, 0.3);
+        margin-left: 5px;
+        margin-right: 5px;
+        border-radius: 12px;
+    }
+
+
     .current-miles, .percentage, .goal, .latest_hike::after {
         background:
             linear-gradient(
-                rgba(111, 73, 48, 0.9),
-                rgba(111, 73, 48, 0.9)
+                rgba(111, 73, 48, 0.5),
+                rgba(111, 73, 48, 0.5)
             );
-
     }
 
     .goal {
@@ -86,6 +93,7 @@ h4 {
 
         .current-goal {
             flex-direction: row;
+            flex-basis: 20%;
         }
 
         .mat-icon {
@@ -98,6 +106,7 @@ h4 {
         }
 
         .big-font {
+            font-size: 2em;
             padding-right: 10px;
         }
         
@@ -119,10 +128,10 @@ h4 {
         }
 
         .mat-icon {
-            font-size: 48px;
+            font-size: 42px;
             padding-right: 20px;
             padding-bottom: 25px;
-            color: rgb(211, 223, 211);
+            color: rgb(58, 168, 58);
         }
     }
 
@@ -208,6 +217,7 @@ mat-form-field {
 }
 
 .update-goal-input {
+    flex-basis: 40%;
     h2 {
         margin-bottom: 15px;
     }

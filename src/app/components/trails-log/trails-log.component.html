@@ -1,7 +1,10 @@
 <div class="header">
   <h1 class="hikingLogTitle">Hiking Log</h1>
-  <button mat-mini-fab color="primary" (click)="openForm()">
-    <span *ngIf="!addUser" class="material-icons">add</span><span *ngIf="addUser" color="warn" class="material-icons">cancel</span>
+  <button *ngIf="!addUser" mat-mini-fab color="primary" (click)="openForm()">
+    <span class="material-icons">add</span>
+  </button>
+  <button *ngIf="addUser" mat-mini-fab color="secondary" (click)="openForm()">
+    <span color="" class="material-icons">clear</span>
   </button>
 </div>
 <div *ngIf="addUser" class="hidden-form">

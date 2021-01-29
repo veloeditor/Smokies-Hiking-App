@@ -1,6 +1,8 @@
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
+import { NgZone, ViewChild } from '@angular/core';
+import { take } from 'rxjs/operators';
 
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { UserHike } from 'src/app/interfaces/user-hike';
@@ -8,6 +10,7 @@ import { Trail } from '../../interfaces/trail';
 import { UserHikesService } from 'src/app/services/user-hikes.service';
 import { TrailsService } from 'src/app/services/trails.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 
 @Component({
   selector: 'app-hike-form',
@@ -18,6 +21,7 @@ export class HikeFormComponent implements OnInit {
 
   @Input() userHike: UserHike;
   @Output() saveTrailForm: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @ViewChild('autosize') autosize: CdkTextareaAutosize;
 
   trails: Trail[];
   hikes: UserHike[];
@@ -38,7 +42,8 @@ export class HikeFormComponent implements OnInit {
     private userHikesService: UserHikesService,
     private fb: FormBuilder,
     private trailsService: TrailsService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private ngZone: NgZone
   ) { }
 
   ngOnInit(): void {
@@ -181,6 +186,11 @@ export class HikeFormComponent implements OnInit {
     return this.trails?.filter(option => option.name.toLowerCase().includes(filterValue));
   }
 
+  triggerResize() {
+    // Wait for changes to be applied, then trigger textarea resize.
+    this.ngZone.onStable.pipe(take(1))
+        .subscribe(() => this.autosize.resizeToFitContent(true));
+  }
 
   saveTrail(trailForm: FormGroup) {
     const hike = {

@@ -15,4 +15,10 @@
     padding-right: 15px;
     font-weight: bold;
     font-size: 1.5em;
+    cursor: pointer;
+    outline: none;
+}
+
+.logo:hover {
+    color: rgb(196, 195, 195);
 }

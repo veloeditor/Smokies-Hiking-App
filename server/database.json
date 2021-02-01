@@ -2448,6 +2448,16 @@
       "roundTrip": false,
       "roundTripMiles": 0,
       "photoUrl": ""
+    },
+    {
+      "trailName": "Abrams Falls Trail",
+      "totalMiles": 0,
+      "date": "2021-02-01T21:23:15.809Z",
+      "comments": "Had to do this trail again to reach another trail.",
+      "roundTrip": false,
+      "roundTripMiles": 4.2,
+      "photoUrl": "https://cdn-files.apstatic.com/hike/7011224_medium_1554400194.jpg",
+      "id": 20
     }
   ],
   "users": [

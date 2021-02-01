@@ -132,18 +132,17 @@ export class HikeFormComponent implements OnInit {
     });
 
     this.trailForm.controls.sections.valueChanges.subscribe((value) => {
-      this.hashiked = false;
       this.selectedSection = value;
       if (this.selectedSection?.length !== 0 || !this.userHike?.id) {
         // change the following to either set miles equal to 'miles' or 'extraMiles' based on whether
-        const miles = this.selectedSection?.reduce((acc, section) => {
+        let miles = null;
+        miles = this.selectedSection?.reduce((acc, section) => {
           this.hashiked = false;
           if (!this.userHike?.id && this.hikedSectionNames.includes(section.sectionName)) {
             this.hashiked = true;
             return 0;
-          } else {
-            return acc + Number(section?.sectionLength);
           }
+          return acc + Number(section?.sectionLength);
         }, 0);
         this.trailObjSelectedMiles = miles?.toFixed(1);
         if (this.trailForm.controls.roundTrip.value === true) {

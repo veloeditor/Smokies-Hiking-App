@@ -31,12 +31,14 @@ export class HikeFormComponent implements OnInit {
   trailObjSelectedMiles = 0;
   sectionNameArray: [{ sectionName: string, sectionLength: number }];
   selectedSection = [];
+  alreadyHikedSelection = [];
   hikedNames = [];
   hikedSectionNames = [];
   trailObjSelected: Trail[];
   trailObjectedEdited = null;
   roundTripMileage: number;
   extraMiles: number;
+  hashiked: boolean;
 
   constructor(
     private userHikesService: UserHikesService,
@@ -93,9 +95,13 @@ export class HikeFormComponent implements OnInit {
 
     this.trailForm.controls.trailName.valueChanges.subscribe((change) => {
       const trailObjSelected = this.trails?.find((t) => t.name === change);
+      if (change === '') {
+        this.hashiked = false;
+      }
       if (trailObjSelected?.sections?.length < 1) {
         if (this.hikedNames.includes(trailObjSelected.name)) {
-          window.alert('You already hiked this!');
+          this.hashiked = true;
+          this.roundTripMileage = trailObjSelected?.length;
         }
         if (trailObjSelected?.length !== undefined && !this.hikedNames.includes(trailObjSelected.name)) {
           this.trailObjSelectedMiles = trailObjSelected?.length;
@@ -125,16 +131,19 @@ export class HikeFormComponent implements OnInit {
       }
     });
 
-    // something in here is breaking totalMiles when editing
     this.trailForm.controls.sections.valueChanges.subscribe((value) => {
+      this.hashiked = false;
       this.selectedSection = value;
-      console.log(this.selectedSection);
-      if (this.selectedSection?.length > 1 || !this.userHike?.id) {
+      if (this.selectedSection?.length !== 0 || !this.userHike?.id) {
+        // change the following to either set miles equal to 'miles' or 'extraMiles' based on whether
         const miles = this.selectedSection?.reduce((acc, section) => {
+          this.hashiked = false;
           if (!this.userHike?.id && this.hikedSectionNames.includes(section.sectionName)) {
+            this.hashiked = true;
             return 0;
+          } else {
+            return acc + Number(section?.sectionLength);
           }
-          return acc + Number(section?.sectionLength);
         }, 0);
         this.trailObjSelectedMiles = miles?.toFixed(1);
         if (this.trailForm.controls.roundTrip.value === true) {
@@ -143,6 +152,22 @@ export class HikeFormComponent implements OnInit {
         }
       }
     });
+
+    // this is to account for sections already hiked so the miles are counted towards total
+    // this.trailForm.controls.sections.valueChanges.subscribe((response) => {
+    //   this.hashiked = false;
+    //   this.alreadyHikedSelection = response;
+    //   if (this.selectedSection?.length !== 0 || !this.userHike?.id) {
+    //     let miles = null;
+    //     miles = this.alreadyHikedSelection?.reduce((acc, section) => {
+    //       if (!this.userHike?.id && this.hikedSectionNames.includes(section.sectionName)) {
+    //         this.hashiked = true;
+    //         return acc + Number(section?.sectionLength);
+    //       }
+    //     }, 0);
+    //     this.roundTripMileage = miles?.toFixed(1);
+    //   }
+    // });
   }
 
   private getUserHikes() {
@@ -221,10 +246,12 @@ export class HikeFormComponent implements OnInit {
       if (hike?.sections === null || hike.sections?.length < 1) {
         const trailName = hike.trailName;
         this.hikedNames.push(trailName);
+        console.log(this.hikedNames);
       } else {
         hike?.sections?.forEach((section) => {
           const sectionName = section.sectionName;
           this.hikedSectionNames.push(sectionName);
+
         });
       }
     });

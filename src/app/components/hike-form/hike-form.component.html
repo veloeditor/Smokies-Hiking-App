@@ -9,9 +9,10 @@
         <input formControlName="trailName" required matInput [matAutocomplete]="auto" />
         <mat-autocomplete #auto="matAutocomplete">
           <mat-option *ngFor="let trail of filteredTrails | async" [value]="trail.name">
-            {{ trail?.name }}
+            {{ trail?.name }} <span *ngIf="hashiked">- Previously Hiked</span>
           </mat-option>
         </mat-autocomplete>
+        <mat-hint *ngIf="hashiked">You previously hiked this. Miles will only count towards 'Total Miles'</mat-hint>
       </mat-form-field>
     </div>
     
@@ -32,10 +33,13 @@
 
     <div class="miles-form">
       <mat-form-field appearance="outline" color="primary" class="miles-form-field">
-        <mat-label>New Miles Hiked</mat-label>
+        <mat-label>Goal Miles</mat-label>
         <input type="number" formControlName="totalMiles" required matInput [value]="trailObjSelectedMiles" />
       </mat-form-field>
-  
+      <mat-form-field appearance="outline" color="primary" class="miles-form-field">
+        <mat-label>Repeated Miles</mat-label>
+        <input type="number" formControlName="roundTripMiles" matInput [value]="roundTripMileage" />
+      </mat-form-field>
       <mat-checkbox formControlName="roundTrip" class="round-trip">Round Trip?</mat-checkbox>
     </div>
   

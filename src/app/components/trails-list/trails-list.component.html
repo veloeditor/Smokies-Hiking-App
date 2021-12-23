@@ -1,3 +1,8 @@
+<div class="app_title">
+  <h1>The 900 Miler Challenge</h1>
+  <h2>Hike all of the trails of the Great Smoky Mountains</h2>
+  <hr>
+</div>
 <div class="trail-list-title">
   <h1>Official Trails</h1>
   <h2>in the Great Smoky Mountains</h2>
@@ -9,7 +14,6 @@
       <input [style.height.px]=20 formControlName="search" matInput placeholder="Search for a trail..." value="">
     </mat-form-field>
   </form>
-  <button *ngIf="!search" mat-icon-button (click)="openForm()"><mat-icon>search</mat-icon></button>
   <button *ngIf="search" mat-icon-button (click)="openForm()"><mat-icon>cancel</mat-icon></button>
 </div>
 
@@ -17,6 +21,7 @@
   <div class="progress-indicators">
     <p class="done"><mat-icon class="check-box-icon">check_box</mat-icon> - Trail fully hiked</p>
     <p class="progress"><mat-icon class="in-progress-icon">timelapse</mat-icon> - Trail in progress</p>
+    <button class="search-btn" *ngIf="!search" mat-icon-button (click)="openForm()"><mat-icon>search</mat-icon></button>
   </div>
   <div class="trail" *ngFor="let trail of dataSource">
     <div class="no-section-trails" *ngIf="trail.sections.length < 1; else trailSections">

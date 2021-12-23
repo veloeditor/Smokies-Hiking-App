@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
     <nav class="nav-bar">
-        <span class="logo">900 Miler</span>
+        <span [routerLink]="['/']" routerLinkActive="router-link-active" class="logo">900 Miler</span>
         <span class="example-spacer"></span>
         <button mat-button [routerLink]="['home']" routerLinkActive="router-link-active">Home</button>
         <button mat-button [routerLink]="['log']" routerLinkActive="router-link-active">Hiking Log</button>

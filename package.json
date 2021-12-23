@@ -31,6 +31,7 @@
     "ng-circle-progress": "^1.6.0",
     "rxjs": "~6.5.4",
     "tslib": "^2.0.0",
+    "webpack-dev-server": "^4.7.1",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

@@ -69,12 +69,14 @@ export class HikeFormComponent implements OnInit {
 
     this.sectionNameArray = this.userHike?.sections;
 
+    // this is for the filter we do on the trailName input field
     this.filteredTrails = this.trailForm.controls.trailName.valueChanges
       .pipe(
         startWith(''),
         map(value => this.findOption(value))
       );
 
+    // if roundTrip box is checked, set the trailObject miles to equal extraMiles
     this.trailForm.controls.roundTrip.valueChanges.subscribe((change) => {
       if (change) {
         this.extraMiles = this.trailObjSelectedMiles;
@@ -91,8 +93,10 @@ export class HikeFormComponent implements OnInit {
       }
     });
 
+    // set miles to userHike object totalMiles for editing
     this.trailForm?.get('totalMiles').setValue(this.userHike?.totalMiles);
 
+    // this will evaluate if the trail is a simple trail with no sections and set miles accordingly.
     this.trailForm.controls.trailName.valueChanges.subscribe((change) => {
       const trailObjSelected = this.trails?.find((t) => t.name === change);
       if (change === '') {
@@ -114,6 +118,8 @@ export class HikeFormComponent implements OnInit {
       }
     });
 
+    // this sets the trail card's picture to either be the picture the trail has in the database or sets it equal to an empty string
+    // later we check for empty strings for photoUrls and set a random picture to that
     this.trailForm.controls.trailName.valueChanges.subscribe((change) => {
       const trailObjSelected = this.trails?.find((t) => t.name === change);
       if (trailObjSelected?.photoUrl !== '') {
@@ -131,15 +137,24 @@ export class HikeFormComponent implements OnInit {
       }
     });
 
+    // this will account for trails w/ sections to appropriately add up, or subtract, the miles as they select sections
     this.trailForm.controls.sections.valueChanges.subscribe((value) => {
+      this.hashiked = false;
       this.selectedSection = value;
+      this.selectedSection?.forEach(section => {
+        if (this.hikedSectionNames.includes(section.sectionName)) {
+          this.hashiked = true;
+          console.log(this.hashiked);
+        } else {
+          this.hashiked = false;
+        }
+        console.log(this.hashiked);
+      });
       if (this.selectedSection?.length !== 0 || !this.userHike?.id) {
         // change the following to either set miles equal to 'miles' or 'extraMiles' based on whether
         let miles = null;
         miles = this.selectedSection?.reduce((acc, section) => {
-          this.hashiked = false;
           if (!this.userHike?.id && this.hikedSectionNames.includes(section.sectionName)) {
-            this.hashiked = true;
             return 0;
           }
           return acc + Number(section?.sectionLength);
@@ -151,22 +166,6 @@ export class HikeFormComponent implements OnInit {
         }
       }
     });
-
-    // this is to account for sections already hiked so the miles are counted towards total
-    // this.trailForm.controls.sections.valueChanges.subscribe((response) => {
-    //   this.hashiked = false;
-    //   this.alreadyHikedSelection = response;
-    //   if (this.selectedSection?.length !== 0 || !this.userHike?.id) {
-    //     let miles = null;
-    //     miles = this.alreadyHikedSelection?.reduce((acc, section) => {
-    //       if (!this.userHike?.id && this.hikedSectionNames.includes(section.sectionName)) {
-    //         this.hashiked = true;
-    //         return acc + Number(section?.sectionLength);
-    //       }
-    //     }, 0);
-    //     this.roundTripMileage = miles?.toFixed(1);
-    //   }
-    // });
   }
 
   private getUserHikes() {
@@ -245,7 +244,6 @@ export class HikeFormComponent implements OnInit {
       if (hike?.sections === null || hike.sections?.length < 1) {
         const trailName = hike.trailName;
         this.hikedNames.push(trailName);
-        console.log(this.hikedNames);
       } else {
         hike?.sections?.forEach((section) => {
           const sectionName = section.sectionName;

@@ -21,7 +21,7 @@
         <mat-label *ngIf="sectionNameArray.length > 0">Sections</mat-label>
         <mat-label *ngIf="sectionNameArray.length < 1">No Sections</mat-label>
         <mat-select *ngIf="!userHike?.id" formControlName="sections" multiple class="sections-select-text">
-          <mat-option *ngFor="let section of sectionNameArray" [value]="section">{{ section.sectionName }} - {{
+          <mat-option *ngFor="let section of sectionNameArray" [ngClass]="{alreadyHiked: hikedSectionNames.includes(section.sectionName)}" [value]="section">{{ section.sectionName }} - {{
             section.sectionLength }} miles</mat-option>
         </mat-select>
         <mat-select *ngIf="userHike?.id" formControlName="sections" multiple class="sections-select-text">

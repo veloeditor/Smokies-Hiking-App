@@ -1,31 +1,30 @@
 @import 'src/assets/material.scss';
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 body {
-    margin: 0;
-    // font-family: Roboto, "Helvetica Neue", sans-serif;
-    font-family: 'proxima-nova-soft', sans-serif !important;
-    font-size: 14px;
-    // background-color: #1a0f08;
-    color: rgb(223, 219, 219);
-    background: linear-gradient(rgba(26,15,8,0.9),rgba(26,15,8,0.9)), url('src/assets/img/topo_map.jpeg');
+  margin: 0;
+  // font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'proxima-nova-soft', sans-serif !important;
+  font-size: 14px;
+  // background-color: #1a0f08;
+  color: rgb(223, 219, 219);
+  background: linear-gradient(rgba(26, 15, 8, 0.9), rgba(26, 15, 8, 0.9));
 }
 
-.deleteSnack, .successSnack {
-    background: green;
-    color: white;
+.deleteSnack,
+.successSnack {
+  background: green;
+  color: white;
 }
 
 .mat-option.mat-selected:not(.mat-option-disabled) {
-    color: white !important;
+  color: white !important;
 }
 
 .mat-expansion-panel-header {
-    background-color: rgba(111, 73, 48, 0.0) !important;
+  background-color: rgba(111, 73, 48, 0) !important;
 }
-
-
-
